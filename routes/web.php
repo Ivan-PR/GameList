@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class);
 
-// Route::get('/home', function () {
-//     return view('home'); 
-// });
+Route::get('login', LoginController::class);
+
+Route::controller(MantenimentController::class)->group(function () {
+    Route::get('manteniment', 'index');
+    Route::get('manteniment/crear', 'create');
+    Route::get('manteniment/editar', 'edit');
+    Route::get('manteniment/eliminar', 'delete');
+});
+
