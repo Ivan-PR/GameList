@@ -22,6 +22,5 @@
     </head>
     <body class="antialiased">
         <h1>Esto es la home </h1>
-        <a href="{{ route('home') }}">Manteniment</a>
     </body>
 </html>
