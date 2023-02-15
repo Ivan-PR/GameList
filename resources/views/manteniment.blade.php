@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<<<<<<< HEAD
         <title>Manteniment</title>
+=======
+        <title>Laravel</title>
+>>>>>>> 9f4b0d9 (manteniment)
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -21,6 +25,10 @@
         </style>
     </head>
     <body class="antialiased">
+<<<<<<< HEAD
         <h1>Esto es manteniment</h1>
+=======
+        <h1>Esto es manteniment </h1>
+>>>>>>> 9f4b0d9 (manteniment)
     </body>
 </html>

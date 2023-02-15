@@ -9,6 +9,7 @@ class MantenimentController extends Controller
     public function index(){
         return view('manteniment');
     }
+<<<<<<< HEAD
     public function create(){
         return view('manteniment');
     }
@@ -19,3 +20,6 @@ class MantenimentController extends Controller
         return view('manteniment');
     }
 }
+=======
+}
+>>>>>>> 9f4b0d9 (manteniment)

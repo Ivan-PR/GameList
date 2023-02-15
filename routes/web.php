@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MantenimentController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,14 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeController::class);
-//Route::get('manteniment', [MantenimentController::class, 'index']);
+Route::get('manteniment', [MantenimentController::class, 'index']);
 
-Route::controller(MantenimentController::class)->group(function () {
-    Route::get('manteniment', 'index');
-    Route::get('manteniment/crear', 'create');
-    Route::get('manteniment/editar', 'edit');
-    Route::get('manteniment/eliminar', 'delete');
-});
 
 // Route::controller(MantenimentController::class)->group(function () {
 //     Route::get('manteniment/crear', 'create');
