@@ -16,8 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeController::class);
-
-Route::get('login', LoginController::class);
+//Route::get('manteniment', [MantenimentController::class, 'index']);
 
 Route::controller(MantenimentController::class)->group(function () {
     Route::get('manteniment', 'index');
@@ -25,4 +24,10 @@ Route::controller(MantenimentController::class)->group(function () {
     Route::get('manteniment/editar', 'edit');
     Route::get('manteniment/eliminar', 'delete');
 });
+
+// Route::controller(MantenimentController::class)->group(function () {
+//     Route::get('manteniment/crear', 'create');
+//     Route::get('manteniment/editar', 'edit');
+//     Route::get('manteniment/eliminar', 'delete');
+// });
 
