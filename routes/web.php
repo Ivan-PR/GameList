@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class);
 Route::get('manteniment', [MantenimentController::class, 'index']);
+Route::get('manteniment', [MantenimentController::class, 'index']);
 
 
 // Route::controller(MantenimentController::class)->group(function () {
