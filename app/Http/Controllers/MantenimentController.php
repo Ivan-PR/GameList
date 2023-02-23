@@ -11,13 +11,16 @@ class MantenimentController extends Controller
     }
 
     public function create(){
-        return view('manteniment/manteniment');
+        return view('manteniment/editar');
     }
     public function edit(){
-        return view('manteniment/manteniment');
+        return view('manteniment/editar');
     }
     public function delete(){
-        return view('manteniment/manteniment');
+        return view('manteniment/borrar');
+    }
+    public function massiveLoad(){
+        return view('manteniment/carga');
     }
 }
 

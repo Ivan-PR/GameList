@@ -33,6 +33,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">?</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./manteniment">Manteniment</a>
+                    </li>
                 </ul>
             </div>
         </div>

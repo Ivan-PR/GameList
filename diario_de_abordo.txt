@@ -1,0 +1,42 @@
+Manteniment:
+- seccion para subir ficheros de datos
+- seccion para create datos nuevos
+- seccion para update datos
+- seccion para delete datos
+
+Home:
+- seccion para mostrar datos
+- seccion para mostrar listado de resultados de busqueda
+- seccion para filtrar/buscar datos
+
+
+Dudas:
+Si quitas el slash del href no carga bien.
+te lleva a "manteniment/manteniment" en vez de "manteniment".
+
+
+<li class="nav-item">
+    <a class="nav-link" href="/manteniment">Llistat</a>
+</li>
+
+Posible estructura de tablas:
+
+plataforma: gba, nes, snes, etc
+juego:idioma=1, plataforma=2
+idiomas: ingles id=1
+
+
+
+##Apuntes: 
+
+Mirar data list para filtrar por nombres.
+
+<label for="exampleDataList" class="form-label">Datalist example</label>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+<datalist id="datalistOptions">
+  <option value="San Francisco">
+  <option value="New York">
+  <option value="Seattle">
+  <option value="Los Angeles">
+  <option value="Chicago">
+</datalist>
