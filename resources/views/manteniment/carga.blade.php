@@ -11,7 +11,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
-
+<script>var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
 <body class="container-fluid">
     <header>
         <nav class="navbar navbar-expand-lg bg-light">
@@ -52,10 +56,15 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <form action="" method="POST">
+                <form action="" method="POST"{{-- enctype="multipart/form-data" --}}>
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Subida de catalogo:</label>
+                        <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Fucks curious">?</a>
                         <input class="form-control" type="file" id="formFile">
+                    </div>
+                    <div class="mb-3">
+                        <label for="imageFileMultiple" class="form-label">Subida de imagenes:</label>
+                        <input class="form-control" type="file" id="imageFileMultiple" multiple>
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
