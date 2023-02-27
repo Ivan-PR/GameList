@@ -22,6 +22,5 @@ Route::controller(MantenimentController::class)->group(function () {
     Route::get('manteniment', 'index');
     Route::get('manteniment/crear', 'create');
     Route::get('manteniment/editar', 'edit');
-    Route::get('manteniment/eliminar', 'delete');
     Route::get('manteniment/carga', 'massiveLoad');
 });

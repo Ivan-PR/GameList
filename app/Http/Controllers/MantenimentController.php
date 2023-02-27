@@ -7,20 +7,20 @@ use Illuminate\Http\Request;
 class MantenimentController extends Controller
 {
     public function index(){
-        return view('manteniment/manteniment');
+        return view('manteniment.home');
     }
 
     public function create(){
-        return view('manteniment/editar');
+        return view('manteniment.editar');
     }
     public function edit(){
-        return view('manteniment/editar');
+        return view('manteniment.editar');
     }
     public function delete(){
-        return view('manteniment/borrar');
+        return view('manteniment.home');
     }
     public function massiveLoad(){
-        return view('manteniment/carga');
+        return view('manteniment.carga');
     }
 }
 
