@@ -1,3 +1,5 @@
+Dudas:
+
 Manteniment:
 - seccion para subir ficheros de datos
 - seccion para create datos nuevos
@@ -10,20 +12,56 @@ Home:
 - seccion para filtrar/buscar datos
 
 
-Dudas:
-Si quitas el slash del href no carga bien.
-te lleva a "manteniment/manteniment" en vez de "manteniment".
 
 
-<li class="nav-item">
-    <a class="nav-link" href="/manteniment">Llistat</a>
-</li>
+Posible estructura de tablas y columnas:
 
-Posible estructura de tablas:
+t_platforms: 
+c_id, c_platform
+Ex: 1, nintendo 64
 
-plataforma: gba, nes, snes, etc
-juego:idioma=1, plataforma=2
-idiomas: ingles id=1
+t_languages: 
+c_Id, c_language
+Ex: 1, ingles
+
+t_Location:
+c_Id, c_Country, c_Image
+Ex: 1, japan, flag.jpg
+
+t_RomSize:
+c_Id, c_Size
+Ex: 1, 64mb
+
+t_games:
+   | c_Id, | c_name,   |   c_Image,    | c_Platform, | c_Publisher, | c_Location, | c_Language, | c_SourceRom, | c_RomSize, | c_SaveType.
+Ex:|  1,   |  mario64, |  mario64.jpg, |      1,     |   nintendo,  |      1,     |     1,      |    Mode 7,   |      1,    |   Flash512
+
+
+
+crear migraciones para crear tablas
+cmd: php artisan make:migration create_platform_table
+
+añadir columna a una tabla:
+cmd: php artisan make:migration add_column_to_platform_table
+video 10 min5:28
+
+cambiar propiedades de columna:
+cmd: php artisan make:migration cambiar_propiedades_to_platform_table
+video 10 min 9:00
+
+actualizar lo que haya en migraciones
+cmd: php artisan migrate
+
+eliminar migraciones
+cmd: php artisan migrate:rollback
+
+para modificar propiedades de columna. se requiere doctrine/dbal
+cmd: composer require doctrine/dbal
+
+-------------------------------
+crear un modelo:
+cmd: php artisan make:model Platform
+
 
 
 
