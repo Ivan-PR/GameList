@@ -2,8 +2,13 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Language;
+use App\Models\Game;
+use App\Models\Location;
+use App\Models\Platform;
+use App\Models\Romsize;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +19,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        Language::factory(10)->create();
+        Game::factory(10)->create();
+        Location::factory(10)->create();
+        Platform::factory(10)->create();
+        Romsize::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
     }
 }

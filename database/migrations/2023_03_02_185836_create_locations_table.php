@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('languages', function (Blueprint $table) {
+        Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->string('language',200);//max 255 caracteres.
+            $table->string('location',30);//max 255 caracteres.
             $table->timestamps();
         });
     }
@@ -27,6 +27,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('languages');
+        Schema::dropIfExists('locations');
     }
 };
+?>

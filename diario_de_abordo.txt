@@ -1,5 +1,7 @@
 Dudas:
 
+vendor/fakerphp/faker/src/Faker/Generator.php
+
 Manteniment:
 - seccion para subir ficheros de datos
 - seccion para create datos nuevos
@@ -28,7 +30,7 @@ t_Location:
 c_Id, c_Country, c_Image
 Ex: 1, japan, flag.jpg
 
-t_RomSize:
+t_RomSizes:
 c_Id, c_Size
 Ex: 1, 64mb
 
@@ -37,36 +39,75 @@ t_games:
 Ex:|  1,   |  mario64, |  mario64.jpg, |      1,     |   nintendo,  |      1,     |     1,      |    Mode 7,   |      1,    |   Flash512
 
 
+##Apuntes:
 
-crear migraciones para crear tablas
+No se donde va:
+- Para crear objetos desde otros archivos:
+cmd: php artisan tinker
+video 11
+
+-------------------------------
+
+Tema Seeders:
+
+- Para crear seeders:
+cmd: php artisan make:seeder PlatformSeeder
+
+-------------------------------
+
+Tema Factory:
+
+cmd: php artisan make:factory PlatformFactory --model=Platform
+
+- Auto generar datos en una tabla con factory:
+video 13, min 9:00
+  Con la funcion definition
+
+-------------------------------
+
+Tema Models:
+
+- Para crear un modelo:
+cmd: php artisan make:model Platform
+
+- Para guardar los datos de un objeto en una tabla diferente a la tabla por defecto,
+se debe especificar en el modelo:
+protected $table = 'platforms';
+    video 11 min 15:00
+
+-------------------------------
+
+Tema migraciones:
+
+- Crear migraciones para crear tablas
 cmd: php artisan make:migration create_platform_table
 
-añadir columna a una tabla:
+- Añadir columna a una tabla:
 cmd: php artisan make:migration add_column_to_platform_table
 video 10 min5:28
 
-cambiar propiedades de columna:
+- Cambiar propiedades de columna:
 cmd: php artisan make:migration cambiar_propiedades_to_platform_table
 video 10 min 9:00
 
-actualizar lo que haya en migraciones
+- Subir lo que haya en migraciones pendiente a la base de datos
 cmd: php artisan migrate
 
-eliminar migraciones
+- Deshacer la ultima migracion
 cmd: php artisan migrate:rollback
 
-para modificar propiedades de columna. se requiere doctrine/dbal
+- Deshacer todas las migraciones y volver a crearlas
+cmd: php artisan migrate:fresh
+
+- Para modificar propiedades de columna. se requiere instalar doctrine/dbal
 cmd: composer require doctrine/dbal
 
+
+
 -------------------------------
-crear un modelo:
-cmd: php artisan make:model Platform
 
-
-
-
-##Apuntes: 
-
+##Futuro:
+Bootstrap 5:
 Mirar data list para filtrar por nombres.
 
 <label for="exampleDataList" class="form-label">Datalist example</label>
