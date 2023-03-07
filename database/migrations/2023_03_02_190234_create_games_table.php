@@ -17,14 +17,21 @@ return new class extends Migration
             $table->id();
             $table->string('name',30);
             $table->string('image',150);
-            $table->integer('platform');
+            $table->bigInteger('platform_id');
             $table->string('publisher',50);
-            $table->integer('location');
-            $table->integer('language');
+            $table->bigInteger('location_id');
+            $table->bigInteger('language_id');
             $table->string('sourcerom',15);
-            $table->integer('romsize');
+            $table->bigInteger('romsize_id');
             $table->string('savetype',10);
             $table->timestamps();
+
+// https://laracasts.com/discuss/channels/laravel/sqlstatehy000-general-error-3780-referencing-column-lang-id-and-referenced-column-id
+
+            $table->foreign('platform_id')->references('id')->on('platforms')->onDelete('restrict');
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('restrict');
+            $table->foreign('language_id')->references('id')->on('languages')->onDelete('restrict');
+            $table->foreign('romsize_id')->references('id')->on('romsizes')->onDelete('restrict');
         });
     }
 
