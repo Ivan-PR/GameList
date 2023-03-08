@@ -19,12 +19,12 @@ class GameFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'image' => $this->faker->imageUrl(),
-            'platform' => $this->faker->numberBetween(1, 10),
+            'platform_id' => $this->faker->numberBetween(1, 10),
             'publisher' => $this->faker->company(),
-            'location' => $this->faker->numberBetween(1, 10),
-            'language' => $this->faker->numberBetween(1, 10),
+            'location_id' => $this->faker->numberBetween(1, 10),
+            'language_id' => $this->faker->numberBetween(1, 10),
             'sourcerom' => $this->faker->countryISOAlpha3(),
-            'romsize' => $this->faker->numberBetween(1, 10),
+            'romsize_id' => $this->faker->numberBetween(1, 10),
             'savetype' => $this->faker->emoji(),
         ];
     }

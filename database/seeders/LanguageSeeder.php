@@ -15,6 +15,6 @@ class LanguageSeeder extends Seeder
      */
     public function run()
     {
-        Language::factory(50)->create();
+        //
     }
 }

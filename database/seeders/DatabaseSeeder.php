@@ -20,10 +20,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Language::factory(10)->create();
-        Game::factory(10)->create();
         Location::factory(10)->create();
         Platform::factory(10)->create();
         Romsize::factory(10)->create();
-
+        Game::factory(10)->create();
     }
 }
