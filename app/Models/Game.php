@@ -10,12 +10,36 @@ class Game extends Model
 {
     // protected $table = 'games';
     use HasFactory;
-    protected function game(): Attribute {
+
+    protected function name(): Attribute
+    {
         return new Attribute(
-            // Mutador da formato al dato antes de ser guardado en la base de datos
-            set: fn ($value) => strtoupper($value),
-            // Accesor da formato al dato antes de ser mostrado en la vista
-            get: fn ($value) => strtoupper($value)
+            get: fn ($value) => ucwords($value),
+            set: fn ($value) => ucwords($value)
+        );
+    }
+
+    protected function publisher(): Attribute
+    {
+        return new Attribute(
+            get: fn ($value) => ucwords($value),
+            set: fn ($value) => ucwords($value)
+        );
+    }
+
+    protected function sourcerom(): Attribute
+    {
+        return new Attribute(
+            get: fn ($value) => ucwords($value),
+            set: fn ($value) => ucwords($value)
+        );
+    }
+
+    protected function savetype(): Attribute
+    {
+        return new Attribute(
+            get: fn ($value) => ucwords($value),
+            set: fn ($value) => ucwords($value)
         );
     }
 }

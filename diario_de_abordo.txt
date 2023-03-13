@@ -5,6 +5,7 @@ Dudas:
 vendor/fakerphp/faker/src/Faker/Generator.php
 
 Manteniment:
+https://www.itsolutionstuff.com/post/laravel-9-multiple-file-upload-tutorialexample.html
 - seccion para subir ficheros de datos
 - seccion para create datos nuevos
 - seccion para update datos
