@@ -20,10 +20,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(RoleSeeder::class);
-        Language::factory(10)->create();
-        Location::factory(10)->create();
-        Platform::factory(10)->create();
-        Romsize::factory(10)->create();
-        Game::factory(10)->create();
+        Language::factory(50)->create();
+        Location::factory(50)->create();
+        Platform::factory(50)->create();
+        Romsize::factory(50)->create();
+        Game::factory(50)->create();
     }
 }
