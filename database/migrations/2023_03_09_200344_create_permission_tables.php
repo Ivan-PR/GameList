@@ -49,8 +49,9 @@ class CreatePermissionTables extends Migration
                 $table->unique(['name', 'guard_name']);
             }
         });
-
+        
         Schema::create($tableNames['model_has_permissions'], function (Blueprint $table) use ($tableNames, $columnNames, $teams) {
+            echo (PermissionRegistrar::$pivotPermission);
             $table->unsignedBigInteger(PermissionRegistrar::$pivotPermission);
 
             $table->string('model_type');
