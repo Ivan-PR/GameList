@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Game;
 
 class MantenimentController extends Controller
 {
     public function index(){
-        return view('manteniment.home');
+        $games = Game::paginate();
+
+        return view('manteniment.home', compact('games'));
     }
 
     public function create(){

@@ -16,6 +16,10 @@ Home:
 - seccion para mostrar listado de resultados de busqueda
 - seccion para filtrar/buscar datos
 
+Revisar:
+Mutadores y accesores cuando tengamos datos propios para añadir trim 
+y otros metodos.
+
 
 
 
