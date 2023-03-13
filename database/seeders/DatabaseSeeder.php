@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(RoleSeeder::class);
         Language::factory(10)->create();
         Location::factory(10)->create();
         Platform::factory(10)->create();
