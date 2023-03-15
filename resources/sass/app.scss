@@ -1,4 +1,37 @@
-*{
-    color: blue;
+* {}
+
+span {
+
+    svg {
+        height: 20px;
+    }
+
+
+    a {
+        svg {
+            height: 20px;
+        }
+
+    }
 }
-.svg{}
+
+[aria-label="Pagination Navigation"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+
+    div {
+        p {
+            margin-top: 15px;
+            text-align: center;
+        }
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }

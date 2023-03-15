@@ -8,7 +8,7 @@ use App\Models\Game;
 class MantenimentController extends Controller
 {
     public function index(){
-        $games = Game::paginate();
+        $games = Game::paginate(5);
 
         return view('manteniment.home', compact('games'));
     }
