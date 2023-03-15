@@ -12,7 +12,7 @@
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
-<body class="container-fluid">
+<body class="container-fluid p-0">
     {{--          HEADER                        --}}
     @include('layouts.manteniment.partials.headerManteniment')
 <main>

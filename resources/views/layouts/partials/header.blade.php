@@ -36,6 +36,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./manteniment">Manteniment</a>
                     </li>
+                    @can()
+                    @endcan
                 </ul>
             </div>
         </div>
