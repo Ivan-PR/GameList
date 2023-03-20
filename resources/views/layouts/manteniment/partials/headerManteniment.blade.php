@@ -15,13 +15,13 @@
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/manteniment">Llistat</a>
+                        <a class="nav-link" href="{{route('manteniment.index')}}">Llistat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/manteniment/crear">Inserir nou</a>
+                        <a class="nav-link" href="{{route('manteniment.crear')}}">Inserir nou</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/manteniment/carga">Carrega massiva</a>
+                        <a class="nav-link" href="{{route('manteniment.carga')}}">Carrega massiva</a>
                     </li>
                 </ul>
             </div>

@@ -1,5 +1,7 @@
 @extends('layouts.plantillaManteniment')
 
+@section('title', 'Carga masiva')
+
 @section('contenido')
 <div class="container">
     <div class="row">

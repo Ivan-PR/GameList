@@ -1,11 +1,14 @@
 @extends('layouts.plantilla')
 
+@section('title', 'Home')
+
+
 @section('contenido')
     <div class="container-xl bg-secondary d-flex w-100 px-0" style="height:650px">
         <div class="col-4 py-5 px-4 border border-5 overflow-auto">
             <div>
                 <ol class="">
-                    <li><img height="25" src="imgs/japanFlag.png"> 1050 - Sword of Mana </li>
+                    <li><img height="25" src="imgs/japanFlag.png"> 1050 - Espada de Mana </li>
                     <li><img height="25" src="imgs/japanFlag.png"> 1051 - Harvest Moon </li>
                     <li><img height="25" src="imgs/japanFlag.png"> 1052 - Finding Nemo </li>
                     <li><img height="25" src="imgs/japanFlag.png"> 1053 - Spiro Adventure </li>
