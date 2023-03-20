@@ -36,8 +36,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('manteniment.index')}}">Manteniment</a>
                     </li>
-                    @can()
-                    @endcan
                 </ul>
             </div>
         </div>
