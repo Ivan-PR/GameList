@@ -16,8 +16,9 @@ class MantenimentController extends Controller
     public function create(){
         return view('manteniment.editar');
     }
-    public function edit(){
-        return view('manteniment.editar');
+    public function edit($id){
+        $game = Game::find($id);
+        return view('manteniment.editar', compact('game'));
     }
     public function delete(){
         return view('manteniment.home');

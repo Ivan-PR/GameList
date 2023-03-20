@@ -1,5 +1,8 @@
 @extends('layouts.plantilla')
 
+@section('title', 'Home')
+
+
 @section('contenido')
     <div class="container-xl bg-secondary d-flex w-100 px-0" style="height:650px">
         <div class="col-4 py-5 px-4 border border-5 overflow-auto">

@@ -1,5 +1,7 @@
 @extends('layouts.plantillaManteniment')
 
+@section('title', 'Llista de Jocs')
+
 @section('contenido')
     <div class="container">
         <div class="row">
@@ -45,10 +47,10 @@
                                 <td>{{ $game->romsize_id }}</td>
                                 <td>{{ $game->savetype }}</td>
                                 <td>
-                                    <a href="{{route('manteniment.editar')}}" class="btn btn-primary">Editar</a>
+                                    <a href="{{route('manteniment.editar',$game->id)}}" class="btn btn-primary">Editar</a>
                                 </td>
                                 <td>
-                                    <a href="{{route('manteniment.eliminar')}}" class="btn btn-danger">Eliminar</a>
+                                    <a href="{{route('manteniment.eliminar',$game->id)}}" class="btn btn-danger">Eliminar</a>
                                 </td>
                             </tr>
                         @endforeach
