@@ -4,23 +4,19 @@
 
 @section('contenido')
 <div class="container">
+    
     <div class="row">
         <div class="col-12">
-            {{-- if hay objeto 
-            <h1 class="text-center">Editar</h1>
-            else no lo hay
-            <h1 class="text-center">Crear nuevo</h1>
-            --}}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <form action="" method="POST" {{-- enctype="multipart/form-data" --}}>
-                {{-- @csrf
-                    @method('PUT') --}}
+            <form action="{{route('manteniment.update', $game )}}" method="POST" {{-- enctype="multipart/form-data" --}}>
+                @csrf
+                @method('PUT')
                 <div class="mb-3">
                     <label for="imageFileMultiple" class="form-label">Subida de imagenes:</label>
                     <input class="form-control" type="file" id="imageFileMultiple" multiple>
+                </div>
+                <div class="mb-3">
+                    <label for="id_game" class="form-label">ID del juego:</label>
+                    <input type="text" class="form-control" id="id_game" name="id_game" value="{{$game->id_game}}">
                 </div>
                 <div class="mb-3">
                     <label for="title" class="form-label">Titulo:</label>
@@ -54,7 +50,7 @@
                     <label for="platform" class="form-label">Plataforma:</label>
                     <input type="text" class="form-control" id="platform" name="platform" value="{{$game->platform_id}}">
                 </div>
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
             </form>
         </div>
     </div>

@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'previous' => '&laquo; Previous',
-    'next' => 'Next &raquo;',
-    'showing' => 'Showing',
-    'to' => 'to',
-    'of' => 'of',
-    'results' => 'results',
+    'previous' => '&laquo; Anterior',
+    'next'     => 'Siguiente &raquo;',
+    'showing' => 'Mostrando del',
+    'to' => 'al',
+    'of' => 'de',
+    'results' => 'resultados',
 
 ];
