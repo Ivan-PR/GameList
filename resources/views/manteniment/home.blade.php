@@ -36,7 +36,7 @@
                     <tbody>
                         @foreach ($games as $game)
                             <tr>
-                                <th scope="row">{{ $game->id }}</th>
+                                <th scope="row">{{ $game->id_game }}</th>
                                 <td>{{ $game->name }}</td>
                                 <td>{{ $game->image }}</td>
                                 <td>{{ $game->platform_id }}</td>

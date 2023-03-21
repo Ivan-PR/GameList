@@ -16,7 +16,7 @@
 <body class="container-fluid p-0">
     {{--          HEADER                        --}}
     @include('layouts.manteniment.partials.headerManteniment')
-<main>
+<main class="mb-3">
     @yield('contenido')
 </main>
     {{--          FOOTER                        --}}

@@ -1,11 +1,23 @@
-span svg {
+html {
+  min-height: 100%;
+}
+html body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+}
+html body span svg {
   height: 20px;
 }
-span a svg {
+html body span a svg {
   height: 20px;
 }
-
-[aria-label="Pagination Navigation"] {
+html body [aria-label="Pagination Navigation"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,13 +32,10 @@ span a svg {
           align-items: center;
   margin-bottom: 15px;
 }
-[aria-label="Pagination Navigation"] div p {
+html body [aria-label="Pagination Navigation"] div p {
   margin-top: 15px;
   text-align: center;
 }
-
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+html body footer {
+  margin-top: auto;
 }/*# sourceMappingURL=app.css.map */
