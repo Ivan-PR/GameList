@@ -2,8 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
             <a class="navbar-brand d-flex" href="#">
-                <img src="./imgs/logo.png" alt="Logo" width="30" 
-                    class="d-inline-block align-text-top me-1">
+                <img src="./imgs/logo.png" alt="Logo" width="30" class="d-inline-block align-text-top me-1">
                 Lists
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -34,10 +33,17 @@
                         <a class="nav-link" href="#">?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('manteniment.index')}}">Manteniment</a>
+                        <a class="nav-link" href="{{ route('manteniment.index') }}">Manteniment</a>
                     </li>
                 </ul>
             </div>
+        </div>
+        <div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link px-5" href="{{ route('user.index') }}">LogIn</a>
+                </li>
+            </ul>
         </div>
     </nav>
 </header>

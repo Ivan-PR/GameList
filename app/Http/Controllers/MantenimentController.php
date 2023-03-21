@@ -42,7 +42,8 @@ class MantenimentController extends Controller {
         $game->platform_id = $request->platform;
         $game->save();
 
-        return redirect()->route('manteniment.index');
+    public function create(){
+        return view('manteniment.crear');
     }
 
     public function edit(Game $game) {

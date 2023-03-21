@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call(RoleSeeder::class);
+        $this->call(UserSeeder::class);
         Language::factory(50)->create();
         Location::factory(50)->create();
         Platform::factory(50)->create();
