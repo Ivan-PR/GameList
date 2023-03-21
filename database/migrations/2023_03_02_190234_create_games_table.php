@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_game');
             $table->string('name',30);
             $table->string('image',150);
             $table->foreignId('platform_id')->constrained('platforms');
@@ -23,7 +24,7 @@ return new class extends Migration
             $table->foreignId('language_id')->constrained('languages');
             $table->string('sourcerom',15);
             $table->foreignId('romsize_id')->constrained('romsizes');
-            $table->string('savetype',10);
+            $table->string('savetype',15);
             $table->timestamps();
 
 // https://laracasts.com/discuss/channels/laravel/sqlstatehy000-general-error-3780-referencing-column-lang-id-and-referenced-column-id
