@@ -26,5 +26,19 @@
                 </ul>
             </div>
         </div>
+        <div>
+            <ul class="navbar-nav">
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link px-5" href="{{ route('login.logout') }}">LogOut</a>
+                    </li>
+                @endauth
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link px-5" href="{{ route('users.login') }}">LogIn</a>
+                    </li>
+                @endguest
+            </ul>
+        </div>
     </nav>
 </header>

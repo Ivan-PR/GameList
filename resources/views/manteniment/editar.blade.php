@@ -1,6 +1,8 @@
 @extends('layouts.plantillaManteniment')
 
+
 @section('title', 'Editando ' . $game->name)
+
 
 @section('contenido')
     <div class="container">

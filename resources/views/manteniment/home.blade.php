@@ -16,7 +16,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <table class="table table-striped table-hover">
+                <table class="table table-responsive table-striped table-hover">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>

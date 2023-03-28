@@ -1,8 +1,9 @@
 @extends('layouts.plantillaManteniment')
 
-@section('title', 'Creando juego')
+@section('title', 'Creando ')
 
 @section('contenido')
+
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -120,3 +121,4 @@
 https://www.youtube.com/watch?v=KbpbqZshUus&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=20
 15:35
 --}}
+

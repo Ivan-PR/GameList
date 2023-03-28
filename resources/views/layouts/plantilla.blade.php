@@ -8,18 +8,18 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="./build/assets/app-490c72e2.css">
-    @vite(['resources/sass/app.scss','resources/js/app.js'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
 <body class="container-fluid p-0">
     {{--          HEADER                        --}}
     @include('layouts.partials.header')
-    <main class="mb-3">
-    @yield('contenido')
-    </main>
 
+    <main class="mb-3">
+        @yield('contenido')
+    </main>
     {{--          FOOTER                        --}}
     @include('layouts.partials.footer')
 </body>
