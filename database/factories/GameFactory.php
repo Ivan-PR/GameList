@@ -17,7 +17,7 @@ class GameFactory extends Factory
     public function definition()
     {
         return [
-            'id_game' => $this->faker->numberBetween(1, 1500),
+            'id_game' => $this->faker->unique()->numberBetween(1, 1500),
             'name' => $this->faker->name(),
             'image' => $this->faker->imageUrl(),
             'platform_id' => $this->faker->numberBetween(1, 50),

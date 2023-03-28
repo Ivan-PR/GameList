@@ -146,6 +146,17 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'id_game' => 'ID del juego',
+        'name' => 'título',
+        'location' => 'país',
+        'publisher' => 'desarrolladora',
+        'sourcerom' => 'source rom',
+        'savetype' => 'save type',
+        'romsize_id' => 'tamaño',
+        'language' => 'idioma',
+        'platform' => 'plataforma',
+
+    ],
 
 ];

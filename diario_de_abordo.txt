@@ -1,6 +1,11 @@
 Por donde iba: Video https://www.youtube.com/watch?v=_ER7UT4w9WU Min 10
 
+https://www.youtube.com/watch?v=n_C_HFqS8XY&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=22
+min 9
+
 Dudas:
+- Metodo old() no funciona en el editar.blade.php con dos parametros
+
 
 vendor/fakerphp/faker/src/Faker/Generator.php
 

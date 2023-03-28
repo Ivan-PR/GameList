@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_game');
+            $table->integer('id_game')->unique();
             $table->string('name',30);
-            $table->string('image',150);
+            $table->string('image',150)->nullable();
             $table->foreignId('platform_id')->constrained('platforms');
             $table->string('publisher',50);
             $table->foreignId('location_id')->constrained('locations');

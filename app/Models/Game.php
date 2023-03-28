@@ -11,6 +11,13 @@ class Game extends Model
     // protected $table = 'games';
     use HasFactory;
 
+    // los campos que se guardaran del objeto en la base de datos
+    // protected $fillable = ['image','id_game','name','location_id','publisher','sourcerom','savetype','romsize_id','language_id_id','platform_id'];
+    
+    //todos los campos que haya dentro de guarded se obviaran
+    // en el momento de guardar el objeto en la base de datos.
+    protected $guarded=[];
+
     protected function name(): Attribute
     {
         return new Attribute(

@@ -20,10 +20,11 @@ Route::get('/', HomeController::class);
 
 Route::controller(MantenimentController::class)->group(function () {
     Route::get('manteniment', 'index')->name('manteniment.index');
-    Route::get('manteniment/crear','create')->name('manteniment.crear');
+    Route::view('manteniment/crear','manteniment.crear')->name('manteniment.crear');
     Route::post('manteniment/almacenar', 'store')->name('manteniment.store');
     Route::get('manteniment/editar/{game}', 'edit')->name('manteniment.editar');
-    Route::put('manteniment/actualizar/{game}', 'update')->name('manteniment.update');
+    // Route::put('manteniment/actualizar/{game}', 'update')->name('manteniment.update');
+    Route::post('manteniment/actualizar/{game}', 'update')->name('manteniment.update');
 
 
     Route::get('manteniment/eliminar/{id}', 'delete')->name('manteniment.eliminar');
