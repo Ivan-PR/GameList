@@ -44,7 +44,7 @@
                             <br>
                         @enderror
                         <input type="text" class="form-control" id="location_id" name="location_id"
-                            value="{{ old('location_id', $game->location_id_id) }}">
+                            value="{{ old('location_id', $game->location->location) }}">
                     </div>
                     <div class="mb-3">
                         <label for="publisher" class="form-label">Desarrolladora:</label>
@@ -84,7 +84,7 @@
                             <br>
                         @enderror
                         <input type="text" class="form-control" id="romsize_id" name="romsize_id"
-                            value="{{ old('romsize_id', $game->romsize_id) }}">
+                            value="{{ old('romsize_id', $game->romsize->romsize) }}">
                     </div>
                     <div class="mb-3">
                         <label for="language_id" class="form-label">Idioma:</label>
@@ -94,7 +94,7 @@
                             <br>
                         @enderror
                         <input type="text" class="form-control" id="language_id" name="language_id"
-                            value="{{ old('language_id', $game->language_id) }}">
+                            value="{{ old('language_id', $game->language->language) }}">
                     </div>
                     <div class="mb-3">
                         <label for="platform_id" class="form-label">Plataforma:</label>
@@ -104,7 +104,7 @@
                             <br>
                         @enderror
                         <input type="text" class="form-control" id="platform_id" name="platform_id"
-                            value="{{ old('platform_id', $game->platform_id) }}">
+                            value="{{ old('platform_id', $game->platform->platform) }}">
                     </div>
                     <button type="submit" class="btn btn-primary">Actualizar</button>
                 </form>

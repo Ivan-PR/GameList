@@ -39,12 +39,12 @@
                                 <th scope="row">{{ $game->id_game }}</th>
                                 <td>{{ $game->name }}</td>
                                 <td>{{ $game->image }}</td>
-                                <td>{{ $game->platform_id }}</td>
+                                <td>{{ $game->platform->platform }}</td>
                                 <td>{{ $game->publisher }}</td>
-                                <td>{{ $game->location_id }}</td>
-                                <td>{{ $game->language_id }}</td>
+                                <td>{{ $game->location->location }}</td>
+                                <td>{{ $game->language->language }}</td>
                                 <td>{{ $game->sourcerom }}</td>
-                                <td>{{ $game->romsize_id }}</td>
+                                <td>{{ $game->romsize->romsize }}</td>
                                 <td>{{ $game->savetype }}</td>
                                 <td>
                                     <a href="{{route('manteniment.editar',$game->id)}}" class="btn btn-primary">Editar</a>
