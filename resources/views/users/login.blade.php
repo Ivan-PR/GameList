@@ -1,54 +1,34 @@
 @extends('layouts.plantilla')
 
 @section('contenido')
-<div class="container-xl bg-secondary d-flex w-100 px-0" style="height:650px">
-    <div class="col-4 py-5 px-4 border border-5 overflow-auto">
-        <div>
-            <ol class="">
-                <li><img height="25" src="imgs/japanFlag.png"> 1050 - Espada de Mana </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1051 - Harvest Moon </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1052 - Finding Nemo </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1053 - Spiro Adventure </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1054 - Kim Possible </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1055 - Terminator 3 </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1056 - Mario &amp; Luigi RPG </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1050 - Sword of Mana </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1051 - Harvest Moon </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1052 - Finding Nemo </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1053 - Spiro Adventure </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1054 - Kim Possible </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1055 - Terminator 3 </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1056 - Mario &amp; Luigi RPG </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1050 - Sword of Mana </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1051 - Harvest Moon </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1052 - Finding Nemo </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1053 - Spiro Adventure </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1054 - Kim Possible </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1055 - Terminator 3 </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1056 - Mario &amp; Luigi RPG </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1050 - Sword of Mana </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1051 - Harvest Moon </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1052 - Finding Nemo </li>
-                <li><img height="25" src="imgs/japanFlag.png"> 1053 - Spiro Adventure </li>
-            </ol>
-        </div>
-        <div class="">Listas de xmls a escoger.</div>
-    </div>
-    <div class="col-8 game_info d-flex flex-column border border-5 p-4">
-        <div class="d-flex flex-row p-4">
-            <div class="w-50 img1"><img src="imgs/som_1.jpg" alt="img" title="img1" height="200" style="display:block;margin: auto;"></div>
-            <div class="w-50 m-auto img2"><img src="imgs/som_2.jpg" alt="img" title="img2" width="300" style="display:block;margin: auto;"></div>
-        </div>
-        <div class="d-flex flex-column ">
-            <h4>1050 - Sword of Mana</h4>
-            <p><b>Location: </b> USA</p>
-            <p><b>Publisher: </b> Nintendo</p>
-            <p><b>Source Rom: </b> Mode 7</p>
-            <p><b>Save Type: </b> Flash 512v131</p>
-            <p><b>Rom Size: </b> 128bits</p>
-            <p><b>Language: </b> English</p>
+<div class="vh-85 d-flex justify-content-center align-items-start mt-5">
+    <div class="col-md-4 p-5 shadow-sm border rounded-3">
+        <h2 class="text-center mb-4 text-dark">Login Form</h2>
+        <form method="POST" action="{{route('login.login')}}">
+            @csrf
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label text-dark">Email address</label>
+                <input type="email" name="email" class="form-control border border-primary" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" value="{{old('email')}}">
+                @error('email')
+                    <small>*{{$message}}</small>
+                @enderror
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label text-dark">Password</label>
+                <input type="password" name="password" class="form-control border border-primary" id="exampleInputPassword1">
+                @error('password')
+                    <small>*{{$message}}</small>
+                @enderror
+            </div>
+            <p class="small"><a class="text-primary" href="forget-password.html">Forgot password?</a></p>
+            <div class="d-grid">
+                <button class="btn btn-primary" type="submit">Login</button>
+            </div>
+        </form>
+        <div class="mt-3">
+            <p class="mb-0 text-dark text-center">¿No tienes cuenta todavía? <a href="{{route('users.registre')}}" class="text-primary fw-bold">Sign Up</a></p>
         </div>
     </div>
-
 </div>
 @endsection

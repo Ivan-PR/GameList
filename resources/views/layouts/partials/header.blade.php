@@ -1,8 +1,8 @@
 <header class="mb-3">
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand d-flex" href="#">
-                <img src="./imgs/logo.png" alt="Logo" width="30" class="d-inline-block align-text-top me-1">
+            <a class="navbar-brand d-flex" href="{{route('home')}}">
+                <img src="/imgs/logo.png" alt="Logo" width="30" class="d-inline-block align-text-top me-1">
                 Lists
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -14,6 +14,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#">Roms</a>
                     </li>
@@ -32,17 +33,26 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">?</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('manteniment.index') }}">Manteniment</a>
-                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('manteniment.index') }}">Manteniment</a>
+                        </li>
+                    @endauth
                 </ul>
             </div>
         </div>
         <div>
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link px-5" href="{{ route('user.index') }}">LogIn</a>
-                </li>
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link px-5" href="{{ route('login.logout') }}">LogOut</a>
+                    </li>
+                @endauth
+                @guest
+                    <li class="nav-item">
+                        <a class="nav-link px-5" href="{{ route('users.login') }}">LogIn</a>
+                    </li>
+                @endguest
             </ul>
         </div>
     </nav>

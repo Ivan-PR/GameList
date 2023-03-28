@@ -6,13 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Game;
 
 class MantenimentController extends Controller {
+
     public function index() {
         $games = Game::orderBy('id', 'desc')->paginate(5);
         return view('manteniment.home', compact('games'));
     }
+
     public function create() {
         return view('manteniment.crear');
     }
+
     public function store(Request $request) {
 
         $request->validate([
@@ -41,14 +44,12 @@ class MantenimentController extends Controller {
         $game->language_id = $request->language;
         $game->platform_id = $request->platform;
         $game->save();
-
-    public function create(){
-        return view('manteniment.crear');
     }
 
     public function edit(Game $game) {
         return view('manteniment.editar', compact('game'));
     }
+
     public function update(Request $request, Game $game) {
         $request->validate([
             'id_game' => 'required',
@@ -77,11 +78,6 @@ class MantenimentController extends Controller {
 
         return redirect()->route('manteniment.index');
     }
-
-
-
-
-
 
     public function delete() {
         return view('manteniment.home');
