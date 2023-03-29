@@ -23,6 +23,7 @@ class StoreGame extends FormRequest {
         return [
             'id_game' => 'required | numeric',
             'name' => 'required | max:30 | string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'location_id' => 'required | numeric',
             'publisher' => 'required | max:50 | string',
             'sourcerom' => 'required | max:15 | string',

@@ -17,6 +17,8 @@ class MantenimentController extends Controller {
     
     public function store(StoreGame $request) {
         $game = Game::create($request->all());
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('imgs'), $imageName);
 
         return redirect()->route('manteniment.index');
     }
