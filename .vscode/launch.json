@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch built-in server and debug",
+            "name": "Launch built-in server and debug Ivan",
             "type": "php",
             "request": "launch",
             "runtimeArgs": [
@@ -19,6 +19,9 @@
             "program": "",
             "cwd": "${workspaceRoot}",
             "port": 9003,
+            "ignore":[
+                "**/vendor/**/*.php"
+            ],
             "serverReadyAction": {
                 "action": "openExternally"
             }

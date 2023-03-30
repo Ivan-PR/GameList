@@ -12,14 +12,12 @@
                     {{-- @method('PUT') --}}
                     <div class="mb-3">
                         <label for="imageFileMultiple" class="form-label">Subida de imagenes:</label>
-                        {{-- https://www.youtube.com/watch?v=KbpbqZshUus&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=20 --}}
-                        {{-- min 8:09  --}}
                         @error('imageFileMultiple')
                             <br>
                             <small>* {{ $message }} </small>
                             <br>
                         @enderror
-                        <input class="form-control" type="file" id="imageFileMultiple" multiple>
+                        <input class="form-control" type="file" name="image" id="imageFileMultiple" multiple>
                     </div>
                     <div class="mb-3">
                         <label for="id_game" class="form-label">ID del juego:</label>

@@ -14,11 +14,12 @@ class MantenimentController extends Controller {
         return view('manteniment.home', compact('games'));
     }
 
-    
     public function store(StoreGame $request) {
-        $game = Game::create($request->all());
         $imageName = time().'.'.$request->image->extension();
-        $request->image->move(public_path('imgs'), $imageName);
+        $request->image->move(public_path('imgs/games'), $imageName);
+        $request=$request->all();
+        $request['image']=$imageName;
+        $game = Game::create($request);
 
         return redirect()->route('manteniment.index');
     }
