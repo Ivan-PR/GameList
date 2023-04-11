@@ -18,13 +18,13 @@ class LoginController extends Controller {
             'password' => 'required|password',
             'passwordconf' => 'required'
         ]);
-         
+
 
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
-        
+
         if ($request->password === $request->passwordconf) {
             $user->save();
             Auth::login($user);
@@ -50,7 +50,7 @@ class LoginController extends Controller {
 
         if (Auth::attempt($credentials/*, $remember */)) {
             $request->session()->regenerate();
-            return redirect()->intended(route('users.index'));
+            return redirect()->intended(route('home'));
         } else {
             return redirect(route('users.login'));
         }

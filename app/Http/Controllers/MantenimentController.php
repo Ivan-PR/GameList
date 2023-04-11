@@ -15,10 +15,10 @@ class MantenimentController extends Controller {
     }
 
     public function store(StoreGame $request) {
-        $imageName = time().'.'.$request->image->extension();
+        $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('imgs/games'), $imageName);
-        $request=$request->all();
-        $request['image']=$imageName;
+        $request = $request->all();
+        $request['image'] = $imageName;
         $game = Game::create($request);
 
         return redirect()->route('manteniment.index');
@@ -29,7 +29,15 @@ class MantenimentController extends Controller {
     }
 
     public function update(Request $request, Game $game) {
-        $game->update($request->all());
+        if (isset($request->image)) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('imgs/games'), $imageName);
+            $request = $request->all();
+            $request['image'] = $imageName;
+            $game->update($request);
+        } else {
+            $game->update($request->all());
+        }
 
         return redirect()->route('manteniment.index');
     }

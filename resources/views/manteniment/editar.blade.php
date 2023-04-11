@@ -14,7 +14,7 @@
                     {{-- @method('PUT') --}}
                     <div class="mb-3">
                         <label for="imageFileMultiple" class="form-label">Subida de imagenes:</label>
-                        <input class="form-control" type="file" id="imageFileMultiple" multiple>
+                        <input class="form-control" type="file" id="imageFileMultiple" value="{{ old('image', $game->image) }}">
                     </div>
                     <div class="mb-3">
                         <label for="id_game" class="form-label">ID del juego:</label>
