@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Game;
+use App\Models\Location;
+use App\Models\Language;
+use App\Models\Platform;
+use App\Models\Romsize;
 use App\Http\Requests\StoreGame;
 use App\Http\Requests\UpdateGame;
 
@@ -25,10 +29,14 @@ class MantenimentController extends Controller {
     }
 
     public function edit(Game $game) {
-        return view('manteniment.editar', compact('game'));
+        $locations = Location::all();
+        $languages = Language::all();
+        $platforms = Platform::all();
+        $romsizes = Romsize::all();
+        return view('manteniment.editar', compact('game', 'locations', 'languages', 'platforms', 'romsizes'));
     }
 
-    public function update(Request $request, Game $game) {
+    public function update(UpdateGame $request, Game $game) {
         if (isset($request->image)) {
             $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('imgs/games'), $imageName);
@@ -42,8 +50,9 @@ class MantenimentController extends Controller {
         return redirect()->route('manteniment.index');
     }
 
-    public function delete() {
-        return view('manteniment.home');
+    public function delete(Game $game) {
+        $game->delete();
+        return redirect()->route('manteniment.index');
     }
     public function massiveLoad() {
         return view('manteniment.carga');

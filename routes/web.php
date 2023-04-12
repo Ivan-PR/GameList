@@ -27,12 +27,11 @@ Route::controller(MantenimentController::class)->group(function () {
     Route::post('manteniment/almacenar', 'store')->name('manteniment.store');
     Route::get('manteniment/editar/{game}', 'edit')->name('manteniment.editar');
 
-    // Route::put('manteniment/actualizar/{game}', 'update')->name('manteniment.update');
-    Route::post('manteniment/actualizar/{game}', 'update')->name('manteniment.update');
+    Route::put('manteniment/actualizar/{game}', 'update')->name('manteniment.update');
+    Route::delete('manteniment/eliminar/{game}', 'delete')->name('manteniment.eliminar');
 
 
 
-    Route::get('manteniment/eliminar/{id}', 'delete')->name('manteniment.eliminar');
     Route::get('manteniment/carga', 'massiveLoad')->name('manteniment.carga');
 });
 

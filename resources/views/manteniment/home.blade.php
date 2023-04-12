@@ -50,7 +50,13 @@
                                     <a href="{{route('manteniment.editar',$game->id)}}" class="btn btn-primary">Editar</a>
                                 </td>
                                 <td>
-                                    <a href="{{route('manteniment.eliminar',$game->id)}}" class="btn btn-danger">Eliminar</a>
+                                    <form action="{{route('manteniment.eliminar',$game->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                                    </form>
+
+                                    
                                 </td>
                             </tr>
                         @endforeach
