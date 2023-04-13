@@ -1,3 +1,5 @@
+Intentando eliminar archivo desde laravel imagen, mirar link laravel storage
+
 Por donde iba: Video https://www.youtube.com/watch?v=uMbNub8JoqY Min 1:23
 
 https://www.youtube.com/watch?v=n_C_HFqS8XY&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=22

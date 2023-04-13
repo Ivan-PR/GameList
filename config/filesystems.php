@@ -36,6 +36,24 @@ return [
             'throw' => false,
         ],
 
+        'imgGames' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/imgs/games'),
+            'throw' => false,
+        ],
+
+        'imgFlag' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/imgs/flags'),
+            'throw' => false,
+        ],
+
+        'csvGames' => [
+            'driver' => 'local',
+            'root' => storage_path('app'),
+            'throw' => false,
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
