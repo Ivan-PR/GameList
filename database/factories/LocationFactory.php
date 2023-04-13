@@ -18,6 +18,7 @@ class LocationFactory extends Factory
     {
         return [
             'location' => $this->faker->city(),
+            'image' => $this->faker->imageUrl(),
         ];
     }
 }

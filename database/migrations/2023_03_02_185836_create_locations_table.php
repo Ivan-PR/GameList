@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->string('location',30);//max 255 caracteres.
+            $table->string('image',150)->nullable();
             $table->timestamps();
         });
     }
