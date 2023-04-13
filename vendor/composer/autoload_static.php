@@ -544,7 +544,7 @@ class ComposerStaticInit18164862d423c6f6c8c2b8d7ade6ee79
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
-        'App\\Http\\Controllers\\MantenimentController' => __DIR__ . '/../..' . '/app/Http/Controllers/MantenimentController.php',
+        'App\\Http\\Controllers\\MantenimentGameController' => __DIR__ . '/../..' . '/app/Http/Controllers/MantenimentGameController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

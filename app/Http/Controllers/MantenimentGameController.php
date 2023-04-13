@@ -11,7 +11,7 @@ use App\Models\Romsize;
 use App\Http\Requests\StoreGame;
 use App\Http\Requests\UpdateGame;
 
-class MantenimentController extends Controller {
+class MantenimentGameController extends Controller {
 
     public function index() {
         $games = Game::orderBy('id', 'desc')->paginate(5);
@@ -25,7 +25,7 @@ class MantenimentController extends Controller {
         $request['image'] = $imageName;
         $game = Game::create($request);
 
-        return redirect()->route('manteniment.index');
+        return redirect()->route('mantenimentGame.index');
     }
 
     public function edit(Game $game) {
@@ -47,12 +47,12 @@ class MantenimentController extends Controller {
             $game->update($request->all());
         }
 
-        return redirect()->route('manteniment.index');
+        return redirect()->route('mantenimentGame.index');
     }
 
     public function delete(Game $game) {
         $game->delete();
-        return redirect()->route('manteniment.index');
+        return redirect()->route('mantenimentGame.index');
     }
     public function massiveLoad() {
         return view('manteniment.carga');

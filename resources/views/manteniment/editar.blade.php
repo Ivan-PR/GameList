@@ -9,7 +9,7 @@
 
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('manteniment.update', $game) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('mantenimentGame.update', $game) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">

@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MantenimentController;
+use App\Http\Controllers\MantenimentGameController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,18 +21,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('home');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
-Route::controller(MantenimentController::class)->group(function () {
-    Route::get('manteniment', 'index')->name('manteniment.index');
-    Route::view('manteniment/crear','manteniment.crear')->name('manteniment.crear');
-    Route::post('manteniment/almacenar', 'store')->name('manteniment.store');
-    Route::get('manteniment/editar/{game}', 'edit')->name('manteniment.editar');
-
-    Route::put('manteniment/actualizar/{game}', 'update')->name('manteniment.update');
-    Route::delete('manteniment/eliminar/{game}', 'delete')->name('manteniment.eliminar');
-
-
-
-    Route::get('manteniment/carga', 'massiveLoad')->name('manteniment.carga');
+Route::controller(MantenimentGameController::class)->group(function () {
+    Route::get('manteniment', 'index')->name('mantenimentGame.index');
+    Route::view('manteniment/crear','manteniment.crear')->name('mantenimentGame.crear');
+    Route::post('manteniment/almacenar', 'store')->name('mantenimentGame.store');
+    Route::get('manteniment/editar/{game}', 'edit')->name('mantenimentGame.editar');
+    Route::put('manteniment/actualizar/{game}', 'update')->name('mantenimentGame.update');
+    Route::delete('manteniment/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar');
+    Route::get('manteniment/carga', 'massiveLoad')->name('mantenimentGame.carga');
 });
 
 Route::controller(UserController::class)->group(function () {

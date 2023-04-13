@@ -35,7 +35,7 @@
                     </li>
                     @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('manteniment.index') }}">Manteniment</a>
+                            <a class="nav-link" href="{{ route('mantenimentGame.index') }}">Manteniment</a>
                         </li>
                     @endauth
                 </ul>

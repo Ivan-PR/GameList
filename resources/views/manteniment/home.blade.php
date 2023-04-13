@@ -9,11 +9,14 @@
                 <h1 class="text-center">Manteniment</h1>
             </div>
         </div>
+
         <div class="row">
             <div class="col-12">
                 <h2 class="text-center">Llistat de Roms</h2>
+                    <a href="{{ route('mantenimentGame.crear') }}"
+                    class="btn btn-info mb-3 w-100 text-white fw-bold">Inserir nou</a>
             </div>
-        </div>
+                </div>
         <div class="row">
             <div class="col-12">
                 <table class="table table-responsive table-striped table-hover">
@@ -47,16 +50,17 @@
                                 <td>{{ $game->romsize->romsize }}</td>
                                 <td>{{ $game->savetype }}</td>
                                 <td>
-                                    <a href="{{route('manteniment.editar',$game->id)}}" class="btn btn-primary">Editar</a>
+                                    <a href="{{ route('mantenimentGame.editar', $game->id) }}"
+                                        class="btn btn-primary">Editar</a>
                                 </td>
                                 <td>
-                                    <form action="{{route('manteniment.eliminar',$game->id)}}" method="POST">
+                                    <form action="{{ route('mantenimentGame.eliminar', $game->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Eliminar</button>
                                     </form>
 
-                                    
+
                                 </td>
                             </tr>
                         @endforeach

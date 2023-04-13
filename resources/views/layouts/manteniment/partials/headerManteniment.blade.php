@@ -14,15 +14,29 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('manteniment.index')}}">Llistat</a>
+
+
+
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Llistats
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ route('mantenimentGame.index') }}">Llistat Jocs</a>
+                            </li>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('manteniment.crear')}}">Inserir nou</a>
+                    <li><a class="dropdown-item" href="{{ route('mantenimentGame.index') }}">Llistat Localitzacions</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('manteniment.carga')}}">Carrega massiva</a>
+                    <li><a class="dropdown-item" href="{{ route('mantenimentGame.index') }}">Llistat Plataformes</a>
                     </li>
+                    <li><a class="dropdown-item" href="{{ route('mantenimentGame.index') }}">Llistat Romsizes</a></li>
+                </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('mantenimentGame.carga') }}">Carrega massiva</a>
+                </li>
                 </ul>
             </div>
         </div>
