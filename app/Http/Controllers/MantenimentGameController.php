@@ -19,6 +19,14 @@ class MantenimentGameController extends Controller {
         return view('manteniment.home', compact('games'));
     }
 
+    public function crear() {
+        $locations = Location::all();
+        $languages = Language::all();
+        $platforms = Platform::all();
+        $romsizes = Romsize::all();
+        return view('manteniment.crear', compact('locations', 'languages', 'platforms', 'romsizes'));
+    }
+
     public function store(StoreGame $request) {
         $imageName = time() . '.' . $request->image->extension();
         $request->image->storeAs('public/imgs/games', $imageName);
@@ -56,9 +64,13 @@ class MantenimentGameController extends Controller {
 
     public function delete(Game $game) {
         $game->delete();
+        if (Storage::disk("imgGames")->exists($game->__get("image"))){
+            Storage::disk("imgGames")->delete($game->__get("image"));
+        }
         return redirect()->route('mantenimentGame.index');
     }
     public function massiveLoad() {
+        
         return view('manteniment.carga');
     }
 }

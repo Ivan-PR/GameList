@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class)->name('home');
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
+
 Route::controller(MantenimentGameController::class)->group(function () {
     Route::get('manteniment', 'index')->name('mantenimentGame.index');
     Route::view('manteniment/crear','manteniment.crear')->name('mantenimentGame.crear');
@@ -29,6 +30,7 @@ Route::controller(MantenimentGameController::class)->group(function () {
     Route::put('manteniment/actualizar/{game}', 'update')->name('mantenimentGame.update');
     Route::delete('manteniment/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar');
     Route::get('manteniment/carga', 'massiveLoad')->name('mantenimentGame.carga');
+
 });
 
 Route::controller(UserController::class)->group(function () {

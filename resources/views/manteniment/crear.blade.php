@@ -45,8 +45,16 @@
                             <small>* {{ $message }} </small>
                             <br>
                         @enderror
-                        <input type="text" class="form-control" id="location_id" name="location_id"
-                            value="{{ old('location_id') }}">
+                        <br>
+                        <select name="location_id" id="location_id" class="form-control">
+                            @foreach ($locations as $location)
+                                @if ($location->id == $game->location_id)
+                                    <option value="{{ $location->id }}" selected>{{ $location->location }}</option>
+                                @else
+                                <option value="{{ $location->id }}">{{ $location->location }}</option>
+                                @endif
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="publisher" class="form-label">Desarrolladora:</label>
@@ -85,8 +93,16 @@
                             <small>* {{ $message }} </small>
                             <br>
                         @enderror
-                        <input type="text" class="form-control" id="romsize_id" name="romsize_id"
-                            value="{{ old('romsize_id') }}">
+                        <br>
+                        <select name="romsize_id" id="romsize_id" class="form-control">
+                            @foreach ($romsizes as $romsize)
+                                @if ($romsize->id == $game->romsize_id)
+                                    <option value="{{ $romsize->id }}" selected>{{ $romsize->romsize }}</option>
+                                @else
+                                <option value="{{ $romsize->id }}">{{ $romsize->romsize }}</option>
+                                @endif
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="language_id" class="form-label">Idioma:</label>
@@ -95,8 +111,16 @@
                             <small>* {{ $message }} </small>
                             <br>
                         @enderror
-                        <input type="text" class="form-control" id="language_id" name="language_id"
-                            value="{{ old('language_id') }}">
+                        <br>
+                        <select name="language_id" id="language_id" class="form-control">
+                            @foreach ($languages as $language)
+                                @if ($language->id == $game->language_id)
+                                    <option value="{{ $language->id }}" selected>{{ $language->language }}</option>
+                                @else
+                                <option value="{{ $language->id }}">{{ $language->language }}</option>
+                                @endif
+                            @endforeach
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="platform_id" class="form-label">Plataforma:</label>
@@ -105,8 +129,16 @@
                             <small>* {{ $message }} </small>
                             <br>
                         @enderror
-                        <input type="text" class="form-control" id="platform_id" name="platform_id"
-                            value="{{ old('platform_id') }}">
+                        <br>
+                        <select name="platform_id" id="platform_id" class="form-control">
+                            @foreach ($platforms as $platform)
+                                @if ($platform->id == $game->platform_id)
+                                    <option value="{{ $platform->id }}" selected>{{ $platform->platform }}</option>
+                                @else
+                                <option value="{{ $platform->id }}">{{ $platform->platform }}</option>
+                                @endif
+                            @endforeach
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
