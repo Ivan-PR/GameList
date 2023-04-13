@@ -24,7 +24,7 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 Route::controller(MantenimentGameController::class)->group(function () {
     Route::get('manteniment', 'index')->name('mantenimentGame.index');
-    Route::view('manteniment/crear','manteniment.crear')->name('mantenimentGame.crear');
+    Route::get('manteniment/crear','crear')->name('mantenimentGame.crear');
     Route::post('manteniment/almacenar', 'store')->name('mantenimentGame.store');
     Route::get('manteniment/editar/{game}', 'edit')->name('mantenimentGame.editar');
     Route::put('manteniment/actualizar/{game}', 'update')->name('mantenimentGame.update');

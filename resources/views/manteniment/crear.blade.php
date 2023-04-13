@@ -47,12 +47,9 @@
                         @enderror
                         <br>
                         <select name="location_id" id="location_id" class="form-control">
+                            <option value="0" selected>Selecciona una pais</option>
                             @foreach ($locations as $location)
-                                @if ($location->id == $game->location_id)
-                                    <option value="{{ $location->id }}" selected>{{ $location->location }}</option>
-                                @else
                                 <option value="{{ $location->id }}">{{ $location->location }}</option>
-                                @endif
                             @endforeach
                         </select>
                     </div>
@@ -95,12 +92,9 @@
                         @enderror
                         <br>
                         <select name="romsize_id" id="romsize_id" class="form-control">
+                            <option value="0" selected>Selecciona un tamaño</option>
                             @foreach ($romsizes as $romsize)
-                                @if ($romsize->id == $game->romsize_id)
-                                    <option value="{{ $romsize->id }}" selected>{{ $romsize->romsize }}</option>
-                                @else
                                 <option value="{{ $romsize->id }}">{{ $romsize->romsize }}</option>
-                                @endif
                             @endforeach
                         </select>
                     </div>
@@ -113,12 +107,9 @@
                         @enderror
                         <br>
                         <select name="language_id" id="language_id" class="form-control">
+                            <option value="0" selected>Selecciona un idioma</option>
                             @foreach ($languages as $language)
-                                @if ($language->id == $game->language_id)
-                                    <option value="{{ $language->id }}" selected>{{ $language->language }}</option>
-                                @else
                                 <option value="{{ $language->id }}">{{ $language->language }}</option>
-                                @endif
                             @endforeach
                         </select>
                     </div>
@@ -131,12 +122,9 @@
                         @enderror
                         <br>
                         <select name="platform_id" id="platform_id" class="form-control">
+                            <option value="0" selected>Selecciona un plataforma</option>
                             @foreach ($platforms as $platform)
-                                @if ($platform->id == $game->platform_id)
-                                    <option value="{{ $platform->id }}" selected>{{ $platform->platform }}</option>
-                                @else
                                 <option value="{{ $platform->id }}">{{ $platform->platform }}</option>
-                                @endif
                             @endforeach
                         </select>
                     </div>
