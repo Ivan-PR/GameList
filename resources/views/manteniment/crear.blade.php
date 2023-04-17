@@ -47,7 +47,7 @@
                         @enderror
                         <br>
                         <select name="location_id" id="location_id" class="form-control">
-                            <option value="0" selected>Selecciona una pais</option>
+                            <option value="0" selected>Selecciona un pais</option>
                             @foreach ($locations as $location)
                                 <option value="{{ $location->id }}">{{ $location->location }}</option>
                             @endforeach

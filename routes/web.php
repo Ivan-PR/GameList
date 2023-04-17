@@ -30,7 +30,15 @@ Route::controller(MantenimentGameController::class)->group(function () {
     Route::put('manteniment/actualizar/{game}', 'update')->name('mantenimentGame.update');
     Route::delete('manteniment/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar');
     Route::get('manteniment/carga', 'massiveLoad')->name('mantenimentGame.carga');
+});
 
+Route::controller(MantenimentLocalitzacionsController::class)->group(function () {
+    Route::get('manteniment/localitzacions', 'index')->name('mantenimentLocalitzacions.index');
+    Route::get('manteniment/localitzacions/crear','crear')->name('mantenimentLocalitzacions.crear');
+    Route::post('manteniment/localitzacions/almacenar', 'store')->name('mantenimentLocalitzacions.store');
+    Route::get('manteniment/localitzacions/editar/{location}', 'edit')->name('mantenimentLocalitzacions.editar');
+    Route::put('manteniment/localitzacions/actualizar/{location}', 'update')->name('mantenimentLocalitzacions.update');
+    Route::delete('manteniment/localitzacions/eliminar/{location}', 'delete')->name('mantenimentLocalitzacions.eliminar');
 });
 
 Route::controller(UserController::class)->group(function () {
