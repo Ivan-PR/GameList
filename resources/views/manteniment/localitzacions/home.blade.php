@@ -25,13 +25,6 @@
                             <th scope="col">ID</th>
                             <th scope="col">Titulo</th>
                             <th scope="col">Imagen</th>
-                            <th scope="col">Plataforma</th>
-                            <th scope="col">Publicado por:</th>
-                            <th scope="col">Pais</th>
-                            <th scope="col">Idioma</th>
-                            <th scope="col">Sourcerom</th>
-                            <th scope="col">Romsize</th>
-                            <th scope="col">Savetype</th>
                             <th scope="col" colspan="2">Acciones</th>
                             <th scope="col"></th>
                         </tr>
@@ -40,14 +33,15 @@
                         @foreach ($locations as $location)
                             <tr>
                                 <th scope="row">{{ $location->id }}</th>
-                                <td>{{ $location->image }}</td>
                                 <td>{{ $location->location }}</td>
+                                <td>{{ $location->image }}</td>
+                                
                                 <td>
-                                    <a href="{{ route('mantenimentLocalitzacions.editar', $game->id) }}"
+                                    <a href="{{ route('mantenimentLocalitzacions.editar', $location->id) }}"
                                         class="btn btn-primary">Editar</a>
                                 </td>
                                 <td>
-                                    <form action="{{ route('mantenimentLocalitzacions.eliminar', $game->id) }}" method="POST">
+                                    <form action="{{ route('mantenimentLocalitzacions.eliminar', $location->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Eliminar</button>
