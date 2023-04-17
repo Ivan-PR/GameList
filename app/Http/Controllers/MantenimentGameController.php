@@ -16,7 +16,7 @@ class MantenimentGameController extends Controller {
 
     public function index() {
         $games = Game::orderBy('id', 'desc')->paginate(5);
-        return view('manteniment.home', compact('games'));
+        return view('manteniment.jocs.home', compact('games'));
     }
 
     public function crear() {
@@ -24,7 +24,7 @@ class MantenimentGameController extends Controller {
         $languages = Language::all();
         $platforms = Platform::all();
         $romsizes = Romsize::all();
-        return view('manteniment.crear', compact('locations', 'languages', 'platforms', 'romsizes'));
+        return view('manteniment.jocs.crear', compact('locations', 'languages', 'platforms', 'romsizes'));
     }
 
     public function store(StoreGame $request) {
@@ -42,7 +42,7 @@ class MantenimentGameController extends Controller {
         $languages = Language::all();
         $platforms = Platform::all();
         $romsizes = Romsize::all();
-        return view('manteniment.editar', compact('game', 'locations', 'languages', 'platforms', 'romsizes'));
+        return view('manteniment.jocs.editar', compact('game', 'locations', 'languages', 'platforms', 'romsizes'));
     }
 
     public function update(UpdateGame $request, Game $game) {
@@ -71,6 +71,6 @@ class MantenimentGameController extends Controller {
     }
     public function massiveLoad() {
         
-        return view('manteniment.carga');
+        return view('manteniment.jocs.carga');
     }
 }

@@ -23,22 +23,22 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 
 Route::controller(MantenimentGameController::class)->group(function () {
-    Route::get('manteniment', 'index')->name('mantenimentGame.index');
-    Route::get('manteniment/crear','crear')->name('mantenimentGame.crear');
-    Route::post('manteniment/almacenar', 'store')->name('mantenimentGame.store');
-    Route::get('manteniment/editar/{game}', 'edit')->name('mantenimentGame.editar');
-    Route::put('manteniment/actualizar/{game}', 'update')->name('mantenimentGame.update');
-    Route::delete('manteniment/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar');
-    Route::get('manteniment/carga', 'massiveLoad')->name('mantenimentGame.carga');
+    Route::get('mantenimiento/juegos', 'index')->name('mantenimentGame.index');
+    Route::get('mantenimiento/juegos/crear','crear')->name('mantenimentGame.crear');
+    Route::post('mantenimiento/juegos/almacenar', 'store')->name('mantenimentGame.store');
+    Route::get('mantenimiento/juegos/editar/{game}', 'edit')->name('mantenimentGame.editar');
+    Route::put('mantenimiento/juegos/actualizar/{game}', 'update')->name('mantenimentGame.update');
+    Route::delete('mantenimiento/juegos/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar');
+    Route::get('mantenimiento/juegos/carga', 'massiveLoad')->name('mantenimentGame.carga');
 });
 
 Route::controller(MantenimentLocalitzacionsController::class)->group(function () {
-    Route::get('manteniment/localitzacions', 'index')->name('mantenimentLocalitzacions.index');
-    Route::get('manteniment/localitzacions/crear','crear')->name('mantenimentLocalitzacions.crear');
-    Route::post('manteniment/localitzacions/almacenar', 'store')->name('mantenimentLocalitzacions.store');
-    Route::get('manteniment/localitzacions/editar/{location}', 'edit')->name('mantenimentLocalitzacions.editar');
-    Route::put('manteniment/localitzacions/actualizar/{location}', 'update')->name('mantenimentLocalitzacions.update');
-    Route::delete('manteniment/localitzacions/eliminar/{location}', 'delete')->name('mantenimentLocalitzacions.eliminar');
+    Route::get('mantenimiento/localizaciones', 'index')->name('mantenimentLocalitzacions.index');
+    Route::get('mantenimiento/localizaciones/crear','crear')->name('mantenimentLocalitzacions.crear');
+    Route::post('mantenimiento/localizaciones/almacenar', 'store')->name('mantenimentLocalitzacions.store');
+    Route::get('mantenimiento/localizaciones/editar/{location}', 'edit')->name('mantenimentLocalitzacions.editar');
+    Route::put('mantenimiento/localizaciones/actualizar/{location}', 'update')->name('mantenimentLocalitzacions.update');
+    Route::delete('mantenimiento/localizaciones/eliminar/{location}', 'delete')->name('mantenimentLocalitzacions.eliminar');
 });
 
 Route::controller(UserController::class)->group(function () {
