@@ -1,6 +1,6 @@
 @extends('layouts.plantillaManteniment')
 
-@section('title', 'Creando ')
+@section('title', 'Creando un juego')
 
 @section('contenido')
 
@@ -122,7 +122,7 @@
                         @enderror
                         <br>
                         <select name="platform_id" id="platform_id" class="form-control">
-                            <option value="0" selected>Selecciona un plataforma</option>
+                            <option value="0" selected>Selecciona una plataforma</option>
                             @foreach ($platforms as $platform)
                                 <option value="{{ $platform->id }}">{{ $platform->platform }}</option>
                             @endforeach
@@ -134,8 +134,4 @@
         </div>
     </div>
 @endsection
-{{-- 
-https://www.youtube.com/watch?v=KbpbqZshUus&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=20
-15:35
---}}
 

@@ -53,6 +53,7 @@
                         @enderror
                         <br>
                         <select name="location_id" id="location_id" class="form-control">
+                            <option value="0" selected>Selecciona un país</option>
                             @foreach ($locations as $location)
                                 @if ($location->id == $game->location_id)
                                     <option value="{{ $location->id }}" selected>{{ $location->location }}</option>
@@ -105,6 +106,7 @@
                         @enderror
                         <br>
                         <select name="romsize_id" id="romsize_id" class="form-control">
+                            <option value="0" selected>Selecciona una tamaño</option>
                             @foreach ($romsizes as $romsize)
                                 @if ($romsize->id == $game->romsize_id)
                                     <option value="{{ $romsize->id }}" selected>{{ $romsize->romsize }}</option>
@@ -124,6 +126,7 @@
                         @enderror
                         <br>
                         <select name="language_id" id="language_id" class="form-control">
+                            <option value="0" selected>Selecciona un idioma</option>
                             @foreach ($languages as $language)
                                 @if ($language->id == $game->language_id)
                                     <option value="{{ $language->id }}" selected>{{ $language->language }}</option>
@@ -143,6 +146,7 @@
                         @enderror
                         <br>
                         <select name="platform_id" id="platform_id" class="form-control">
+                            <option value="0" selected>Selecciona una plataforma</option>
                             @foreach ($platforms as $platform)
                                 @if ($platform->id == $game->platform_id)
                                     <option value="{{ $platform->id }}" selected>{{ $platform->platform }}</option>

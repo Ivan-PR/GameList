@@ -6,15 +6,15 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">Manteniment</h1>
+                <h1 class="text-center">Mantenimiento</h1>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12">
-                <h2 class="text-center">Llistat de Roms</h2>
+                <h2 class="text-center">Listado de Roms</h2>
                     <a href="{{ route('mantenimentGame.crear') }}"
-                    class="btn btn-info mb-3 w-100 text-white fw-bold">Inserir nou</a>
+                    class="btn btn-info mb-3 w-100 text-white fw-bold">Insertar nuevo</a>
             </div>
                 </div>
         <div class="row">
@@ -23,16 +23,16 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Platform</th>
-                            <th scope="col">Publisher</th>
-                            <th scope="col">Location</th>
-                            <th scope="col">Language</th>
-                            <th scope="col">Sourcerom</th>
-                            <th scope="col">Romsize</th>
-                            <th scope="col">Savetype</th>
-                            <th scope="col" colspan="2">Accions</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Plataforma</th>
+                            <th scope="col">Publicado por:</th>
+                            <th scope="col">País</th>
+                            <th scope="col">Idioma</th>
+                            <th scope="col">Source rom</th>
+                            <th scope="col">Rom size</th>
+                            <th scope="col">Save type</th>
+                            <th scope="col" colspan="2">Acciones</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>

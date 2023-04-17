@@ -42,16 +42,19 @@ Route::controller(MantenimentLocalitzacionsController::class)->group(function ()
     Route::delete('mantenimiento/localizaciones/eliminar/{location}', 'delete')->name('mantenimentLocalitzacions.eliminar');
 });
 
+// Manteniment Platafomes name('mantenimentPlataformes.ejemplo');
+// Manteniment Romsizes name('mantenimentRomsizes.ejemplo');
+
 Route::controller(UserController::class)->group(function () {
-    Route::view('users', 'users.index')->middleware('auth')->name('users.index');
-    Route::get('users/crear', 'create')->name('users.create');
-    Route::get('users/editar/{id}', 'edit')->name('users.editar');
-    Route::view('users/login', 'users.login')->name('users.login');
-    Route::view('users/registre', 'users.registre')->name('users.registre');
+    Route::view('usuarios', 'users.index')->middleware('auth')->name('users.index');
+    Route::get('usuarios/crear', 'create')->name('users.create');
+    Route::get('usuarios/editar/{id}', 'edit')->name('users.editar');
+    Route::view('usuarios/login', 'users.login')->name('users.login');
+    Route::view('usuarios/registro', 'users.registre')->name('users.registre');
 });
 
 Route::controller(LoginController::class)->group(function () {
     Route::post('/inicio-sesion', 'login')->name('login.login');
-    Route::post('/validar-registre', 'register')->name('login.registre');
+    Route::post('/validar-registro', 'register')->name('login.registre');
     Route::post('/logout', 'logout')->name('login.logout');
 });

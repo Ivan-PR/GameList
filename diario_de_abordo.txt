@@ -1,9 +1,9 @@
-Intentando eliminar archivo desde laravel imagen, mirar link laravel storage
+FUTUROS CAMBIOS:
 
-Por donde iba: Video https://www.youtube.com/watch?v=uMbNub8JoqY Min 1:23
+- BOTON VOLVER DENTRO DE LAS PAGINAS MANTENIMIENTO
+- EN VEZ DE MOSTRAR LAS RUTAS QUE MUESTRE UNA IMAGENz
 
-https://www.youtube.com/watch?v=n_C_HFqS8XY&list=PLZ2ovOgdI-kWWS9aq8mfUDkJRfYib-SvF&index=22
-min 9
+
 
 Dudas:
 - Metodo old() no funciona en el editar.blade.php con dos parametros
