@@ -1,18 +1,18 @@
 @extends('layouts.plantillaManteniment')
 
-@section('title', 'Llista de Jocs')
+@section('title', 'Listado de Localizaciones')
 
 @section('contenido')
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">Manteniment</h1>
+                <h1 class="text-center">Mantenimiento Localizaciones</h1>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12">
-                <h2 class="text-center">Llistat de Roms</h2>
+                <h2 class="text-center">Listado de Localizaciones</h2>
                     <a href="{{ route('mantenimentGame.crear') }}"
                     class="btn btn-info mb-3 w-100 text-white fw-bold">Inserir nou</a>
             </div>
