@@ -13,8 +13,8 @@
         <div class="row">
             <div class="col-12">
                 <h2 class="text-center">Listado de Localizaciones</h2>
-                    <a href="{{ route('mantenimentGame.crear') }}"
-                    class="btn btn-info mb-3 w-100 text-white fw-bold">Inserir nou</a>
+                    <a href="{{ route('mantenimentLocalitzacions.crear') }}"
+                    class="btn btn-info mb-3 w-100 text-white fw-bold">Insertar Nuevo</a>
             </div>
                 </div>
         <div class="row">
@@ -23,38 +23,31 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Platform</th>
-                            <th scope="col">Publisher</th>
-                            <th scope="col">Location</th>
-                            <th scope="col">Language</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Imagen</th>
+                            <th scope="col">Plataforma</th>
+                            <th scope="col">Publicado por:</th>
+                            <th scope="col">Pais</th>
+                            <th scope="col">Idioma</th>
                             <th scope="col">Sourcerom</th>
                             <th scope="col">Romsize</th>
                             <th scope="col">Savetype</th>
-                            <th scope="col" colspan="2">Accions</th>
+                            <th scope="col" colspan="2">Acciones</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($games as $game)
+                        @foreach ($locations as $location)
                             <tr>
-                                <th scope="row">{{ $game->id_game }}</th>
-                                <td>{{ $game->name }}</td>
-                                <td>{{ $game->image }}</td>
-                                <td>{{ $game->platform->platform }}</td>
-                                <td>{{ $game->publisher }}</td>
-                                <td>{{ $game->location->location }}</td>
-                                <td>{{ $game->language->language }}</td>
-                                <td>{{ $game->sourcerom }}</td>
-                                <td>{{ $game->romsize->romsize }}</td>
-                                <td>{{ $game->savetype }}</td>
+                                <th scope="row">{{ $location->id }}</th>
+                                <td>{{ $location->image }}</td>
+                                <td>{{ $location->location }}</td>
                                 <td>
-                                    <a href="{{ route('mantenimentGame.editar', $game->id) }}"
+                                    <a href="{{ route('mantenimentLocalitzacions.editar', $game->id) }}"
                                         class="btn btn-primary">Editar</a>
                                 </td>
                                 <td>
-                                    <form action="{{ route('mantenimentGame.eliminar', $game->id) }}" method="POST">
+                                    <form action="{{ route('mantenimentLocalitzacions.eliminar', $game->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -66,7 +59,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{ $games->links() }}
+                {{ $locations->links() }}
             </div>
         </div>
     </div>
