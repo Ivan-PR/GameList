@@ -23,7 +23,7 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Titulo</th>
+                            <th scope="col">Pais</th>
                             <th scope="col">Imagen</th>
                             <th scope="col" colspan="2">Acciones</th>
                             <th scope="col"></th>
