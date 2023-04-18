@@ -1,8 +1,8 @@
 <header class="mb-3">
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-light justify-content-between">
+        <div class="d-flex">
             <a class="navbar-brand d-flex" href="{{route('home')}}">
-                <img src="/imgs/system/logo.png" alt="Logo" width="30" class="d-inline-block align-text-top me-1">
+                <img src="/imgs/system/logo.png" alt="Logo" width="30" class="d-inline-block align-text-top ms-4 me-1">
                 Lists
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
