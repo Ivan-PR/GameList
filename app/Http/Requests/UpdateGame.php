@@ -26,13 +26,13 @@ class UpdateGame extends FormRequest
             'id_game' => 'required | numeric',
             'name' => 'required | max:30 | string',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'location_id' => 'required | numeric',
+            'location_id' => 'required | numeric |exists:locations,id| min:1',
             'publisher' => 'required | max:50 | string',
             'sourcerom' => 'required | max:15 | string',
             'savetype' => 'required | max:15 | string',
-            'romsize_id' => 'required | numeric',
-            'language_id' => 'required | numeric',
-            'platform_id' => 'required | numeric',
+            'romsize_id' => 'required | numeric |exists:romsizes,id| min:1',
+            'language_id' => 'required | numeric |exists:languages,id| min:1',
+            'platform_id' => 'required | numeric |exists:platforms,id| min:1',
         ];
     }
 
@@ -48,6 +48,13 @@ class UpdateGame extends FormRequest
             'publisher.max' => 'Nombre de la desarrolladora excesivamente largo.',
             'sourcerom.max' => 'Nombre  de la source rom excesivamente largo.',
             'savetype.max' => 'Nombre del save type excesivamente largo.',
+            'id_game.numeric' => 'El id del juego debe ser numerico.',
+            'image.mimes' => 'El formato de la imagen no es valido.',
+            'image.max' => 'El tamaño de la imagen no es valido.',
+            'location_id.numeric' => 'El id de la localizacion debe ser numerico.',
+            'romsize_id.numeric' => 'El id del tamaño de la rom debe ser numerico.',
+            'language_id.numeric' => 'El id del idioma debe ser numerico.',
+            'platform_id.numeric' => 'El id de la plataforma debe ser numerico.',
         ];
     }
 }
