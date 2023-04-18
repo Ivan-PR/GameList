@@ -10,6 +10,8 @@ class Location extends Model
 {
     //protected $table = 'locations';
     use HasFactory;
+
+    protected $guarded=[];
     protected function location(): Attribute {
         return new Attribute(
             // Mutador da formato al dato antes de ser guardado en la base de datos

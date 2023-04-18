@@ -21,14 +21,14 @@
                     </div>
                     
                     <div class="mb-3">
-                        <label for="name" class="form-label">Pais:</label>
-                        @error('name')
+                        <label for="location" class="form-label">Pais:</label>
+                        @error('location')
                             <br>
                             <small>* {{ $message }} </small>
                             <br>
                         @enderror
-                        <input type="text" class="form-control" id="name" name="name"
-                            value="{{ old('name') }}">
+                        <input type="text" class="form-control" id="location" name="location"
+                            value="{{ old('location') }}">
                     </div>
                     
                     <button type="submit" class="btn btn-primary">Guardar</button>
