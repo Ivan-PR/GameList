@@ -24,4 +24,6 @@ class MantenimentLocalitzacionsController extends Controller
 
         return redirect()->route('mantenimentLocalitzacions.index');
     }
+
+    
 }
