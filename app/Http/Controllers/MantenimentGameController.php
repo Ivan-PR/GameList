@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Models\Location;
 use App\Models\Language;
@@ -10,7 +9,7 @@ use App\Models\Platform;
 use App\Models\Romsize;
 use App\Http\Requests\StoreGame;
 use App\Http\Requests\UpdateGame;
-use Illuminate\Validation\Rules\Exists;
+
 
 class MantenimentGameController extends Controller {
 
