@@ -38,7 +38,7 @@ Route::controller(MantenimentLocalitzacionsController::class)->group(function ()
     Route::get('mantenimiento/localizaciones/crear','crear')->name('mantenimentLocalitzacions.crear');
     Route::post('mantenimiento/localizaciones/almacenar', 'store')->name('mantenimentLocalitzacions.store');
     Route::get('mantenimiento/localizaciones/editar/{location}', 'edit')->name('mantenimentLocalitzacions.editar');
-    Route::put('mantenimiento/localizaciones/actualizar/{location}', 'update')->name('mantenimentLocalitzacions.update');
+    Route::get('mantenimiento/localizaciones/actualizar/{location}', 'update')->name('mantenimentLocalitzacions.update');
     Route::delete('mantenimiento/localizaciones/eliminar/{location}', 'delete')->name('mantenimentLocalitzacions.eliminar');
 });
 
