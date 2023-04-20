@@ -30,11 +30,11 @@ class MantenimentLocalitzacionsController extends Controller
     public function edit(Location $location) {
         return view('manteniment.localitzacions.editar', compact('location'));
     }
-
+   
     public function update(UpdateLocation $request, Location $location) {
         if (isset($request->image)) {
             $imageName = time() . '.' . $request->image->extension();
-            if (Storage::disk("imgFlag")->exists($location->__get("image"))){
+            if ($location->__get("image") != null && Storage::disk("imgFlag")->exists($location->__get("image"))){
                 Storage::disk("imgFlag")->delete($location->__get("image"));
             }
             $request->image->storeAs('public/imgs/flags', $imageName);
