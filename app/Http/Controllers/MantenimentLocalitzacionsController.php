@@ -47,4 +47,11 @@ class MantenimentLocalitzacionsController extends Controller
 
         return redirect()->route('mantenimentLocalitzacions.index');
     }
+    public function delete(Location $location) {
+        $location->delete();
+        if (Storage::disk("imgFlag")->exists($location->__get("image"))){
+            Storage::disk("imgFlag")->delete($location->__get("image"));
+        }
+        return redirect()->route('mantenimentLocalitzacions.index');
+    }
 }
