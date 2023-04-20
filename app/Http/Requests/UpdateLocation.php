@@ -21,10 +21,26 @@ class UpdateLocation extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             //
+
+            'location' => 'required | max:30 | string',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ];
+    }
+    public function attributes() {
+        return [
+            'location' => 'Nombre del pais',
+        ];
+    }
+
+    public function messages() {
+        return [
+            'location.max' => 'Nombre del pais excesivamente largo.',
+            'image.mimes' => 'El formato de la imagen no es valido.',
+            'image.max' => 'El tamaño de la imagen no es valido.',
         ];
     }
 }

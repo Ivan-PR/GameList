@@ -11,8 +11,7 @@
             <div class="col-12">
                 <form action="{{ route('mantenimentLocalitzacions.update', $location) }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
-
+                    @method("PUT")
                     <div class="mb-3">
                         <label for="imageFileMultiple" class="form-label">Subida de imagenes:</label>
                         @error('imageFileMultiple')

@@ -16,12 +16,8 @@
 <body class="container-fluid p-0">
     {{--          HEADER                        --}}
     @include('layouts.partials.header')
-    
-    @if ($previous = url()->previous())
-        <a href="{{$previous}}" class="btn btn-secondary mb-3 text-white fw-bold">Atras</a>
-        @else
-        <a href="{{ url('/')}}" class="btn btn-secondary mb-3 text-white fw-bold">Atras a Home</a>
-    @endif
+
+        <a href="{{route()}}" class="btn btn-secondary mb-3 text-white fw-bold">Atras</a>
 
     <main class="mb-3">
         @yield('contenido')
