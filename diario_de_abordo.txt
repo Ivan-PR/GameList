@@ -1,7 +1,3 @@
-ivan debuga editar no funciona vuelve a misma pagina
-
-
-
 FUTUROS CAMBIOS:
 
 - BOTON VOLVER DENTRO DE LAS PAGINAS MANTENIMIENTO
