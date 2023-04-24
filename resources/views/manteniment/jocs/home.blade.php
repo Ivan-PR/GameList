@@ -33,7 +33,6 @@
                             <th scope="col">Rom size</th>
                             <th scope="col">Save type</th>
                             <th scope="col" colspan="2">Acciones</th>
-                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>

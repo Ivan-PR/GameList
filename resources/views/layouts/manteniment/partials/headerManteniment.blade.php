@@ -27,9 +27,7 @@
                     </li>
                     <li><a class="dropdown-item" href="{{ route('mantenimentPlataformes.index') }}">Listado Plataformas</a>
                     </li>
-                    <li><a class="dropdown-item" href="{{ route('mantenimentGame.index') }}">Llistat Romsizes</a></li>
-                    {{-- 
-                    <li><a class="dropdown-item" href="{{ route('mantenimentRomsizes.index') }}">Llistat Romsizes</a></li> --}}
+                    <li><a class="dropdown-item" href="{{ route('mantenimentRomsizes.index') }}">Listado Romsizes</a></li>
                 </ul>
                 </li>
                 <li class="nav-item">

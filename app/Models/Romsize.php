@@ -10,6 +10,8 @@ class Romsize extends Model
 {
     #protected $table = 'romsizes';
     use HasFactory;
+
+    protected $guarded=[];
     protected function romsize(): Attribute {
         return new Attribute(
             // Mutador da formato al dato antes de ser guardado en la base de datos

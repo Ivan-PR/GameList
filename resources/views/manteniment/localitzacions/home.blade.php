@@ -26,7 +26,6 @@
                             <th scope="col">Pais</th>
                             <th scope="col">Imagen</th>
                             <th scope="col" colspan="2">Acciones</th>
-                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>

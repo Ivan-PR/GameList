@@ -17,8 +17,6 @@
     {{--          HEADER                        --}}
     @include('layouts.partials.header')
 
-        <a href="{{route()}}" class="btn btn-secondary mb-3 text-white fw-bold">Atras</a>
-
     <main class="mb-3">
         @yield('contenido')
     </main>

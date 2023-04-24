@@ -1,23 +1,23 @@
 @extends('layouts.plantillaManteniment')
 
-@section('title', 'Creando Plataforma')
+@section('title', 'Creando Romsize')
 
 @section('contenido')
 
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('mantenimentPlataformes.store') }}" method="POST">
+                <form action="{{ route('mantenimentRomsizes.store') }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="platform" class="form-label">Plataforma:</label>
-                        @error('platform')
+                        <label for="romsize" class="form-label">Romsize:</label>
+                        @error('romsize')
                             <br>
                             <small>* {{ $message }} </small>
                             <br>
                         @enderror
-                        <input type="text" class="form-control" id="platform" name="platform"
-                            value="{{ old('platform') }}">
+                        <input type="text" class="form-control" id="romsize" name="romsize"
+                            value="{{ old('romsize') }}">
                     </div>
                     
                     <button type="submit" class="btn btn-primary">Guardar</button>

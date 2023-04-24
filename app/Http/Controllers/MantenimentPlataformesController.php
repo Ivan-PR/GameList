@@ -6,7 +6,7 @@ use App\Models\Platform;
 use App\Http\Requests\StorePlatform;
 use App\Http\Requests\UpdatePlatform;
 
-class mantenimentPlataformesController extends Controller {
+class MantenimentPlataformesController extends Controller {
     public function index() {
         $platforms = Platform::orderBy('id', 'desc')->paginate(5);
         return view('manteniment.plataformes.home', compact('platforms'));

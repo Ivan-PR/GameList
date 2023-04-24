@@ -1,19 +1,19 @@
 @extends('layouts.plantillaManteniment')
 
-@section('title', 'Listado de Plataformas')
+@section('title', 'Listado de Romsizes')
 
 @section('contenido')
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">Mantenimiento de Plataformas</h1>
+                <h1 class="text-center">Mantenimiento de Romsizes</h1>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12">
-                <h2 class="text-center">Listado de Plataformas</h2>
-                    <a href="{{ route('mantenimentPlataformes.crear') }}"
+                <h2 class="text-center">Listado de Romsizes</h2>
+                    <a href="{{ route('mantenimentRomsizes.crear') }}"
                     class="btn btn-info mb-3 w-100 text-white fw-bold">Insertar Nueva</a>
             </div>
                 </div>
@@ -23,21 +23,21 @@
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Plataforma</th>
+                            <th scope="col">Romsize</th>
                             <th scope="col" colspan="2">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($platforms as $platform)
+                        @foreach ($romsizes as $romsize)
                             <tr>
-                                <th scope="row">{{ $platform->id }}</th>
-                                <td>{{ $platform->platform }}</td>                                
+                                <th scope="row">{{ $romsize->id }}</th>
+                                <td>{{ $romsize->romsize }}</td>                                
                                 <td>
-                                    <a href="{{ route('mantenimentPlataformes.editar', $platform->id) }}"
+                                    <a href="{{ route('mantenimentRomsizes.editar', $romsize->id) }}"
                                         class="btn btn-primary">Editar</a>
                                 </td>
                                 <td>
-                                    <form action="{{ route('mantenimentPlataformes.eliminar', $platform->id) }}" method="POST">
+                                    <form action="{{ route('mantenimentRomsizes.eliminar', $romsize->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -49,7 +49,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{ $platforms->links() }}
+                {{ $romsizes->links() }}
             </div>
         </div>
     </div>
