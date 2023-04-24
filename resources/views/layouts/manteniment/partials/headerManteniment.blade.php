@@ -25,11 +25,10 @@
                     </li>
                     <li><a class="dropdown-item" href="{{ route('mantenimentLocalitzacions.index') }}">Listado Localizaciones</a>
                     </li>
-                    <li><a class="dropdown-item" href="{{ route('mantenimentGame.index') }}">Listado Plataformas</a>
+                    <li><a class="dropdown-item" href="{{ route('mantenimentPlataformes.index') }}">Listado Plataformas</a>
                     </li>
                     <li><a class="dropdown-item" href="{{ route('mantenimentGame.index') }}">Llistat Romsizes</a></li>
-                    {{-- <li><a class="dropdown-item" href="{{ route('mantenimentPlataformes.index') }}">Llistat Plataformes</a>
-                    </li>
+                    {{-- 
                     <li><a class="dropdown-item" href="{{ route('mantenimentRomsizes.index') }}">Llistat Romsizes</a></li> --}}
                 </ul>
                 </li>

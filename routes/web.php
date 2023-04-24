@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MantenimentGameController;
 use App\Http\Controllers\MantenimentLocalitzacionsController;
+use App\Http\Controllers\mantenimentPlataformesController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -42,8 +43,23 @@ Route::controller(MantenimentLocalitzacionsController::class)->group(function ()
     Route::delete('mantenimiento/localizaciones/eliminar/{location}', 'delete')->name('mantenimentLocalitzacions.eliminar');
 });
 
-// Manteniment Platafomes name('mantenimentPlataformes.ejemplo');
-// Manteniment Romsizes name('mantenimentRomsizes.ejemplo');
+Route::controller(mantenimentPlataformesController::class)->group(function () {
+    Route::get('mantenimiento/plataformas', 'index')->name('mantenimentPlataformes.index');
+    Route::get('mantenimiento/plataformas/crear','crear')->name('mantenimentPlataformes.crear');
+    Route::post('mantenimiento/plataformas/almacenar', 'store')->name('mantenimentPlataformes.store');
+    Route::get('mantenimiento/plataformas/editar/{platform}', 'edit')->name('mantenimentPlataformes.editar');
+    Route::put('mantenimiento/plataformas/actualizar/{platform}', 'update')->name('mantenimentPlataformes.update');
+    Route::delete('mantenimiento/plataformas/eliminar/{platform}', 'delete')->name('mantenimentPlataformes.eliminar');
+});
+
+Route::controller(mantenimentRomsizesController::class)->group(function () {
+    Route::get('mantenimiento/romsizes', 'index')->name('mantenimentRomsizes.index');
+    Route::get('mantenimiento/romsizes/crear','crear')->name('mantenimentRomsizes.crear');
+    Route::post('mantenimiento/romsizes/almacenar', 'store')->name('mantenimentRomsizes.store');
+    Route::get('mantenimiento/romsizes/editar/{platform}', 'edit')->name('mantenimentRomsizes.editar');
+    Route::put('mantenimiento/romsizes/actualizar/{platform}', 'update')->name('mantenimentRomsizes.update');
+    Route::delete('mantenimiento/romsizes/eliminar/{platform}', 'delete')->name('mantenimentRomsizes.eliminar');
+});
 
 Route::controller(UserController::class)->group(function () {
     Route::view('usuarios', 'users.index')->middleware('auth')->name('users.index');
