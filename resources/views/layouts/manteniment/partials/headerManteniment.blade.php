@@ -31,7 +31,7 @@
                 </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('mantenimentGame.carga') }}">Carga masiva</a>
+                    <a class="nav-link" href="{{ route('mantenimentGame.cargaView') }}">Carga masiva</a>
                 </li>
                 </ul>
             </div>

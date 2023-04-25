@@ -11,17 +11,20 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <form action="" method="POST">
+            <form action="{{ route('mantenimentGame.carga') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                    {{-- @method('PUT') --}}
                 <div class="mb-3">
-                    <label for="formFile" class="form-label">Subida de catalogo:</label>
+                    <label for="imageFileMultiple" class="form-label">Subida de catalogo:</label>
                     <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Fucks curious">?</a>
-                    <input class="form-control" type="file" id="formFile">
+                    @error('imageFileMultiple')
+                            <br>
+                            <small>* {{ $message }} </small>
+                            <br>
+                        @enderror
+                    <input class="form-control" type="file" name="xmlfile" id="imageFileMultiple">
                 </div>
-                <div class="mb-3">
-                    <label for="imageFileMultiple" class="form-label">Subida de imagenes:</label>
-                    <input class="form-control" type="file" id="imageFileMultiple" multiple>
-                </div>
-                <button type="submit" class="btn btn-primary">Guardar</button>
+                <button type="submit" class="btn btn-primary" name="submit">Subir</button>
             </form>
         </div>
     </div>

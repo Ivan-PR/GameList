@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeController::class)->name('home');
-Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+
 
 
 Route::controller(MantenimentGameController::class)->group(function () {
@@ -33,7 +33,8 @@ Route::controller(MantenimentGameController::class)->group(function () {
     Route::get('mantenimiento/juegos/editar/{game}', 'edit')->name('mantenimentGame.editar');
     Route::put('mantenimiento/juegos/actualizar/{game}', 'update')->name('mantenimentGame.update');
     Route::delete('mantenimiento/juegos/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar');
-    Route::get('mantenimiento/juegos/carga', 'massiveLoad')->name('mantenimentGame.carga');
+    Route::view('mantenimiento/juegos/carga', 'manteniment.jocs.carga')->name('mantenimentGame.cargaView');
+    Route::post('mantenimiento/juegos/carga', 'massiveLoad')->name('mantenimentGame.carga');
 });
 
 Route::controller(MantenimentLocalitzacionsController::class)->group(function () {
@@ -74,5 +75,5 @@ Route::controller(UserController::class)->group(function () {
 Route::controller(LoginController::class)->group(function () {
     Route::post('/inicio-sesion', 'login')->name('login.login');
     Route::post('/validar-registro', 'register')->name('login.registre');
-    Route::post('/logout', 'logout')->name('login.logout');
+    Route::get('/logout', 'logout')->name('login.logout');
 });

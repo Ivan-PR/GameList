@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Storage;
 use App\Models\Game;
 use App\Models\Location;
@@ -48,7 +49,7 @@ class MantenimentGameController extends Controller {
         if (isset($request->image)) {
             var_dump($request->image->extension());
             $imageName = time() . '.' . $request->image->extension();
-            if (Storage::disk("imgGames")->exists($game->__get("image"))){
+            if (Storage::disk("imgGames")->exists($game->__get("image"))) {
                 Storage::disk("imgGames")->delete($game->__get("image"));
             }
             $request->image->storeAs('public/imgs/games', $imageName);
@@ -64,13 +65,24 @@ class MantenimentGameController extends Controller {
 
     public function delete(Game $game) {
         $game->delete();
-        if (Storage::disk("imgGames")->exists($game->__get("image"))){
+        if (Storage::disk("imgGames")->exists($game->__get("image"))) {
             Storage::disk("imgGames")->delete($game->__get("image"));
         }
         return redirect()->route('mantenimentGame.index');
     }
     public function massiveLoad() {
-        
-        return view('manteniment.jocs.carga');
+        if (isset($_POST['submit']) && isset($_FILES['xmlfile'])) {
+            $xml = simplexml_load_file($_FILES['xmlfile']['tmp_name']);
+            foreach ($xml->game as $game) {
+                $game = (array) $game;
+                $game['image'] = $game['image'][0];
+                $game['location_id'] = $game['location_id'][0];
+                $game['language_id'] = $game['language_id'][0];
+                $game['platform_id'] = $game['platform_id'][0];
+                $game['romsize_id'] = $game['romsize_id'][0];
+                Game::create($game);
+            }
+            return view('manteniment.jocs.carga');
+        }
     }
 }

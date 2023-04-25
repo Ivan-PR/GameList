@@ -136,3 +136,56 @@ Mirar data list para filtrar por nombres.
   <option value="Los Angeles">
   <option value="Chicago">
 </datalist>
+
+
+
+##Relaciones:
+
+nextInfo: the next item selected.
+location: the item location, the values are:
+        0 = Europe
+        1 = USA
+        2 = Germany
+        3 = China
+        4 = Spain
+        5 = France
+        6 = Italy
+        7 = Japan
+        8 = Netherlands
+        9 = England
+        10 = Denmark
+        11 = Finland
+        12 = Norway
+        13 = Poland
+        14 = Portugal
+        15 = Sweden
+        16 = Europe USA
+        17 = Europe USA Japan
+        18 = USA Japan
+        19 = Australia
+        20 = North Korea
+        21 = Brazil
+        22 = South Korea
+        23 = Europe Brazil
+        24 = Europe USA Brazil
+        25 = USA Brazil
+language: the item language(s), the individual values are:
+        1 = French
+        2 = English (US)
+        4 = Chinese
+        8 = Danish
+        16 = Dutch
+        32 = Finland
+        64 = German
+        128 = Italian
+        256 = Japanese
+        512 = Norwegian
+        1024 = Polish
+        2048 = Portuguese
+        4096 = Spanish
+        8192 = Swedish
+        16384 = English (UK) (only if English (US) already exist)
+        32768 = Portuguese (BR)
+        65536 = Korean
+
+        https://programacion.net/articulo/insertar_la_informacion_de_un_xml_a_una_tabla_mysql_1968
