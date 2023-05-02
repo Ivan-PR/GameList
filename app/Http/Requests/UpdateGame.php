@@ -23,7 +23,7 @@ class UpdateGame extends FormRequest
      */
     public function rules() {
         return [
-            'id_game' => 'required | numeric',
+            'id_game' => 'required | string',
             'name' => 'required | max:30 | string',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'location_id' => 'required | numeric |exists:locations,id| min:1',

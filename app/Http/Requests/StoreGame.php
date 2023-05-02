@@ -21,7 +21,7 @@ class StoreGame extends FormRequest {
      */
     public function rules() {
         return [
-            'id_game' => 'required | numeric',
+            'id_game' => 'required | string',
             'name' => 'required | max:30 | string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'publisher' => 'required | max:50 | string',

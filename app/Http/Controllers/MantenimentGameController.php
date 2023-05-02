@@ -75,16 +75,44 @@ class MantenimentGameController extends Controller {
     public function massiveLoad() {
         if (isset($_POST['submit']) && isset($_FILES['xmlfile'])) {
             $xml = simplexml_load_file($_FILES['xmlfile']['tmp_name']);
-            foreach ($xml->game as $game) {
-                $game = (array) $game;
-                $game['image'] = $game['image'][0];
-                $game['location_id'] = $game['location_id'][0];
-                $game['language_id'] = $game['language_id'][0];
-                $game['platform_id'] = $game['platform_id'][0];
-                $game['romsize_id'] = $game['romsize_id'][0];
-                Game::create($game);
+            $newGame['platform_id'] = Platform::firstOrCreate(['platform' => $xml->configuration->system->__toString()], ['platform' => $xml->configuration->system]);
+            $newGame['platform_id'] = $newGame['platform_id']->__get('id');
+            foreach ($xml->games->game as $gamex) {
+                //crear comprobar si el juego existe
+                $one=Game::where('name', $gamex->title->__toString())->exists();
+                $two=Game::where('platform_id', $newGame['platform_id'])->exists();
+           
+                if (!Game::where('platform_id', $newGame['platform_id'])
+                ->where('name', $gamex->title->__toString())
+                ->first()) {
+                    $newGame['id_game'] = $gamex->files->romCRC->__toString();
+                    $newGame['name'] = $gamex->title->__toString();
+                    $newGame['image'] = $gamex->imageNumber . '.jpg';
+                    $newGame['publisher'] = $gamex->publisher->__toString();
+                    $newGame['location_id'] = $gamex->location->__toString();
+                    $newGame['language_id'] = $gamex->language->__toString();
+                    $newGame['sourcerom'] = $gamex->sourceRom->__toString();
+                    $newGame['romsize_id'] = Romsize::firstOrCreate(['romsize' => $gamex->romSize->__toString()], ['romsize' => $gamex->romSize]);
+                    $newGame['romsize_id'] = $newGame['romsize_id']->__get('id');
+                    $newGame['savetype'] = $gamex->saveType->__toString();
+                    Game::create($newGame);
+                } else {
+                    //actualizar
+                    $game = Game::where('platform_id', $newGame['platform_id'])
+                    ->where('name', $gamex->title->__toString())
+                    ->first();
+                    $game->update(['name' => $gamex->title->__toString()]);
+                    $game->update(['image' => $gamex->imageNumber . '.jpg']);
+                    $game->update(['publisher' => $gamex->publisher->__toString()]);
+                    $game->update(['location_id' => (int) $gamex->location->__toString()]);
+                    $game->update(['language_id' => (int) $gamex->language->__toString()]);
+                    $game->update(['sourcerom' => $gamex->sourceRom->__toString()]);
+                    $romSize=Romsize::firstOrCreate(['romsize' => $gamex->romSize->__toString()], ['romsize' => $gamex->romSize]);
+                    $game->update(['romsize_id' => $romSize->__get('id')]);
+                    $game->update(['savetype' => $gamex->saveType->__toString()]);
+                }
             }
-            return view('manteniment.jocs.carga');
+            return redirect()->route('mantenimentGame.index');
         }
     }
 }
