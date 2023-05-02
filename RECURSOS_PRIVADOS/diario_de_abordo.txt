@@ -12,6 +12,9 @@ Dudas:
 - Metodo old() no funciona en el editar.blade.php con dos parametros
 
 
+1. Enrutado "/" misma raiz y otra con "/{$game}" -> Invoke -> llamar a la lista con todos los juegos.
+2. Recoger el id por parametro por get y cargar la lista con todos los juegos. Y insertar el juego.
+
 vendor/fakerphp/faker/src/Faker/Generator.php
 
 Manteniment:

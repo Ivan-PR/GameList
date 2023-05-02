@@ -24,7 +24,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 
-
+Route::controller(HomeController::class)->group(function (){
+   Route::get("/game/{gameOne}","viewGame")->name("home.viewGame");
+});
 
 Route::controller(MantenimentGameController::class)->group(function () {
     Route::get('mantenimiento/juegos', 'index')->name('mantenimentGame.index');

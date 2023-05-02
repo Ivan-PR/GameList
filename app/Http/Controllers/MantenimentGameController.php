@@ -60,6 +60,8 @@ class MantenimentGameController extends Controller {
             $game->update($request->all());
         }
 
+        
+
         return redirect()->route('mantenimentGame.index');
     }
 

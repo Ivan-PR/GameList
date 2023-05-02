@@ -4,6 +4,7 @@
 
 
 @section('contenido')
+
     <div class="container-xl bg-secondary d-flex w-100 px-0" style="height:650px">
         <div class="col-4 py-4 px-4 border border-5 overflow-auto">
             <div>
@@ -18,17 +19,18 @@
         </div>
         <div class="col-8 game_info d-flex flex-column border border-5 p-4">
             <div class="d-flex flex-row p-4">
-                <div class="w-50 img1"><img src="imgs/games/som_1.jpg" alt="img" title="img1" height="200" style="display:block;margin: auto;"></div>
+                <div class="w-50 img1"><img src="imgs/games/{{$gameOne->image}}" alt="img" title="img1" height="200" style="display:block;margin: auto;"></div>
                 <div class="w-50 m-auto img2"><img src="imgs/games/som_2.jpg" alt="img" title="img2" width="300" style="display:block;margin: auto;"></div>
             </div>
             <div class="d-flex flex-column pt-5">
-                <h4>1050 - Sword of Mana</h4>
-                <p><b>País: </b> USA</p>
-                <p><b>Publicado por: </b> Nintendo</p>
-                <p><b>Source Rom: </b> Mode 7</p>
-                <p><b>Save Type: </b> Flash 512v131</p>
-                <p><b>Rom Size: </b> 128bits</p>
-                <p><b>Idioma: </b> English</p>
+                {{-- Arreglar foreach --}}
+                <h4>{{$gameOne->id_game}} - {{$gameOne->name}}</h4>
+                <p><b>País: </b> @foreach ($locations as $location)@if ($location->id == $gameOne->language_id){{$location->location}}@else @endif @endforeach</p>
+                <p><b>Publicado por: </b> @foreach ($platforms as $platform)@if ($platform->id == $gameOne->platform_id){{$platform->platform}}@else @endif @endforeach</p>
+                <p><b>Source Rom: </b> {{$gameOne->sourcerom}}</p>
+                <p><b>Save Type: </b> {{$gameOne->savetype}}</p>
+                <p><b>Rom Size: </b> @foreach ($romsizes as $romsize)@if ($romsize->id == $gameOne->romsize_id){{$romsize->romsize}}@else @endif @endforeach</p>
+                <p><b>Idioma: </b> @foreach ($languages as $language)@if ($language->id == $gameOne->language_id){{$language->language}}@else @endif @endforeach</p>
             </div>
         </div>
 
