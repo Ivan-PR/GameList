@@ -24,7 +24,7 @@ class StoreRomsize extends FormRequest
     public function rules()
     {
         return [
-            'romsize' => 'required | max:20 | string',
+            'romsize' => 'required | max:40 | string',
         ];
     }
 
