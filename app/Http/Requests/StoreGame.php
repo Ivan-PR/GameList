@@ -25,7 +25,7 @@ class StoreGame extends FormRequest {
             'name' => 'required | max:30 | string',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'publisher' => 'required | max:50 | string',
-            'sourcerom' => 'required | max:15 | string',
+            'sourcerom' => 'required | max:40 | string',
             'savetype' => 'required | max:15 | string',
             'location_id' => 'required | numeric | min:1 |exists:locations,id',
             'romsize_id' => 'required | numeric | min:1 ',

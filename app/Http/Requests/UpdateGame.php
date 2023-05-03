@@ -28,7 +28,7 @@ class UpdateGame extends FormRequest
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'location_id' => 'required | numeric |exists:locations,id| min:1',
             'publisher' => 'required | max:50 | string',
-            'sourcerom' => 'required | max:15 | string',
+            'sourcerom' => 'required | max:40 | string',
             'savetype' => 'required | max:15 | string',
             'romsize_id' => 'required | numeric |exists:romsizes,id| min:1',
             'language_id' => 'required | numeric |exists:languages,id| min:1',
