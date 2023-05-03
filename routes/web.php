@@ -6,6 +6,7 @@ use App\Http\Controllers\MantenimentGameController;
 use App\Http\Controllers\MantenimentLocalitzacionsController;
 use App\Http\Controllers\MantenimentPlataformesController;
 use App\Http\Controllers\MantenimentRomsizesController;
+use App\Http\Controllers\MantenimentLanguagesController;
 
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
