@@ -17,9 +17,5 @@ class LanguageSeeder extends Seeder
     public function run()
     {
         //
-
-        DB::table("languages")->insert([
-            'language' => 1
-        ]);
     }
 }
