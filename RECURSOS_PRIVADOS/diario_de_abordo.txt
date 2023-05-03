@@ -192,3 +192,33 @@ language: the item language(s), the individual values are:
         65536 = Korean
 
         https://programacion.net/articulo/insertar_la_informacion_de_un_xml_a_una_tabla_mysql_1968
+
+        location: Integer; // indicate the location of the rom.
+           0 : Europe
+           1 : USA
+           2 : Germany
+           3 : China
+           4 : Spain
+           5 : France
+           6 : Italy
+           7 : Japan
+           8 : Nederland
+      language: Integer; // indicate the Language(s) of the rom.
+           1     : French
+           2     : English
+           4     : Chinese
+           8     : Danish
+           16    : Dutch
+           32    : Finland
+           64    : German
+           128   : Italian
+           256   : Japanese
+           512   : Norwegian
+           1024  : Polish
+           2048  : Portuguese
+           4096  : Spanish
+           8192  : Swedish
+           16384 : English  // if there are 2 english language in the game (like Harry potter), this one is the UK version
+           32768 : Portuguese // if there are 2 Portuguese language in the game (like Harry potter), this one is the BR version
+           Exemple of use:
+             - if ((game.language & 256) != 0){ the Danish language is in the game. }

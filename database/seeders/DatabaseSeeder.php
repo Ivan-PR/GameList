@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
-        DB::table('languages')->insert([
-            'id' => 1,
-            'language' => 'Sin idioma']);
+        // DB::table('languages')->insert([
+        //     'id' => 1,
+        //     'language' => 'Sin idioma']);
         // el idioma 18 es el ultimo que debe haber, previos 17
         Language::factory(50)->create();
         Location::factory(50)->create();
