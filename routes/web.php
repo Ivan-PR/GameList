@@ -57,6 +57,15 @@ Route::controller(MantenimentPlataformesController::class)->group(function () {
     Route::delete('mantenimiento/plataformas/eliminar/{platform}', 'delete')->name('mantenimentPlataformes.eliminar');
 });
 
+Route::controller(MantenimentLanguagesController::class)->group(function () {
+    Route::get('mantenimiento/idiomas', 'index')->name('mantenimentLanguages.index');
+    Route::get('mantenimiento/idiomas/crear','crear')->name('mantenimentLanguages.crear');
+    Route::post('mantenimiento/idiomas/almacenar', 'store')->name('mantenimentLanguages.store');
+    Route::get('mantenimiento/idiomas/editar/{platform}', 'edit')->name('mantenimentLanguages.editar');
+    Route::put('mantenimiento/idiomas/actualizar/{platform}', 'update')->name('mantenimentLanguages.update');
+    Route::delete('mantenimiento/idiomas/eliminar/{platform}', 'delete')->name('mantenimentLanguages.eliminar');
+});
+
 Route::controller(MantenimentRomsizesController::class)->group(function () {
     Route::get('mantenimiento/romsizes', 'index')->name('mantenimentRomsizes.index');
     Route::get('mantenimiento/romsizes/crear','crear')->name('mantenimentRomsizes.crear');
