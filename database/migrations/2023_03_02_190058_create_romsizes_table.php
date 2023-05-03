@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('romsizes', function (Blueprint $table) {
             $table->id();
-            $table->string('romsize',20);//max 255 caracteres.
+            $table->string('romsize',40);//max 255 caracteres.
             $table->timestamps();
         });
     }
