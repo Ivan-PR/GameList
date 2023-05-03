@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('publisher',50);
             $table->foreignId('location_id')->constrained('locations');
             $table->foreignId('language_id')->constrained('languages');
-            $table->string('sourcerom',15);
+            $table->string('sourcerom',40);
             $table->foreignId('romsize_id')->constrained('romsizes');
             $table->string('savetype',15);
             $table->timestamps();
