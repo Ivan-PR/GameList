@@ -28,6 +28,7 @@
                     <li><a class="dropdown-item" href="{{ route('mantenimentPlataformes.index') }}">Listado Plataformas</a>
                     </li>
                     <li><a class="dropdown-item" href="{{ route('mantenimentRomsizes.index') }}">Listado Romsizes</a></li>
+                    <li><a class="dropdown-item" href="{{ route('mantenimentLanguages.index') }}">Listado Idiomas</a></li>
                 </ul>
                 </li>
                 <li class="nav-item">
