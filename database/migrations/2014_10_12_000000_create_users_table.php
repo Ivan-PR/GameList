@@ -24,12 +24,6 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::table('users')->insert([
-            'name' => 'Administrador Supremo',
-            'email' => 'admin@art.es',
-            'password' => bcrypt(12345678)
-        ]);
-
     }
 
     /**
