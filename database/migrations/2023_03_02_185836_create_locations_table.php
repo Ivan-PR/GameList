@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('image',150)->nullable();
             $table->timestamps();
         });
-        
+
         DB::table('locations')->insert([
             [
                 'id'=>'1',
@@ -66,6 +66,11 @@ return new class extends Migration
                 'id'=>'9',
                 'location'=>'Nederland',
                 'image'=>'nederland.png'
+            ],
+            [
+                'id'=>'10',
+                'location'=>'Sin Localizacion',
+                'image'=>'xx.png'
             ]
         ]);
     }
