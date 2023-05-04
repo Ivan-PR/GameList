@@ -194,15 +194,15 @@ language: the item language(s), the individual values are:
         https://programacion.net/articulo/insertar_la_informacion_de_un_xml_a_una_tabla_mysql_1968
 
         location: Integer; // indicate the location of the rom.
-           0 : Europe
-           1 : USA
-           2 : Germany
-           3 : China
-           4 : Spain
-           5 : France
-           6 : Italy
-           7 : Japan
-           8 : Nederland
+          1 0 : Europe
+          2 1 : USA
+          3 2 : Germany
+          4 3 : China
+          5 4 : Spain
+          6 5 : France
+          7 6 : Italy
+          8 7 : Japan
+          9 8 : Nederland
       language: Integer; // indicate the Language(s) of the rom.
            1     : French
            2     : English
