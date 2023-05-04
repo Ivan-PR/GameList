@@ -25,8 +25,8 @@ class LanguageFactory extends Factory
      */
     public function definition()
     {
-        return [
-            'language' => $this->faker->locale()
-        ];
+        // return [
+        //     'language' => $this->faker->locale()
+        // ];
     }
 }
