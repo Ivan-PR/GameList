@@ -77,9 +77,13 @@ class MantenimentGameController extends Controller {
     public function massiveLoad() {
         if (isset($_POST['submit']) && isset($_FILES['xmlfile'])) {
             $xml = simplexml_load_file($_FILES['xmlfile']['tmp_name']);
+
+            // Declaramos como global para poder utilizarlo en funciones.
             global $newGame;
+
             $newGame['platform_id'] = Platform::firstOrCreate(['platform' => $xml->configuration->system->__toString()], ['platform' => $xml->configuration->system]);
             $newGame['platform_id'] = $newGame['platform_id']->__get('id');
+
             foreach ($xml->games->game as $gamex) {
                 //crear comprobar si el juego existe
                 $one = Game::where('name', $gamex->title->__toString())->exists();
@@ -92,13 +96,16 @@ class MantenimentGameController extends Controller {
                     $newGame['name'] = $gamex->title->__toString();
                     $newGame['image'] = $gamex->imageNumber . '.jpg';
                     $newGame['publisher'] = $gamex->publisher->__toString();
-                    $newGame['location_id'] = $gamex->location->__toString();
+                    $newGame['location_id'] = Romsize::firstOrCreate(['location' => $gamex->location->__toString()], ['location' => $gamex->location]);
+                    $newGame['location_id'] = $newGame['location_id']->__get('id');
 
-                    $newGame['language_id'] = Language::findOr($gamex->language->__toString(), fn () => $newGame['language_id'] = 1);
+                    $newGame['language_id'] = Language::findOr($gamex->language->__toString(), function () {
+                        $newGame['language_id'] = 1;
+                    });
                     if ($newGame['language_id'] !== 1) {
                         $newGame['language_id'] = $newGame['language_id']->__get('id');
                     }
-                    
+
                     $newGame['sourcerom'] = $gamex->sourceRom->__toString();
                     $newGame['romsize_id'] = Romsize::firstOrCreate(['romsize' => $gamex->romSize->__toString()], ['romsize' => $gamex->romSize]);
                     $newGame['romsize_id'] = $newGame['romsize_id']->__get('id');
