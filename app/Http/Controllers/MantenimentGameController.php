@@ -97,8 +97,8 @@ class MantenimentGameController extends Controller {
                     $newGame['image'] = $gamex->imageNumber . '.jpg';
                     $newGame['publisher'] = $gamex->publisher->__toString();
 
-                    $locationCheck = Location::where('location', (int) $gamex->location->__toString())
-                        ->where('location', $gamex->location->__toString())
+                    $locationCheck = Location::where('id', $gamex->location->__toString())
+                        ->where('id', $gamex->location->__toString())
                         ->first();
                     if ($locationCheck == null) {
                         $newGame['location_id'] = 10;
@@ -106,16 +106,13 @@ class MantenimentGameController extends Controller {
                         $newGame['location_id'] = (int) $gamex->location->__toString();
                     }
 
-
-                    // Hacer lo mismo con LANGUAGE
-
-                    // Comprueba si el idioma existe y si no SIN IDIOMA
-                    $newGame['language_id'] = Language::findOr($gamex->language->__toString(), function () {
-                        return 3;
-                    });
-
-                    if ($newGame['language_id'] !== 3 && $newGame['language_id'] =! null) {
-                        $newGame['language_id'] = $newGame['language_id']->__get('id');
+                    $languageCheck = Language::where('id', $gamex->language->__toString())
+                        ->where('id', $gamex->language->__toString())
+                        ->first();
+                    if ($languageCheck == null) {
+                        $newGame['language_id'] = 3;
+                    } else {
+                        $newGame['language_id'] = (int) $gamex->language->__toString();
                     }
 
                     $newGame['sourcerom'] = $gamex->sourceRom->__toString();
