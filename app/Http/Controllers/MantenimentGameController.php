@@ -90,7 +90,7 @@ class MantenimentGameController extends Controller {
                 $two = Game::where('platform_id', $newGame['platform_id'])->exists();
 
                 if (!Game::where('platform_id', $newGame['platform_id'])
-                    ->where('name', $gamex->title->__toString())
+                    ->where('id_game', $gamex->files->romCRC->__toString())
                     ->first()) {
                     $newGame['id_game'] = $gamex->files->romCRC->__toString();
                     $newGame['name'] = $gamex->title->__toString();
