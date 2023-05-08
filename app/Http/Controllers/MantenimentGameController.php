@@ -111,13 +111,11 @@ class MantenimentGameController extends Controller {
 
                     // Comprueba si el idioma existe y si no SIN IDIOMA
                     $newGame['language_id'] = Language::findOr($gamex->language->__toString(), function () {
-                        $newGame['language_id'] = 3;
+                        return 3;
                     });
-                    
+
                     if ($newGame['language_id'] !== 3 && $newGame['language_id'] =! null) {
                         $newGame['language_id'] = $newGame['language_id']->__get('id');
-                    } else if ($newGame['language_id'] == null){
-                        $newGame['language_id'] = 3;
                     }
 
                     $newGame['sourcerom'] = $gamex->sourceRom->__toString();
