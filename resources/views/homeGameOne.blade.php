@@ -11,7 +11,7 @@
                 <ol class="gamelist">
                     <div class="scrolling-pagination">
                         @foreach ($games as $game)
-                        <a href="{{route("home.viewGame",$game)}}" alt="Game {{$game->id_game}}" title="Game {{$game->id_game}}"><li><img height="25" src="imgs/flags/{{$game->location->image}}"> {{$game->id_game}} - {{$game->name}} </li></a>
+                        <a href="{{route("home.viewGame",$game)}}" alt="Game {{$game->id_game}}" title="Game {{$game->id_game}}"><li><img height="12" src="/imgs/flags/{{$game->location->image}}"> {{$game->id_game}} - {{$game->name}} </li></a>
                         @endforeach
                     </div>
                 </ol>
