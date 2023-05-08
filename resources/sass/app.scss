@@ -1,30 +1,45 @@
-html{
+html {
     min-height: 100%;
-    body{
+
+    body {
         display: flex;
         flex-direction: column;
-        min-height:100vh;
+        min-height: 100vh;
+
+        .gamelist {
+
+            a {
+
+                color: #fff;
+                text-decoration: none;
+
+            }
+
+
+        }
+
         span {
 
             svg {
                 height: 20px;
             }
-        
-        
+
+
             a {
                 svg {
                     height: 20px;
                 }
-        
+
             }
         }
+
         [aria-label="Pagination Navigation"] {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
             margin-bottom: 15px;
-        
+
             div {
                 p {
                     margin-top: 15px;
@@ -32,7 +47,8 @@ html{
                 }
             }
         }
-        footer{
+
+        footer {
             margin-top: auto;
         }
     }

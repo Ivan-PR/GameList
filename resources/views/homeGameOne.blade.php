@@ -27,11 +27,11 @@
 
                 <h4>{{$gameOne->id_game}} - {{$gameOne->name}}</h4>
                 <p><b>País: </b> {{$gameOne->location->location}}</p>
-                <p><b>Publicado por: </b> @foreach ($platforms as $platform)@if ($platform->id == $gameOne->platform_id){{$platform->platform}} @endif @endforeach</p>
+                <p><b>Publicado por: </b> {{$gameOne->platform->platform}}</p>
                 <p><b>Source Rom: </b> {{$gameOne->sourcerom}}</p>
                 <p><b>Save Type: </b> {{$gameOne->savetype}}</p>
-                <p><b>Rom Size: </b> @foreach ($romsizes as $romsize)@if ($romsize->id == $gameOne->romsize_id){{$romsize->romsize}} @endif @endforeach</p>
-                <p><b>Idioma: </b> @foreach ($languages as $language)@if ($language->id == $gameOne->language_id){{$language->language}} @endif @endforeach</p>
+                <p><b>Rom Size: </b> {{$gameOne->romsize->romsize}}</p>
+                <p><b>Idioma: </b> {{$gameOne->language->language}}</p>
             </div>
         </div>
 
