@@ -97,14 +97,17 @@ class MantenimentGameController extends Controller {
                     $newGame['image'] = $gamex->imageNumber . '.jpg';
                     $newGame['publisher'] = $gamex->publisher->__toString();
 
-                    // Comprueba si la localización existe y si no EUROPA
-                    $newGame['location_id'] = $gamex->location->__toString();
-                    $newGame['location_id'] = Location::findOr($gamex->location->__toString(), function () {
+                    $locationCheck = Location::where('location', (int) $gamex->location->__toString())
+                        ->where('location', $gamex->location->__toString())
+                        ->first();
+                    if ($locationCheck == null) {
                         $newGame['location_id'] = 10;
-                    });
-                    if ($newGame['location_id'] !== 10 || $newGame->isEmpty()) {
-                        $newGame['location_id'] = $newGame['location_id']->__get('id');
+                    } else {
+                        $newGame['location_id'] = (int) $gamex->location->__toString();
                     }
+
+
+                    // Hacer lo mismo con LANGUAGE
 
                     // Comprueba si el idioma existe y si no SIN IDIOMA
                     $newGame['language_id'] = Language::findOr($gamex->language->__toString(), function () {
@@ -131,11 +134,11 @@ class MantenimentGameController extends Controller {
                     $locationCheck = Location::where('location', (int) $gamex->location->__toString())
                         ->where('location', $gamex->location->__toString())
                         ->first();
-                        if($locationCheck == null){
-                            $game->update(['location_id' => 10]);
-                        }else{
-                            $game->update(['location_id' => (int) $gamex->location->__toString()]);
-                        }
+                    if ($locationCheck == null) {
+                        $game->update(['location_id' => 10]);
+                    } else {
+                        $game->update(['location_id' => (int) $gamex->location->__toString()]);
+                    }
 
                     $game->update(['language_id' => (int) $gamex->language->__toString()]);
                     $game->update(['sourcerom' => $gamex->sourceRom->__toString()]);
