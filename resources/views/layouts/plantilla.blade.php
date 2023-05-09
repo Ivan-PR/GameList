@@ -17,7 +17,7 @@
     {{--          HEADER                        --}}
     @include('layouts.partials.header')
 
-    <a href="{{ url()->previous() }}" class="btn btn-secondary mb-3 text-white fw-bold">Atras</a>
+    <a href="javascript:history.back()" class="btn btn-secondary mb-3 text-white fw-bold">Atras</a>
 
     <main class="mb-3">
         @yield('contenido')

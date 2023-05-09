@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-
-<!-- Dat by Patrick (nointro@free.fr) aka [-F1-] on IRC, Dat and Images Hosted on http://nointro.free.fr -->
-<!-- Please visit official no-intro website on http://www.gbadat.altervista.org> -->
-<!-- Download OfflineList on http://offlinelist.free.fr> -->
-
-<!-- Datter : SolidSnake -->
-<!-- Pictures by :  -->
-<!-- OL Datter :  -->
-
+
+
+<!-- Dat by Patrick (nointro@free.fr) aka [-F1-] on IRC, Dat and Images Hosted on http://nointro.free.fr -->
+
+<!-- Please visit official no-intro website on http://www.gbadat.altervista.org> -->
+
+<!-- Download OfflineList on http://offlinelist.free.fr> -->
+
+
+
+<!-- Datter : SolidSnake -->
+
+<!-- Pictures by :  -->
+
+<!-- OL Datter :  -->
+
+
+
 <dat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="datas.xsd">
 	<configuration>
 		<datName>Official No-Intro Atari Jaguar</datName>
@@ -56,7 +65,7 @@
 		<game>
 			<imageNumber>2</imageNumber>
 			<releaseNumber>0</releaseNumber>
-			<title>Alien vs Predator</title>
+			<title>Alien vs Predatora</title>
 			<saveType></saveType>
 			<romSize>4194304</romSize>
 			<publisher>Atari</publisher>
@@ -1025,7 +1034,7 @@
 		<game>
 			<imageNumber>59</imageNumber>
 			<releaseNumber>0</releaseNumber>
-			<title>Zoop!</title>
+			<title>Zoopa!</title>
 			<saveType></saveType>
 			<romSize>1048576</romSize>
 			<publisher>Atari</publisher>

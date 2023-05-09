@@ -78,16 +78,10 @@ class MantenimentGameController extends Controller {
         if (isset($_POST['submit']) && isset($_FILES['xmlfile'])) {
             $xml = simplexml_load_file($_FILES['xmlfile']['tmp_name']);
 
-            // Declaramos como global para poder utilizarlo en funciones.
-            global $newGame;
-
             $newGame['platform_id'] = Platform::firstOrCreate(['platform' => $xml->configuration->system->__toString()], ['platform' => $xml->configuration->system]);
             $newGame['platform_id'] = $newGame['platform_id']->__get('id');
 
             foreach ($xml->games->game as $gamex) {
-                //crear comprobar si el juego existe
-                $one = Game::where('name', $gamex->title->__toString())->exists();
-                $two = Game::where('platform_id', $newGame['platform_id'])->exists();
 
                 if (!Game::where('platform_id', $newGame['platform_id'])
                     ->where('id_game', $gamex->files->romCRC->__toString())
@@ -123,14 +117,14 @@ class MantenimentGameController extends Controller {
                 } else {
                     //actualizar
                     $game = Game::where('platform_id', $newGame['platform_id'])
-                        ->where('name', $gamex->title->__toString())
+                        ->where('id_game', $gamex->files->romCRC->__toString())
                         ->first();
                     $game->update(['name' => $gamex->title->__toString()]);
                     $game->update(['image' => $gamex->imageNumber . '.jpg']);
                     $game->update(['publisher' => $gamex->publisher->__toString()]);
 
-                    $locationCheck = Location::where('location', (int) $gamex->location->__toString())
-                        ->where('location', $gamex->location->__toString())
+                    $locationCheck = Location::where('id', $gamex->location->__toString())
+                        ->where('id', $gamex->location->__toString())
                         ->first();
                     if ($locationCheck == null) {
                         $game->update(['location_id' => 10]);
@@ -138,7 +132,15 @@ class MantenimentGameController extends Controller {
                         $game->update(['location_id' => (int) $gamex->location->__toString()]);
                     }
 
-                    $game->update(['language_id' => (int) $gamex->language->__toString()]);
+                    $languageCheck = Language::where('id', $gamex->language->__toString())
+                    ->where('id', $gamex->language->__toString())
+                    ->first();
+                    if ($languageCheck == null) {
+                        $game->update(['language_id' => 3]);
+                    } else {
+                        $game->update(['language_id' => (int) $gamex->location->__toString()]);
+                    }
+
                     $game->update(['sourcerom' => $gamex->sourceRom->__toString()]);
                     $romSize = Romsize::firstOrCreate(['romsize' => $gamex->romSize->__toString()], ['romsize' => $gamex->romSize]);
                     $game->update(['romsize_id' => $romSize->__get('id')]);

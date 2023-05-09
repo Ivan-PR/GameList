@@ -1,15 +1,14 @@
 <header class="mb-3">
-    <nav class="navbar navbar-expand-lg bg-light justify-content-between">
-        <div class="d-flex">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
             <a class="navbar-brand d-flex" href="{{route('home')}}">
                 <img src="/imgs/system/logo.png" alt="Logo" width="30" class="d-inline-block align-text-top ms-4 me-1">
                 Lists
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -27,11 +26,8 @@
                         </li>
                     @endauth
                 </ul>
-            </div>
-        </div>
-        <div>
-            <ul class="navbar-nav">
-                @auth
+                <div class="navbar-nav ms-auto">
+                    @auth
                     <li class="nav-item">
                         <a class="nav-link px-5" href="{{ route('login.logout') }}">Cerrar Sesión</a>
                     </li>
@@ -41,7 +37,8 @@
                         <a class="nav-link px-5" href="{{ route('users.login') }}">Iniciar Sesión</a>
                     </li>
                 @endguest
-            </ul>
+                </div>
+            </div>
         </div>
     </nav>
 </header>
