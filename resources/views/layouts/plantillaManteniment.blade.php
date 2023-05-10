@@ -16,7 +16,9 @@
 <body class="container-fluid p-0">
     {{--          HEADER                        --}}
     @include('layouts.manteniment.partials.headerManteniment')
-    <a href="javascript:history.back()" class="btn btn-secondary mb-3 text-white fw-bold">Atras</a>
+    <div class="container-xl">
+        <a href="javascript:history.back()" class="w-100 btn btn-secondary mb-3 text-white fw-bold">Atras</a>
+    </div>
 <main class="mb-3">
     @yield('contenido')
 </main>

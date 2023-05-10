@@ -5,32 +5,34 @@
 
 @section('contenido')
     <div class="container-xl bg-secondary d-flex  w-100 px-0" style="height:650px">
-     
-            <div class="col-4 py-4 px-4 border border-5 overflow-auto">
-                <div class="">Lista de juegos a escoger.</div>
-                <div>
-                    <ol class="gamelist">
-                        @foreach ($games as $game)
-                            <a href="{{ route('home.viewGame', $game) }}" alt="Game {{ $game->id_game }}"
-                                title="Game {{ $game->id_game }}">
-                                <li><img height="12" src="imgs/flags/{{ $game->location->image }}"> {{ $game->id_game }} -
-                                    {{ $game->name }} </li>
-                            </a>
-                        @endforeach
-                    </ol>
-                </div>
-            </div>
-            <div class="col-8 game_info d-flex border border-5 p-4 justify-content-center align-items-center">
-                <div class="">
-                    <img src="/imgs/system/logo.png" alt="Logo">
-                </div>
+
+        <div class="col-4 py-4 px-4 border border-5 overflow-auto">
+            <div class="">Lista de juegos a escoger.</div>
+            <div>
+                <ol class="gamelist">
+                    @foreach ($games as $game)
+                        <a href="{{ route('home.viewGame', $game) }}" alt="Game {{ $game->id_game }}"
+                            title="Game {{ $game->id_game }}">
+                            <li><img height="12" src="imgs/flags/{{ $game->location->image }}"> {{ $game->id_game }} -
+                                {{ $game->name }} </li>
+                        </a>
+                    @endforeach
+                </ol>
             </div>
         </div>
-   
+        <div class="col-8 game_info d-flex border border-5 p-4 justify-content-center align-items-center">
+            <div class="">
+                <img src="/imgs/system/logo.png" alt="Logo">
+            </div>
+        </div>
+    </div>
+
     </div>
     <div class="container-xl bg-secondary d-flex  w-100 px-0">
-        
-        <div class="col-4 py-4 px-4 border border-5 overflow-auto">
+        <form class="w-100" action="{{ route('home') }}" method="POST">
+            @csrf
+            <div class="col-4 py-4 px-4 border border-5 overflow-auto">
+
                 <label for="platform_id" class="form-label">Plataforma:</label>
                 <select name="platform_id" id="platform_id" class="form-control">
                     <option value="0" selected>Selecciona una plataforma</option>
@@ -65,7 +67,9 @@
                     @endforeach
                 </select>
             </div>
-     
-
+            <div class="col-12 d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+            </div>
+        </form>
     </div>
 @endsection
