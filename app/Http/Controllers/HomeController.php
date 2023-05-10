@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FilterGame;
 use App\Models\Game;
 use App\Models\Language;
 use App\Models\Location;
 use App\Models\Platform;
 use App\Models\Romsize;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller {
-    public function __invoke() {
+    public function __invoke(FilterGame $request) {
+        // Falta analizar que viene por el request y en caso de que no sea All o Todos o x y si no el objeto $games lo filtramos con metodos de laravel.
         $games = Game::all();
         $locations = Location::all();
         $languages = Language::all();
