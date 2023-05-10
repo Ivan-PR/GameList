@@ -61,9 +61,6 @@ class MantenimentGameController extends Controller {
         } else {
             $game->update($request->all());
         }
-
-
-
         return redirect()->route('mantenimentGame.index');
     }
 
@@ -82,6 +79,7 @@ class MantenimentGameController extends Controller {
             $newGame['platform_id'] = $newGame['platform_id']->__get('id');
 
             foreach ($xml->games->game as $gamex) {
+                //crear comprobar si el juego existe
 
                 if (!Game::where('platform_id', $newGame['platform_id'])
                     ->where('id_game', $gamex->files->romCRC->__toString())

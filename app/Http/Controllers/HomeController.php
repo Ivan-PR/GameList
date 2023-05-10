@@ -12,7 +12,11 @@ use Illuminate\Http\Request;
 class HomeController extends Controller {
     public function __invoke() {
         $games = Game::all();
-        return view('home', compact("games"));
+        $locations = Location::all();
+        $languages = Language::all();
+        $platforms = Platform::all();
+        $romsizes = Romsize::all();
+        return view('home', compact("games", "locations", 'languages', 'platforms', 'romsizes'));
     }
 
     public function viewGame(Game $gameOne) {
