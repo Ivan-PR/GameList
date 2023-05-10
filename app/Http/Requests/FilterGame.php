@@ -24,10 +24,10 @@ class FilterGame extends FormRequest
     public function rules()
     {
         return [
-            'platform' => 'required',
-            'location' => 'required',
-            'language' => 'required',
-            'romsize' => 'required'
+            'platform_id' => 'required | numeric',
+            'location_id' => 'required | numeric',
+            'language_id' => 'required | numeric',
+            'romsize_id' => 'required | numeric'
         ];
     }
 }
