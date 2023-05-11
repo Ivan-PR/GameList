@@ -35,7 +35,7 @@
             <div class="col-4 py-4 px-4 border border-5 overflow-auto">
 
                 <label for="platform_id" class="form-label">Plataforma:</label>
-                <select name="platform_id" id="platform_id" class="form-control">
+                <select name="filter[platform_id]" id="platform_id" class="form-control">
                     <option value="0" selected>Selecciona una plataforma</option>
                     @foreach ($platforms as $platform)
                         <option value="{{ $platform->id }}" >{{ $platform->platform }}</option>
@@ -45,7 +45,7 @@
             <div class="col-8 game_info d-flex border border-5 p-4">
                 <label for="location_id" class="form-label">Pais:</label>
                 <br>
-                <select name="location_id" id="location_id" class="form-control">
+                <select name="filter[location_id]" id="location_id" class="form-control">
                     <option value="0" selected>Selecciona una localizacion</option>
                     @foreach ($locations as $location)
                         <option value="{{ $location->id }}" >{{ $location->location }}</option>
@@ -53,7 +53,7 @@
                 </select>
                 <label for="language_id" class="form-label">Idioma:</label>
                 <br>
-                <select name="language_id" id="language_id" class="form-control">
+                <select name="filter[language_id]" id="language_id" class="form-control">
                     <option value="0" selected>Selecciona un idioma</option>
                     @foreach ($languages as $language)
                         <option value="{{ $language->id }}" >{{ $language->language }}</option>
@@ -61,7 +61,7 @@
                 </select>
                 <label for="romsize_id" class="form-label">Tamaño:</label>
                 <br>
-                <select name="romsize_id" id="romsize_id" class="form-control">
+                <select name="filter[romsize_id]" id="romsize_id" class="form-control">
                     <option value="0" selected>Selecciona una romsize</option>
                     @foreach ($romsizes as $romsize)
                         <option value="{{ $romsize->id }}" >{{ $romsize->romsize }}</option>
@@ -69,7 +69,7 @@
                 </select>
             </div>
             <div class="col-12 d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary">Filtrar</button>
+                <button name="filtero" type="submit" class="btn btn-primary">Filtrar</button>
             </div>
         </form>
     </div>

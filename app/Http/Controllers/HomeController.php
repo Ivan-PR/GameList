@@ -10,19 +10,19 @@ use App\Models\Platform;
 use App\Models\Romsize;
 
 class HomeController extends Controller {
-    public function __invoke(FilterGame $request) {
+    public function __invoke() {
         $locations = Location::all();
         $languages = Language::all();
         $platforms = Platform::all();
         $romsizes = Romsize::all();
 
-        if($request!== null){
+        if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['filtero'])){
             //creo una consulta que me traiga todos los juegos que cumplan con las condiciones de los filtros sin añadir los que tengan el valor 0
-
-            $games = Game::where('platform_id', ($request->platform_id == 0) ? '!=' : '=', $request->platform_id)
-            ->where('location_id', ($request->location_id == 0) ? '!=' : '=', $request->location_id)
-            ->where('language_id', ($request->language_id == 0) ? '!=' : '=', $request->language_id)
-            ->where('romsize_id', ($request->romsize_id == 0) ? '!=' : '=', $request->romsize_id)
+            $request= $_POST['filter'];
+            $games = Game::where('platform_id', ($request['platform_id'] == 0) ? '!=' : '=', $request['platform_id'])
+            ->where('location_id', ($request['location_id'] == 0) ? '!=' : '=', $request['location_id'])
+            ->where('language_id', ($request['language_id'] == 0) ? '!=' : '=', $request['language_id'])
+            ->where('romsize_id', ($request['romsize_id'] == 0) ? '!=' : '=', $request['romsize_id'])
             ->get();
 
             return view('home', compact("games", "locations", 'languages', 'platforms', 'romsizes','request'));
