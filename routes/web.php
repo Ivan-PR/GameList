@@ -23,15 +23,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeController::class)->name('home');
 
-Route::controller(HomeController::class)->group(function (){
-   Route::get("/game/{gameOne}","viewGame")->name("home.viewGame");
+
+
+Route::controller(HomeController::class)->group(function () {
+    Route::get("/","__invoke")->name("home");
+    Route::post("/","__invoke")->name("home");
+    Route::get("/game/{gameOne}", "viewGame")->name("home.viewGame");
 });
 
 Route::controller(MantenimentGameController::class)->group(function () {
     Route::get('mantenimiento/juegos', 'index')->name('mantenimentGame.index');
-    Route::get('mantenimiento/juegos/crear','crear')->name('mantenimentGame.crear');
+    Route::get('mantenimiento/juegos/crear', 'crear')->name('mantenimentGame.crear');
     Route::post('mantenimiento/juegos/almacenar', 'store')->name('mantenimentGame.store');
     Route::get('mantenimiento/juegos/editar/{game}', 'edit')->name('mantenimentGame.editar');
     Route::put('mantenimiento/juegos/actualizar/{game}', 'update')->name('mantenimentGame.update');
@@ -42,7 +45,7 @@ Route::controller(MantenimentGameController::class)->group(function () {
 
 Route::controller(MantenimentLocalitzacionsController::class)->group(function () {
     Route::get('mantenimiento/localizaciones', 'index')->name('mantenimentLocalitzacions.index');
-    Route::get('mantenimiento/localizaciones/crear','crear')->name('mantenimentLocalitzacions.crear');
+    Route::get('mantenimiento/localizaciones/crear', 'crear')->name('mantenimentLocalitzacions.crear');
     Route::post('mantenimiento/localizaciones/almacenar', 'store')->name('mantenimentLocalitzacions.store');
     Route::get('mantenimiento/localizaciones/editar/{location}', 'edit')->name('mantenimentLocalitzacions.editar');
     Route::put('mantenimiento/localizaciones/actualizar/{location}', 'update')->name('mantenimentLocalitzacions.update');
@@ -51,7 +54,7 @@ Route::controller(MantenimentLocalitzacionsController::class)->group(function ()
 
 Route::controller(MantenimentPlataformesController::class)->group(function () {
     Route::get('mantenimiento/plataformas', 'index')->name('mantenimentPlataformes.index');
-    Route::get('mantenimiento/plataformas/crear','crear')->name('mantenimentPlataformes.crear');
+    Route::get('mantenimiento/plataformas/crear', 'crear')->name('mantenimentPlataformes.crear');
     Route::post('mantenimiento/plataformas/almacenar', 'store')->name('mantenimentPlataformes.store');
     Route::get('mantenimiento/plataformas/editar/{platform}', 'edit')->name('mantenimentPlataformes.editar');
     Route::put('mantenimiento/plataformas/actualizar/{platform}', 'update')->name('mantenimentPlataformes.update');
@@ -60,7 +63,7 @@ Route::controller(MantenimentPlataformesController::class)->group(function () {
 
 Route::controller(MantenimentLanguagesController::class)->group(function () {
     Route::get('mantenimiento/idiomas', 'index')->name('mantenimentLanguages.index');
-    Route::get('mantenimiento/idiomas/crear','crear')->name('mantenimentLanguages.crear');
+    Route::get('mantenimiento/idiomas/crear', 'crear')->name('mantenimentLanguages.crear');
     Route::post('mantenimiento/idiomas/almacenar', 'store')->name('mantenimentLanguages.store');
     Route::get('mantenimiento/idiomas/editar/{platform}', 'edit')->name('mantenimentLanguages.editar');
     Route::put('mantenimiento/idiomas/actualizar/{platform}', 'update')->name('mantenimentLanguages.update');
@@ -69,7 +72,7 @@ Route::controller(MantenimentLanguagesController::class)->group(function () {
 
 Route::controller(MantenimentRomsizesController::class)->group(function () {
     Route::get('mantenimiento/romsizes', 'index')->name('mantenimentRomsizes.index');
-    Route::get('mantenimiento/romsizes/crear','crear')->name('mantenimentRomsizes.crear');
+    Route::get('mantenimiento/romsizes/crear', 'crear')->name('mantenimentRomsizes.crear');
     Route::post('mantenimiento/romsizes/almacenar', 'store')->name('mantenimentRomsizes.store');
     Route::get('mantenimiento/romsizes/editar/{romsize}', 'edit')->name('mantenimentRomsizes.editar');
     Route::put('mantenimiento/romsizes/actualizar/{romsize}', 'update')->name('mantenimentRomsizes.update');
