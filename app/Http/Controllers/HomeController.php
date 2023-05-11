@@ -8,31 +8,33 @@ use App\Models\Language;
 use App\Models\Location;
 use App\Models\Platform;
 use App\Models\Romsize;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller {
-    public function __invoke() {
+    public function __invoke(Request $request)
+    {
         $locations = Location::all();
         $languages = Language::all();
         $platforms = Platform::all();
         $romsizes = Romsize::all();
-
-        if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['filtero'])){
-            //creo una consulta que me traiga todos los juegos que cumplan con las condiciones de los filtros sin añadir los que tengan el valor 0
-            $request= $_POST['filter'];
-            $games = Game::where('platform_id', ($request['platform_id'] == 0) ? '!=' : '=', $request['platform_id'])
-            ->where('location_id', ($request['location_id'] == 0) ? '!=' : '=', $request['location_id'])
-            ->where('language_id', ($request['language_id'] == 0) ? '!=' : '=', $request['language_id'])
-            ->where('romsize_id', ($request['romsize_id'] == 0) ? '!=' : '=', $request['romsize_id'])
-            ->get();
-
-            return view('home', compact("games", "locations", 'languages', 'platforms', 'romsizes','request'));
-        }
-        else{
+    
+        if ($request->isMethod('POST') && $request->has('submit')) {
+            $requestData = $request->input('filter');
+    
+            $games = Game::where('platform_id', ($requestData['platform_id'] == 0) ? '!=' : '=', $requestData['platform_id'])
+                ->where('location_id', ($requestData['location_id'] == 0) ? '!=' : '=', $requestData['location_id'])
+                ->where('language_id', ($requestData['language_id'] == 0) ? '!=' : '=', $requestData['language_id'])
+                ->where('romsize_id', ($requestData['romsize_id'] == 0) ? '!=' : '=', $requestData['romsize_id'])
+                ->get();
+    
+            return view('home', compact('games', 'locations', 'languages', 'platforms', 'romsizes', 'requestData'));
+        } else {
             $games = Game::all();
-            return view('home', compact("games", "locations", 'languages', 'platforms', 'romsizes'));
+            return view('home', compact('games', 'locations', 'languages', 'platforms', 'romsizes'));
         }
-        // Falta analizar que viene por el request y en caso de que no sea All o Todos o x y si no el objeto $games lo filtramos con metodos de laravel.
     }
+    
+
 
     public function viewGame(Game $gameOne) {
         $games = Game::all();
