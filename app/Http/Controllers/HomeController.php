@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller {
     public function __invoke(Request $request)
     {
+        
         $locations = Location::all();
         $languages = Language::all();
         $platforms = Platform::all();
@@ -29,8 +30,14 @@ class HomeController extends Controller {
     
             return view('home', compact('games', 'locations', 'languages', 'platforms', 'romsizes', 'requestData'));
         } else {
+            $requestData = [
+                'platform_id' => 0,
+                'location_id' => 0,
+                'language_id' => 0,
+                'romsize_id' => 0,
+            ];
             $games = Game::all();
-            return view('home', compact('games', 'locations', 'languages', 'platforms', 'romsizes'));
+            return view('home', compact('games', 'locations', 'languages', 'platforms', 'romsizes', 'requestData'));
         }
     }
     
