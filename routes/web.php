@@ -30,6 +30,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get("/","__invoke")->name("home");
     Route::post("/","__invoke")->name("home");
     Route::get("/game/{gameOne}", "viewGame")->name("home.viewGame");
+    Route::post("/game/{gameOne}", "viewGame")->name("home.viewGame");
 });
 
 Route::controller(MantenimentGameController::class)->group(function () {
