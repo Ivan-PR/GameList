@@ -38,7 +38,7 @@ return [
 
         'imgGames' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/imgs/games'),
+            'root' => storage_path('app/public/games'),
             'throw' => false,
         ],
 
