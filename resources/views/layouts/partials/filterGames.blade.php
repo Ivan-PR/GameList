@@ -1,6 +1,6 @@
 <div>
-    <form class="row m-auto container-xl bg-secondary w-100 px-0" action="{{ route('home') }}" method="GET">
-        @method('GET')
+    <form class="row m-auto container-xl bg-secondary w-100 px-0" action="{{ route('home') }}" method="POST">
+        @method('POST')
         @csrf
         <div class="col-4 py-4 px-4 border border-5 overflow-auto">
             <label for="platform_id" class="form-label">Plataforma:</label>

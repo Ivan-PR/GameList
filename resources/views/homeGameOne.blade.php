@@ -8,6 +8,7 @@
     <div class="container-xl bg-secondary d-flex w-100 px-0" style="height:650px">
         <div class="col-4 py-4 px-4 border border-5 overflow-auto">
             <div>
+                <div class="">Lista de juegos a escoger.</div>
                 <ol class="gamelist">
                     @foreach ($games as $game)
                         <a href="{{ route('home.viewGame', $game, $requestData) }}" alt="Game {{ $game->id_game }}"
@@ -18,7 +19,6 @@
                     @endforeach
                 </ol>
             </div>
-            <div class="">Listas de xmls a escoger.</div>
         </div>
         <div class="col-8 game_info d-flex flex-column border border-5 p-4">
             <div class="d-flex flex-row p-4">

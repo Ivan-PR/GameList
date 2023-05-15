@@ -19,7 +19,7 @@ class HomeController extends Controller {
         $platforms = Platform::all();
         $romsizes = Romsize::all();
 
-        if ($request->isMethod('GET') && $request->has('submit')) {
+        if ($request->isMethod('POST') && $request->has('submit')) {
             $requestData = $request->input('filter');
             $request->session()->put('filter', $requestData);
 
@@ -59,7 +59,7 @@ class HomeController extends Controller {
         }
 
 
-        if ($request->isMethod('GET') && $request->has('submit')) {
+        if ($request->isMethod('POST') && $request->has('submit')) {
             $requestData = $request->input('filter');
             $request->session()->put('filter', $requestData);
         }
