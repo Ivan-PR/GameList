@@ -10,6 +10,7 @@ use App\Models\Platform;
 use App\Models\Romsize;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules\Exists;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller {
     public function __invoke(Request $request) {
@@ -46,10 +47,15 @@ class HomeController extends Controller {
         $platforms = Platform::all();
         $romsizes = Romsize::all();
 
-        // comprobar si existe la imagen en el disco
-        if (!file_exists(storage_path('app/public/imgs/games/' . $gameOne->image))) {
+        // comprobar si existe la imagen en la carpeta
+        $prova = Storage::disk("imgGames")->exists($gameOne->__get("image"));
+        $prova2 = $gameOne->__get("image");
+        if (!Storage::disk("imgGames")->exists($gameOne->__get("image"))) {
             $gameOne->image = 'Sinimagen.webp';
+            //Storage::disk("imgGames")->exists($gameOne->image)
+            //home/ivan/Documentos/M12/proyecto_M12/GameList/public/imgs/games
         }
+        
 
         if ($request->isMethod('GET') && $request->has('submit')) {
             $requestData = $request->input('filter');

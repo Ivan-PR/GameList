@@ -49,7 +49,6 @@ class MantenimentGameController extends Controller {
 
     public function update(UpdateGame $request, Game $game) {
         if (isset($request->image)) {
-            var_dump($request->image->extension());
             $imageName = time() . '.' . $request->image->extension();
             if (Storage::disk("imgGames")->exists($game->__get("image"))) {
                 Storage::disk("imgGames")->delete($game->__get("image"));
