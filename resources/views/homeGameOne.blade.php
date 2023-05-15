@@ -9,11 +9,13 @@
         <div class="col-4 py-4 px-4 border border-5 overflow-auto">
             <div>
                 <ol class="gamelist">
-                    <div class="scrolling-pagination">
-                        @foreach ($games as $game)
-                        <a href="{{route("home.viewGame",$game)}}" alt="Game {{$game->id_game}}" title="Game {{$game->id_game}}"><li><img height="12" src="/imgs/flags/{{$game->location->image}}"> {{$game->id_game}} - {{$game->name}} </li></a>
-                        @endforeach
-                    </div>
+                    @foreach ($games as $game)
+                        <a href="{{ route('home.viewGame', $game) }}" alt="Game {{ $game->id_game }}"
+                            title="Game {{ $game->id_game }}">
+                            <li><img height="12" src="../../imgs/flags/{{ $game->location->image }}"> {{ $game->id_game }} -
+                                {{ $game->name }} </li>
+                        </a>
+                    @endforeach
                 </ol>
             </div>
             <div class="">Listas de xmls a escoger.</div>
@@ -36,4 +38,5 @@
         </div>
 
     </div>
+    @include("layouts.partials.filterGamesGameOne")
 @endsection
