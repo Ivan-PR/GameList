@@ -9,11 +9,11 @@ use App\Models\Location;
 use App\Models\Platform;
 use App\Models\Romsize;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Exists;
 
 class HomeController extends Controller {
     public function __invoke(Request $request)
     {
-
         $locations = Location::all();
         $languages = Language::all();
         $platforms = Platform::all();
@@ -41,13 +41,16 @@ class HomeController extends Controller {
         }
     }
 
-
-
     public function viewGame(Game $gameOne, Request $request) {
         $locations = Location::all();
         $languages = Language::all();
         $platforms = Platform::all();
         $romsizes = Romsize::all();
+
+        // comprobar si existe la imagen en el disco
+        if(!file_exists(storage_path('app/public/imgs/games/' . $gameOne->image))) {
+            $gameOne->image = 'Sinimagen.webp';
+        }
 
         if ($request->isMethod('POST') && $request->has('submit')) {
             $requestData = $request->input('filter');
