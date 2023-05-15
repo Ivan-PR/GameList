@@ -17,7 +17,7 @@ class UpdateGame extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Get the validation rules that apply to the request..
      *
      * @return array<string, mixed>
      */
@@ -29,7 +29,7 @@ class UpdateGame extends FormRequest
             'location_id' => 'numeric |exists:locations,id| min:1',
             'publisher' => 'max:50 | string',
             'sourcerom' => 'max:40 | string',
-            'savetype' => 'max:15 |  | string',
+            'savetype' => 'max:15 | string',
             'romsize_id' => 'numeric |exists:romsizes,id| min:1',
             'language_id' => 'numeric |exists:languages,id| min:1',
             'platform_id' => 'numeric |exists:platforms,id| min:1',
@@ -44,7 +44,7 @@ class UpdateGame extends FormRequest
 
     public function messages(){
         return [
-            'name.max' => 'Nombre del titulo excesivamente largo.',
+            'name.max' => 'Nombre del título excesivamente largo.',
             'publisher.max' => 'Nombre de la desarrolladora excesivamente largo.',
             'sourcerom.max' => 'Nombre  de la source rom excesivamente largo.',
             'savetype.max' => 'Nombre del save type excesivamente largo.',
