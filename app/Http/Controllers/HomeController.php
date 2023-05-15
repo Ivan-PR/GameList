@@ -72,8 +72,6 @@ class HomeController extends Controller {
             ];
             $games = Game::all();
         }
-
-        
         return view('homeGameOne', compact('games', 'gameOne', 'locations', 'languages', 'platforms', 'romsizes', 'requestData'));
     }
 }
