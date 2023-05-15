@@ -26,13 +26,13 @@ class UpdateGame extends FormRequest
             'id_game' => 'required | string',
             'name' => 'required | max:170 | string',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'location_id' => 'required | numeric |exists:locations,id| min:1',
-            'publisher' => 'required | max:50 | string',
-            'sourcerom' => 'required | max:40 | string',
-            'savetype' => 'required | max:15 | string',
-            'romsize_id' => 'required | numeric |exists:romsizes,id| min:1',
-            'language_id' => 'required | numeric |exists:languages,id| min:1',
-            'platform_id' => 'required | numeric |exists:platforms,id| min:1',
+            'location_id' => 'numeric |exists:locations,id| min:1',
+            'publisher' => 'max:50 | string',
+            'sourcerom' => 'max:40 | string',
+            'savetype' => 'max:15 |  | string',
+            'romsize_id' => 'numeric |exists:romsizes,id| min:1',
+            'language_id' => 'numeric |exists:languages,id| min:1',
+            'platform_id' => 'numeric |exists:platforms,id| min:1',
         ];
     }
 

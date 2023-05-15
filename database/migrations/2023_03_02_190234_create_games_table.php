@@ -19,12 +19,12 @@ return new class extends Migration
             $table->string('name',170);
             $table->string('image',150)->nullable();
             $table->foreignId('platform_id')->nullable()->constrained('platforms');
-            $table->string('publisher',50);
-            $table->foreignId('location_id')->constrained('locations');
-            $table->foreignId('language_id')->constrained('languages');
-            $table->string('sourcerom',40);
-            $table->foreignId('romsize_id')->constrained('romsizes');
-            $table->string('savetype',15);
+            $table->string('publisher',50)->nullable();
+            $table->foreignId('location_id')->nullable()->constrained('locations');
+            $table->foreignId('language_id')->nullable()->constrained('languages');
+            $table->string('sourcerom',40)->nullable();
+            $table->foreignId('romsize_id')->nullable()->constrained('romsizes');
+            $table->string('savetype',15)->nullable();
             $table->timestamps();
 
 // https://laracasts.com/discuss/channels/laravel/sqlstatehy000-general-error-3780-referencing-column-lang-id-and-referenced-column-id
