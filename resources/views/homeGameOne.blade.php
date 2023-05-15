@@ -37,5 +37,5 @@
         </div>
 
     </div>
-    @include("layouts.partials.filterGames")
+    @include("layouts.partials.filterGamesGameOne")
 @endsection
