@@ -31,7 +31,7 @@ class MantenimentGameController extends Controller {
 
     public function store(StoreGame $request) {
         $imageName = time() . '.' . $request->image->extension();
-        $request->image->storeAs('public/imgs/games', $imageName);
+        $request->image->storeAs('public/games', $imageName);
         $request = $request->all();
         $request['image'] = $imageName;
         Game::create($request);
@@ -53,7 +53,7 @@ class MantenimentGameController extends Controller {
             if (Storage::disk("imgGames")->exists($game->__get("image"))) {
                 Storage::disk("imgGames")->delete($game->__get("image"));
             }
-            $request->image->storeAs('public/imgs/games', $imageName);
+            $request->image->storeAs('public/games', $imageName);
             $request = $request->all();
             $request['image'] = $imageName;
             $game->update($request);

@@ -52,7 +52,7 @@ class HomeController extends Controller {
         // comprobar si existe la imagen en la carpeta
         $prova = Storage::disk("imgGames")->exists($gameOne->__get("image"));
         $prova2 = $gameOne->__get("image");
-        if (!Storage::disk("imgGames")->exists($gameOne->__get("image"))) {
+        if (!Storage::disk("imgGames")->exists($prova2)) {
             $gameOne->image = 'Sinimagen.webp';
             //Storage::disk("imgGames")->exists($gameOne->image)
             //home/ivan/Documentos/M12/proyecto_M12/GameList/public/imgs/games
