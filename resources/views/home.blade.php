@@ -11,7 +11,7 @@
             <div>
                 <ol class="gamelist">
                     @foreach ($games as $game)
-                        <a href="{{ route('home.viewGame', $game) }}" alt="Game {{ $game->id_game }}"
+                        <a href="{{ route('home.viewGame', $game, $requestData) }}" alt="Game {{ $game->id_game }}"
                             title="Game {{ $game->id_game }}">
                             <li><img height="12" src="imgs/flags/{{ $game->location->image }}"> {{ $game->id_game }} -
                                 {{ $game->name }} </li>

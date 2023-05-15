@@ -1,7 +1,7 @@
 
 <div class="container-xl bg-secondary d-flex  w-100 px-0">
-    <form class="w-100" action="{{ route('home.viewGame',$gameOne) }}" method="POST">
-        @method('POST')
+    <form class="w-100" action="{{ route('home.viewGame',$gameOne) }}" method="GET">
+        @method('GET')
         @csrf
         <div class="col-4 py-4 px-4 border border-5 overflow-auto">
             <label for="platform_id" class="form-label">Plataforma:</label>
