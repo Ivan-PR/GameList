@@ -54,8 +54,6 @@ class HomeController extends Controller {
         $prova2 = $gameOne->__get("image");
         if (!Storage::disk("imgGames")->exists($prova2)) {
             $gameOne->image = 'Sinimagen.webp';
-            //Storage::disk("imgGames")->exists($gameOne->image)
-            //home/ivan/Documentos/M12/proyecto_M12/GameList/public/imgs/games
         }
 
 

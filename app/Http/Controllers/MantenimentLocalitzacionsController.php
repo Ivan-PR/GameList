@@ -19,7 +19,7 @@ class MantenimentLocalitzacionsController extends Controller
 
     public function store(StoreLocation $request) {
         $imageName = time() . '.' . $request->image->extension();
-        $request->image->storeAs('public/imgs/flags', $imageName);
+        $request->image->storeAs('public/flags', $imageName);
         $request = $request->all();
         $request['image'] = $imageName;
         Location::create($request);
@@ -37,7 +37,7 @@ class MantenimentLocalitzacionsController extends Controller
             if ($location->__get("image") != null && Storage::disk("imgFlag")->exists($location->__get("image"))){
                 Storage::disk("imgFlag")->delete($location->__get("image"));
             }
-            $request->image->storeAs('public/imgs/flags', $imageName);
+            $request->image->storeAs('public/flags', $imageName);
             $request = $request->all();
             $request['image'] = $imageName;
             $location->update($request);

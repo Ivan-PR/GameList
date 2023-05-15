@@ -6,6 +6,11 @@ html {
         flex-direction: column;
         min-height: 100vh;
 
+        .labeling {
+            color: #add8e6;
+            font-weight: bolder;
+        }
+
         .gamelist {
 
             a {

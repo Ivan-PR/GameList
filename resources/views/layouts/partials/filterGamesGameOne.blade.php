@@ -4,7 +4,7 @@
         @method('POST')
         @csrf
         <div class="col-4 py-4 px-4 border border-5 overflow-auto">
-            <label for="platform_id" class="form-label">Plataforma:</label>
+            <label for="platform_id" class="labeling form-label">Plataforma:</label>
             <select name="filter[platform_id]" id="platform_id" class="form-control">
                 <option value="0" {{ $requestData['platform_id'] == 0 ? 'selected' : '' }}>Selecciona una
                     plataforma</option>
@@ -18,7 +18,7 @@
         </div>
         <div class="col-8 game_info d-flex border border-5 p-4">
             <div class="col-4 px-2">
-                <label for="location_id" class="form-label pe-2">País:</label>
+                <label for="location_id" class="labeling form-label pe-2">País:</label>
                 <br />
                 <select name="filter[location_id]" id="location_id" class="form-control">
                     <option value="0" {{ $requestData['location_id'] == 0 ? 'selected' : '' }}>Selecciona una
@@ -32,7 +32,7 @@
                 </select>
             </div>
             <div class="col-4">
-                <label for="language_id" class="form-label">Idioma:</label>
+                <label for="language_id" class="labeling form-label">Idioma:</label>
                 <br>
                 <select name="filter[language_id]" id="language_id" class="form-control">
                     <option value="0" {{ $requestData['language_id'] == 0 ? 'selected' : '' }}>Selecciona un idioma
@@ -46,7 +46,7 @@
                 </select>
             </div>
             <div class="col-4 px-2">
-                <label for="romsize_id" class="form-label">Tamaño:</label>
+                <label for="romsize_id" class="labeling form-label">Tamaño:</label>
                 <br>
                 <select name="filter[romsize_id]" id="romsize_id" class="form-control">
                     <option value="0" {{ $requestData['romsize_id'] == 0 ? 'selected' : '' }}>Selecciona una
@@ -61,8 +61,8 @@
                 </select>
             </div>
         </div>
-        <div class="col-12 d-flex border border-5 justify-content-center">
-            <button name="submit" type="submit" class="btn btn-primary">Filtrar</button>
+        <div class="col-12 d-flex py-3 border border-5 justify-content-center">
+            <button name="submit" type="submit" class="btn btn-primary w-50">Filtrar</button>
         </div>
     </form>
 </div>

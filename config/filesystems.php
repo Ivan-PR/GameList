@@ -44,13 +44,13 @@ return [
 
         'imgFlag' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/imgs/flags'),
+            'root' => storage_path('app/public/flags'),
             'throw' => false,
         ],
 
         'csvGames' => [
             'driver' => 'local',
-            'root' => storage_path('app'),
+            'root' => storage_path('app/public/csv'),
             'throw' => false,
         ],
 
