@@ -52,8 +52,9 @@ class HomeController extends Controller {
             $gameOne->image = 'Sinimagen.webp';
         }
 
-        if ($request->isMethod('POST') && $request->has('submit')) {
+        if ($request->isMethod('GET') && $request->has('submit')) {
             $requestData = $request->input('filter');
+            $request->session()->put('filter', $requestData);
 
             $games = Game::where('platform_id', ($requestData['platform_id'] == 0) ? '!=' : '=', $requestData['platform_id'])
                 ->where('location_id', ($requestData['location_id'] == 0) ? '!=' : '=', $requestData['location_id'])
@@ -63,12 +64,17 @@ class HomeController extends Controller {
 
             return view('homeGameOne', compact('games','gameOne', 'locations', 'languages', 'platforms', 'romsizes', 'requestData'));
         } else {
-            $requestData = [
-                'platform_id' => 0,
-                'location_id' => 0,
-                'language_id' => 0,
-                'romsize_id' => 0,
-            ];
+            if ($request->session()->has('filter')) {
+                $requestData = $request->session()->get('filter');
+            } else {
+                $requestData = [
+                    'platform_id' => 0,
+                    'location_id' => 0,
+                    'language_id' => 0,
+                    'romsize_id' => 0,
+                ];
+            }
+            
             $games = Game::all();
             return view('homeGameOne', compact('games','gameOne', 'locations', 'languages', 'platforms', 'romsizes', 'requestData'));
         }
