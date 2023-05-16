@@ -4,6 +4,9 @@ cmd: php artisan migrate:fresh --seed
 cmd: php artisan serve
 cmd: npm run dev
 
+Http:
+app/Http/Kernel.php
+
 Controladores:
 app/Http/Controllers/HomeController.php
 app/Http/Controllers/LoginController.php
@@ -13,6 +16,9 @@ app/Http/Controllers/MantenimentLocalitzacionsController.php
 app/Http/Controllers/MantenimentPlataformesController.php
 app/Http/Controllers/MantenimentRomsizesController.php
 app/Http/Controllers/UserController.php
+
+Middleware:
+app/Http/Middleware/CheckRole.php
 
 Requests:
 app/Http/Requests/FilterGame.php
