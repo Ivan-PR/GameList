@@ -72,79 +72,84 @@ class MantenimentGameController extends Controller {
     }
     public function massiveLoad() {
         if (isset($_POST['submit']) && isset($_FILES['xmlfile']) && $_FILES['xmlfile']["error"] == 0) {
-            $xml = simplexml_load_file($_FILES['xmlfile']['tmp_name']);
+            try {
+                $xml = simplexml_load_file($_FILES['xmlfile']['tmp_name']);
 
-            $newGame['platform_id'] = Platform::firstOrCreate(['platform' => $xml->configuration->system->__toString()], ['platform' => $xml->configuration->system]);
-            $newGame['platform_id'] = $newGame['platform_id']->__get('id');
+                $newGame['platform_id'] = Platform::firstOrCreate(['platform' => $xml->configuration->system->__toString()], ['platform' => $xml->configuration->system]);
+                $newGame['platform_id'] = $newGame['platform_id']->__get('id');
 
-            foreach ($xml->games->game as $gamex) {
+                foreach ($xml->games->game as $gamex) {
 
-                //crear comprobar si el juego existe
-                if (!Game::where('platform_id', $newGame['platform_id'])
-                    ->where('id_game', $gamex->files->romCRC->__toString())
-                    ->first()) {
-                    $newGame['id_game'] = $gamex->files->romCRC->__toString();
-                    $newGame['name'] = $gamex->title->__toString();
-                    $newGame['image'] = $gamex->imageNumber . '.jpg';
-                    $newGame['publisher'] = $gamex->publisher->__toString();
-
-                    $locationCheck = Location::where('id', $gamex->location->__toString())
-                        ->where('id', $gamex->location->__toString())
-                        ->first();
-                    if ($locationCheck == null) {
-                        $newGame['location_id'] = 10;
-                    } else {
-                        $newGame['location_id'] = (int) $gamex->location->__toString();
-                    }
-
-                    $languageCheck = Language::where('id', $gamex->language->__toString())
-                        ->where('id', $gamex->language->__toString())
-                        ->first();
-                    if ($languageCheck == null) {
-                        $newGame['language_id'] = 3;
-                    } else {
-                        $newGame['language_id'] = (int) $gamex->language->__toString();
-                    }
-
-                    $newGame['sourcerom'] = $gamex->sourceRom->__toString();
-                    $newGame['romsize_id'] = Romsize::firstOrCreate(['romsize' => $gamex->romSize->__toString()], ['romsize' => $gamex->romSize]);
-                    $newGame['romsize_id'] = $newGame['romsize_id']->__get('id');
-                    $newGame['savetype'] = $gamex->saveType->__toString();
-                    Game::create($newGame);
-                } else {
-                    //actualizar
-                    $game = Game::where('platform_id', $newGame['platform_id'])
+                    //crear comprobar si el juego existe
+                    if (!Game::where('platform_id', $newGame['platform_id'])
                         ->where('id_game', $gamex->files->romCRC->__toString())
-                        ->first();
-                    $game->update(['name' => $gamex->title->__toString()]);
-                    $game->update(['image' => $gamex->imageNumber . '.jpg']);
-                    $game->update(['publisher' => $gamex->publisher->__toString()]);
+                        ->first()) {
+                        $newGame['id_game'] = $gamex->files->romCRC->__toString();
+                        $newGame['name'] = $gamex->title->__toString();
+                        $newGame['image'] = $gamex->imageNumber . '.jpg';
+                        $newGame['publisher'] = $gamex->publisher->__toString();
 
-                    $locationCheck = Location::where('id', $gamex->location->__toString())
-                        ->where('id', $gamex->location->__toString())
-                        ->first();
-                    if ($locationCheck == null) {
-                        $game->update(['location_id' => 10]);
+                        $locationCheck = Location::where('id', $gamex->location->__toString())
+                            ->where('id', $gamex->location->__toString())
+                            ->first();
+                        if ($locationCheck == null) {
+                            $newGame['location_id'] = 10;
+                        } else {
+                            $newGame['location_id'] = (int) $gamex->location->__toString();
+                        }
+
+                        $languageCheck = Language::where('id', $gamex->language->__toString())
+                            ->where('id', $gamex->language->__toString())
+                            ->first();
+                        if ($languageCheck == null) {
+                            $newGame['language_id'] = 3;
+                        } else {
+                            $newGame['language_id'] = (int) $gamex->language->__toString();
+                        }
+
+                        $newGame['sourcerom'] = $gamex->sourceRom->__toString();
+                        $newGame['romsize_id'] = Romsize::firstOrCreate(['romsize' => $gamex->romSize->__toString()], ['romsize' => $gamex->romSize]);
+                        $newGame['romsize_id'] = $newGame['romsize_id']->__get('id');
+                        $newGame['savetype'] = $gamex->saveType->__toString();
+                        Game::create($newGame);
                     } else {
-                        $game->update(['location_id' => (int) $gamex->location->__toString()]);
-                    }
+                        //actualizar
+                        $game = Game::where('platform_id', $newGame['platform_id'])
+                            ->where('id_game', $gamex->files->romCRC->__toString())
+                            ->first();
+                        $game->update(['name' => $gamex->title->__toString()]);
+                        $game->update(['image' => $gamex->imageNumber . '.jpg']);
+                        $game->update(['publisher' => $gamex->publisher->__toString()]);
 
-                    $languageCheck = Language::where('id', $gamex->language->__toString())
-                        ->where('id', $gamex->language->__toString())
-                        ->first();
-                    if ($languageCheck == null) {
-                        $game->update(['language_id' => 3]);
-                    } else {
-                        $game->update(['language_id' => (int) $gamex->location->__toString()]);
-                    }
+                        $locationCheck = Location::where('id', $gamex->location->__toString())
+                            ->where('id', $gamex->location->__toString())
+                            ->first();
+                        if ($locationCheck == null) {
+                            $game->update(['location_id' => 10]);
+                        } else {
+                            $game->update(['location_id' => (int) $gamex->location->__toString()]);
+                        }
 
-                    $game->update(['sourcerom' => $gamex->sourceRom->__toString()]);
-                    $romSize = Romsize::firstOrCreate(['romsize' => $gamex->romSize->__toString()], ['romsize' => $gamex->romSize]);
-                    $game->update(['romsize_id' => $romSize->__get('id')]);
-                    $game->update(['savetype' => $gamex->saveType->__toString()]);
+                        $languageCheck = Language::where('id', $gamex->language->__toString())
+                            ->where('id', $gamex->language->__toString())
+                            ->first();
+                        if ($languageCheck == null) {
+                            $game->update(['language_id' => 3]);
+                        } else {
+                            $game->update(['language_id' => (int) $gamex->location->__toString()]);
+                        }
+
+                        $game->update(['sourcerom' => $gamex->sourceRom->__toString()]);
+                        $romSize = Romsize::firstOrCreate(['romsize' => $gamex->romSize->__toString()], ['romsize' => $gamex->romSize]);
+                        $game->update(['romsize_id' => $romSize->__get('id')]);
+                        $game->update(['savetype' => $gamex->saveType->__toString()]);
+                    }
                 }
+                return redirect()->route('mantenimentGame.index');
+            } catch (Exception $e) {
+                Log::error($e);
+                return redirect()->back()->with('false', 'Algo ha salido mal, vuelve a intentarlo. Mensaje de error: ' . $e->getMessage());
             }
-            return redirect()->route('mantenimentGame.index');
         }
         return redirect()->route('mantenimentGame.cargaView');
     }

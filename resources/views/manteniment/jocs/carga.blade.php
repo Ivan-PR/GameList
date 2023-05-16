@@ -16,11 +16,9 @@
                     <div class="mb-3">
                         <label for="imageFileMultiple" class="form-label">Subida de catalogo:</label>
                         <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Fucks curious">?</a>
-                        @error('imageFileMultiple')
-                            <br>
-                            <small>* {{ $message }} </small>
-                            <br>
-                        @enderror
+                        @if (session('false'))
+                            <p>{{ session('false') }}</p>
+                        @endif
                         <input class="form-control" type="file" name="xmlfile" id="imageFileMultiple">
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Subir</button>
