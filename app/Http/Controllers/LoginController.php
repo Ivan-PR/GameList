@@ -15,10 +15,9 @@ class LoginController extends Controller {
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required|password',
+            'password' => 'required',
             'passwordconf' => 'required'
         ]);
-
 
         $user = new User();
         $user->name = $request->name;
@@ -33,9 +32,7 @@ class LoginController extends Controller {
         return redirect(route('users.registre'));
     }
 
-
     public function login(Request $request) {
-
         $request->validate([
             'email' => 'required',
             'password' => 'required'
@@ -55,7 +52,6 @@ class LoginController extends Controller {
             return redirect(route('users.login'));
         }
     }
-
 
     public function logout(Request $request) {
         Auth::logout();

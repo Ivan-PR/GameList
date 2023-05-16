@@ -4,15 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateRomsize extends FormRequest
-{
+class UpdateRomsize extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize() {
         return true;
     }
 
@@ -21,20 +19,19 @@ class UpdateRomsize extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             'romsize' => 'required | max:20 | string',
         ];
     }
 
-    public function attributes(){
+    public function attributes() {
         return [
             'romsize' => 'Romsize del juego',
         ];
     }
 
-    public function messages(){
+    public function messages() {
         return [
             'romsize.max' => 'Nombre de la romsize excesivamente largo.',
         ];

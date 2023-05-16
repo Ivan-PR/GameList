@@ -1,17 +1,15 @@
 @extends('layouts.plantillaManteniment')
 
-
 @section('title', 'Editando ' . $location->location)
-
 
 @section('contenido')
     <div class="container">
-
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('mantenimentLocalitzacions.update', $location) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('mantenimentLocalitzacions.update', $location) }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
-                    @method("PUT")
+                    @method('PUT')
                     <div class="mb-3">
                         <label for="imageFileMultiple" class="form-label">Subida de imagenes:</label>
                         @error('imageFileMultiple')
@@ -21,7 +19,6 @@
                         @enderror
                         <input class="form-control" type="file" name="image" id="imageFileMultiple" multiple>
                     </div>
-
                     <div class="mb-3">
                         <label for="location" class="form-label">Pais:</label>
                         @error('location')
@@ -32,8 +29,6 @@
                         <input type="text" class="form-control" id="location" name="location"
                             value="{{ old('location', $location->location) }}">
                     </div>
-
-                    
                     <button type="submit" class="btn btn-primary">Actualizar</button>
                 </form>
             </div>

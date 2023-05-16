@@ -6,12 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
-class Romsize extends Model
-{
-    #protected $table = 'romsizes';
+class Romsize extends Model {
     use HasFactory;
 
-    protected $guarded=[];
+    protected $guarded = [];
     protected function romsize(): Attribute {
         return new Attribute(
             // Mutador da formato al dato antes de ser guardado en la base de datos

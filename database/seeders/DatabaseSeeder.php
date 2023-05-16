@@ -11,18 +11,15 @@ use App\Models\Platform;
 use App\Models\Romsize;
 use Illuminate\Support\Facades\DB;
 
-class DatabaseSeeder extends Seeder
-{
+class DatabaseSeeder extends Seeder {
     /**
      * Seed the application's database.
      *
      * @return void
      */
-    public function run()
-    {
+    public function run() {
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
-
         // Language::factory(50)->create();
         // Location::factory(50)->create();
         // Platform::factory(50)->create();

@@ -9,8 +9,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Language>
  */
-class LanguageFactory extends Factory
-{
+class LanguageFactory extends Factory {
     /**
      * The name of the factory's corresponding model.
      *
@@ -23,8 +22,7 @@ class LanguageFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
-    {
+    public function definition() {
         return [
             'language' => $this->faker->locale()
         ];

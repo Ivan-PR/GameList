@@ -34,13 +34,17 @@ class StoreGame extends FormRequest {
         ];
     }
 
-    public function attributes(){
+    public function attributes() {
         return [
             'name' => 'titulo del juego',
+            'location_id' => 'pais',
+            'romsize_id' => 'rom',
+            'language_id' => 'idioma',
+            'platform_id' => 'plataforma',
         ];
     }
 
-    public function messages(){
+    public function messages() {
         return [
             'name.max' => 'Nombre del titulo excesivamente largo.',
             'publisher.max' => 'Nombre de la desarrolladora excesivamente largo.',
@@ -53,7 +57,6 @@ class StoreGame extends FormRequest {
             'romsize_id.numeric' => 'El id del tamaño de la rom debe ser numerico.',
             'language_id.numeric' => 'El id del idioma debe ser numerico.',
             'platform_id.numeric' => 'El id de la plataforma debe ser numerico.',
-
         ];
     }
 }

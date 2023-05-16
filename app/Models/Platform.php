@@ -6,12 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
-class Platform extends Model
-{
-    // protected $table = 'platforms';
+class Platform extends Model {
     use HasFactory;
 
-    protected $guarded=[];
+    protected $guarded = [];
     protected function platform(): Attribute {
         return new Attribute(
             // Mutador da formato al dato antes de ser guardado en la base de datos

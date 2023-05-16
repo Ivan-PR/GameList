@@ -11,13 +11,13 @@ class MantenimentPlataformesController extends Controller {
         $platforms = Platform::orderBy('id', 'desc')->paginate(5);
         return view('manteniment.plataformes.home', compact('platforms'));
     }
+
     public function crear() {
         return view('manteniment.plataformes.crear');
     }
 
     public function store(StorePlatform $request) {
         Platform::create($request->all());
-
         return redirect()->route('mantenimentPlataformes.index');
     }
 
@@ -31,7 +31,6 @@ class MantenimentPlataformesController extends Controller {
     }
     public function delete(Platform $platform) {
         $platform->delete();
-
         return redirect()->route('mantenimentPlataformes.index');
     }
 }

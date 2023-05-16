@@ -17,4 +17,3 @@ class GameSeeder extends Seeder
         //
     }
 }
-?>

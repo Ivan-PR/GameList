@@ -6,64 +6,50 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
-class Game extends Model
-{
-    // protected $table = 'games';
+class Game extends Model {
     use HasFactory;
 
-    // los campos que se guardaran del objeto en la base de datos
-    // protected $fillable = ['image','id_game','name','location_id','publisher','sourcerom','savetype','romsize_id','language_id_id','platform_id'];
-    
-    //todos los campos que haya dentro de guarded se obviaran
-    // en el momento de guardar el objeto en la base de datos.
-    protected $guarded=[];
+    //Todos los atributos que haya dentro de guarded se obviaran en el momento de guardar el objeto en la base de datos.
+    protected $guarded = [];
 
-    public function platform()
-    {
+    public function platform() {
         return $this->belongsTo(Platform::class);
     }
 
-    public function location()
-    {
+    public function location() {
         return $this->belongsTo(Location::class);
     }
 
-    public function language()
-    {
+    public function language() {
         return $this->belongsTo(Language::class);
     }
 
-    public function romsize()
-    {
+    public function romsize() {
         return $this->belongsTo(Romsize::class);
     }
 
-    protected function name(): Attribute
-    {
+    protected function name(): Attribute {
         return new Attribute(
             get: fn ($value) => ucwords($value),
             set: fn ($value) => ucwords($value)
         );
     }
 
-    protected function publisher(): Attribute
-    {
+    protected function publisher(): Attribute {
         return new Attribute(
             get: fn ($value) => ucwords($value),
             set: fn ($value) => ucwords($value)
         );
     }
 
-    protected function sourcerom(): Attribute
-    {
+    protected function sourcerom(): Attribute {
         return new Attribute(
             get: fn ($value) => ucwords($value),
             set: fn ($value) => ucwords($value)
         );
     }
 
-    protected function savetype(): Attribute
-    {
+    protected function savetype(): Attribute {
         return new Attribute(
             get: fn ($value) => ucwords($value),
             set: fn ($value) => ucwords($value)

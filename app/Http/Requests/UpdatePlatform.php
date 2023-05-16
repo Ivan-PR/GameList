@@ -4,15 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePlatform extends FormRequest
-{
+class UpdatePlatform extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize() {
         return true;
     }
 
@@ -21,20 +19,19 @@ class UpdatePlatform extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             'platform' => 'required | max:100 | string',
         ];
     }
 
-    public function attributes(){
+    public function attributes() {
         return [
             'platform' => 'Plataforma del juego',
         ];
     }
 
-    public function messages(){
+    public function messages() {
         return [
             'platform.max' => 'Nombre de la plataforma excesivamente largo.',
         ];

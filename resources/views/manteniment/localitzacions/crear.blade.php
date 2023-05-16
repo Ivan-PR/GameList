@@ -8,7 +8,6 @@
         <div class="row">
             <div class="col-12">
                 <form action="{{ route('mantenimentLocalitzacions.store') }}" method="POST" enctype="multipart/form-data">
-                    {{-- <form action="{{ route('mantenimentLocalitzacions.store') }}" method="POST" enctype="multipart/form-data"> --}}
                     @csrf
                     <div class="mb-3">
                         <label for="imageFileMultiple" class="form-label">Subida de imagenes:</label>
@@ -19,7 +18,6 @@
                         @enderror
                         <input class="form-control" type="file" name="image" id="imageFileMultiple" multiple>
                     </div>
-                    
                     <div class="mb-3">
                         <label for="location" class="form-label">Pais:</label>
                         @error('location')
@@ -30,7 +28,6 @@
                         <input type="text" class="form-control" id="location" name="location"
                             value="{{ old('location') }}">
                     </div>
-                    
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
             </div>

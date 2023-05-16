@@ -71,15 +71,15 @@ class MantenimentGameController extends Controller {
         return redirect()->route('mantenimentGame.index');
     }
     public function massiveLoad() {
-        if (isset($_POST['submit']) && isset($_FILES['xmlfile'])) {
+        if (isset($_POST['submit']) && isset($_FILES['xmlfile']) && $_FILES['xmlfile']->error == 0) {
             $xml = simplexml_load_file($_FILES['xmlfile']['tmp_name']);
 
             $newGame['platform_id'] = Platform::firstOrCreate(['platform' => $xml->configuration->system->__toString()], ['platform' => $xml->configuration->system]);
             $newGame['platform_id'] = $newGame['platform_id']->__get('id');
 
             foreach ($xml->games->game as $gamex) {
-                //crear comprobar si el juego existe
 
+                //crear comprobar si el juego existe
                 if (!Game::where('platform_id', $newGame['platform_id'])
                     ->where('id_game', $gamex->files->romCRC->__toString())
                     ->first()) {
@@ -130,8 +130,8 @@ class MantenimentGameController extends Controller {
                     }
 
                     $languageCheck = Language::where('id', $gamex->language->__toString())
-                    ->where('id', $gamex->language->__toString())
-                    ->first();
+                        ->where('id', $gamex->language->__toString())
+                        ->first();
                     if ($languageCheck == null) {
                         $game->update(['language_id' => 3]);
                     } else {

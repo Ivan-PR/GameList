@@ -5,90 +5,87 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 
-
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('languages', function (Blueprint $table) {
             $table->id();
-            $table->string('language',200);//max 255 caracteres.
+            $table->string('language', 200); //max 255 caracteres.
             $table->timestamps();
         });
 
         DB::table('languages')->insert([
             [
-                'id'=>'1',
-                'language'=>'French'
+                'id' => '1',
+                'language' => 'French'
             ],
             [
-                'id'=>'2',
-                'language'=>'English'
+                'id' => '2',
+                'language' => 'English'
             ],
             [
-                'id'=>'3',
-                'language'=>'Sin Idioma'
+                'id' => '3',
+                'language' => 'Sin Idioma'
             ],
             [
-                'id'=>'4',
-                'language'=>'Chinese'
+                'id' => '4',
+                'language' => 'Chinese'
             ],
             [
-                'id'=>'8',
-                'language'=>'Danish'
+                'id' => '8',
+                'language' => 'Danish'
             ],
             [
-                'id'=>'16',
-                'language'=>'Dutch'
+                'id' => '16',
+                'language' => 'Dutch'
             ],
             [
-                'id'=>'32',
-                'language'=>'Finland'
+                'id' => '32',
+                'language' => 'Finland'
             ],
             [
-                'id'=>'64',
-                'language'=>'German'
+                'id' => '64',
+                'language' => 'German'
             ],
             [
-                'id'=>'128',
-                'language'=>'Italian'
+                'id' => '128',
+                'language' => 'Italian'
             ],
             [
-                'id'=>'256',
-                'language'=>'Japanese'
+                'id' => '256',
+                'language' => 'Japanese'
             ],
             [
-                'id'=>'512',
-                'language'=>'Norwegian'
+                'id' => '512',
+                'language' => 'Norwegian'
             ],
             [
-                'id'=>'1024',
-                'language'=>'Polish'
+                'id' => '1024',
+                'language' => 'Polish'
             ],
             [
-                'id'=>'2048',
-                'language'=>'Portuguese'
+                'id' => '2048',
+                'language' => 'Portuguese'
             ],
             [
-                'id'=>'4096',
-                'language'=>'Spanish'
+                'id' => '4096',
+                'language' => 'Spanish'
             ],
             [
-                'id'=>'8192',
-                'language'=>'Swedish'
+                'id' => '8192',
+                'language' => 'Swedish'
             ],
             [
-                'id'=>'16384',
-                'language'=>'English'
+                'id' => '16384',
+                'language' => 'English'
             ],
             [
-                'id'=>'32768',
-                'language'=>'Portuguese'
+                'id' => '32768',
+                'language' => 'Portuguese'
             ]
         ]);
     }
@@ -98,8 +95,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('languages');
     }
 };

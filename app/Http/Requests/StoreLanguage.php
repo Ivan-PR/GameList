@@ -4,15 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreLanguage extends FormRequest
-{
+class StoreLanguage extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize() {
         return true;
     }
 
@@ -21,22 +19,21 @@ class StoreLanguage extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             'language' => 'required | max:100 | string',
         ];
     }
 
-    public function attributes(){
+    public function attributes() {
         return [
             'language' => 'Idioma del juego',
         ];
     }
 
-    public function messages(){
+    public function messages() {
         return [
-            'language.max' => 'Nombre de la idioma excesivamente largo.',
+            'language.max' => 'Nombre del idioma excesivamente largo.',
         ];
     }
 }

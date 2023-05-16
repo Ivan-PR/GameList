@@ -9,14 +9,13 @@
                 <h1 class="text-center">Mantenimiento</h1>
             </div>
         </div>
-
         <div class="row">
             <div class="col-12">
                 <h2 class="text-center">Listado de Roms</h2>
-                    <a href="{{ route('mantenimentGame.crear') }}"
-                    class="btn btn-info mb-3 w-100 text-white fw-bold">Insertar nuevo</a>
+                <a href="{{ route('mantenimentGame.crear') }}" class="btn btn-info mb-3 w-100 text-white fw-bold">Insertar
+                    nuevo</a>
             </div>
-                </div>
+        </div>
         <div class="row">
             <div class="col-12">
                 <table class="table table-responsive table-striped table-hover">

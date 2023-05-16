@@ -30,4 +30,3 @@ class GameFactory extends Factory
         ];
     }
 }
-?>

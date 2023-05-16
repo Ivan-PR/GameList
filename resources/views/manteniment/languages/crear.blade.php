@@ -3,7 +3,6 @@
 @section('title', 'Creando Idioma')
 
 @section('contenido')
-
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -19,7 +18,6 @@
                         <input type="text" class="form-control" id="language" name="language"
                             value="{{ old('language') }}">
                     </div>
-                    
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
             </div>

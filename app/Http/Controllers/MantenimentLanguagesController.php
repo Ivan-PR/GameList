@@ -11,13 +11,13 @@ class MantenimentLanguagesController extends Controller {
         $languages = Language::orderBy('id', 'desc')->paginate(5);
         return view('manteniment.languages.home', compact('languages'));
     }
+
     public function crear() {
         return view('manteniment.languages.crear');
     }
 
     public function store(StoreLanguage $request) {
         Language::create($request->all());
-
         return redirect()->route('mantenimentLanguages.index');
     }
 
@@ -31,7 +31,6 @@ class MantenimentLanguagesController extends Controller {
     }
     public function delete(Language $language) {
         $language->delete();
-
         return redirect()->route('mantenimentLanguages.index');
     }
 }

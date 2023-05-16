@@ -4,15 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateLocation extends FormRequest
-{
+class UpdateLocation extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize() {
         return true;
     }
 
@@ -23,13 +21,11 @@ class UpdateLocation extends FormRequest
      */
     public function rules() {
         return [
-            //
-
             'location' => 'required | max:30 | string',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
         ];
     }
+
     public function attributes() {
         return [
             'location' => 'Nombre del pais',

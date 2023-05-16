@@ -22,7 +22,6 @@ class HomeController extends Controller {
         if ($request->isMethod('POST') && $request->has('submit')) {
             $requestData = $request->input('filter');
             $request->session()->put('filter', $requestData);
-
             $games = Game::where('platform_id', ($requestData['platform_id'] == 0) ? '!=' : '=', $requestData['platform_id'])
                 ->where('location_id', ($requestData['location_id'] == 0) ? '!=' : '=', $requestData['location_id'])
                 ->where('language_id', ($requestData['language_id'] == 0) ? '!=' : '=', $requestData['language_id'])
@@ -56,7 +55,6 @@ class HomeController extends Controller {
             $gameOne->image = 'Sinimagen.webp';
         }
 
-
         if ($request->isMethod('POST') && $request->has('submit')) {
             $requestData = $request->input('filter');
             $request->session()->put('filter', $requestData);
@@ -76,7 +74,6 @@ class HomeController extends Controller {
                 'language_id' => 0,
                 'romsize_id' => 0,
             ];
-
             $games = Game::all();
         }
 

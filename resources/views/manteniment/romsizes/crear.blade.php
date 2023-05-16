@@ -3,7 +3,6 @@
 @section('title', 'Creando Romsize')
 
 @section('contenido')
-
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -16,10 +15,8 @@
                             <small>* {{ $message }} </small>
                             <br>
                         @enderror
-                        <input type="text" class="form-control" id="romsize" name="romsize"
-                            value="{{ old('romsize') }}">
+                        <input type="text" class="form-control" id="romsize" name="romsize" value="{{ old('romsize') }}">
                     </div>
-                    
                     <button type="submit" class="btn btn-primary">Guardar</button>
                 </form>
             </div>

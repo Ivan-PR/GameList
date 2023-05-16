@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Language extends Model {
-    //protected $table = 'languages';
     use HasFactory;
 
     protected function language(): Attribute {

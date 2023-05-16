@@ -4,15 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateGame extends FormRequest
-{
+class UpdateGame extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize()
-    {
+    public function authorize() {
         return true;
     }
 
@@ -36,13 +34,13 @@ class UpdateGame extends FormRequest
         ];
     }
 
-    public function attributes(){
+    public function attributes() {
         return [
             'name' => 'titulo del juego',
         ];
     }
 
-    public function messages(){
+    public function messages() {
         return [
             'name.max' => 'Nombre del título excesivamente largo.',
             'publisher.max' => 'Nombre de la desarrolladora excesivamente largo.',
