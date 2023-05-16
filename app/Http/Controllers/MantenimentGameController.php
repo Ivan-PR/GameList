@@ -71,7 +71,7 @@ class MantenimentGameController extends Controller {
         return redirect()->route('mantenimentGame.index');
     }
     public function massiveLoad() {
-        if (isset($_POST['submit']) && isset($_FILES['xmlfile']) && $_FILES['xmlfile']->error == 0) {
+        if (isset($_POST['submit']) && isset($_FILES['xmlfile']) && $_FILES['xmlfile']["error"] == 0) {
             $xml = simplexml_load_file($_FILES['xmlfile']['tmp_name']);
 
             $newGame['platform_id'] = Platform::firstOrCreate(['platform' => $xml->configuration->system->__toString()], ['platform' => $xml->configuration->system]);
@@ -146,5 +146,6 @@ class MantenimentGameController extends Controller {
             }
             return redirect()->route('mantenimentGame.index');
         }
+        return redirect()->route('mantenimentGame.cargaView');
     }
 }
