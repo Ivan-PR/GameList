@@ -28,28 +28,28 @@ Route::controller(HomeController::class)->group(function () {
     Route::match(['get', 'post'], '/game/{gameOne}', "viewGame")->name("home.viewGame");
 });
 
-Route::middleware(['auth', 'role:Admin'])->group(function () {
-    Route::get('mantenimiento/juegos', [MantenimentGameController::class, 'index'])->name('mantenimentGame.index');
-    Route::get('mantenimiento/juegos/crear', [MantenimentGameController::class, 'crear'])->name('mantenimentGame.crear');
-    Route::post('mantenimiento/juegos/almacenar', [MantenimentGameController::class, 'store'])->name('mantenimentGame.store');
-    Route::get('mantenimiento/juegos/editar/{game}', [MantenimentGameController::class, 'edit'])->name('mantenimentGame.editar');
-    Route::put('mantenimiento/juegos/actualizar/{game}', [MantenimentGameController::class, 'update'])->name('mantenimentGame.update');
-    Route::delete('mantenimiento/juegos/eliminar/{game}', [MantenimentGameController::class, 'delete'])->name('mantenimentGame.eliminar');
-    Route::view('mantenimiento/juegos/carga', 'manteniment.jocs.carga')->name('mantenimentGame.cargaView');
-    Route::post('mantenimiento/juegos/carga', [MantenimentGameController::class, 'massiveLoad'])->name('mantenimentGame.carga');
-});
-
-
-// Route::controller(MantenimentGameController::class)->group(function () {
-//     Route::get('mantenimiento/juegos', 'index')->name('mantenimentGame.index');
-//     Route::get('mantenimiento/juegos/crear', 'crear')->name('mantenimentGame.crear');
-//     Route::post('mantenimiento/juegos/almacenar', 'store')->name('mantenimentGame.store');
-//     Route::get('mantenimiento/juegos/editar/{game}', 'edit')->name('mantenimentGame.editar');
-//     Route::put('mantenimiento/juegos/actualizar/{game}', 'update')->name('mantenimentGame.update');
-//     Route::delete('mantenimiento/juegos/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar');
+// Route::middleware(['auth', 'role:Admin'])->group(function () {
+//     Route::get('mantenimiento/juegos', [MantenimentGameController::class, 'index'])->name('mantenimentGame.index');
+//     Route::get('mantenimiento/juegos/crear', [MantenimentGameController::class, 'crear'])->name('mantenimentGame.crear');
+//     Route::post('mantenimiento/juegos/almacenar', [MantenimentGameController::class, 'store'])->name('mantenimentGame.store');
+//     Route::get('mantenimiento/juegos/editar/{game}', [MantenimentGameController::class, 'edit'])->name('mantenimentGame.editar');
+//     Route::put('mantenimiento/juegos/actualizar/{game}', [MantenimentGameController::class, 'update'])->name('mantenimentGame.update');
+//     Route::delete('mantenimiento/juegos/eliminar/{game}', [MantenimentGameController::class, 'delete'])->name('mantenimentGame.eliminar');
 //     Route::view('mantenimiento/juegos/carga', 'manteniment.jocs.carga')->name('mantenimentGame.cargaView');
-//     Route::post('mantenimiento/juegos/carga', 'massiveLoad')->name('mantenimentGame.carga');
+//     Route::post('mantenimiento/juegos/carga', [MantenimentGameController::class, 'massiveLoad'])->name('mantenimentGame.carga');
 // });
+
+
+Route::controller(MantenimentGameController::class)->group(function () {
+    Route::get('mantenimiento/juegos', 'index')->name('mantenimentGame.index')->middleware('checkRole');;
+    Route::get('mantenimiento/juegos/crear', 'crear')->name('mantenimentGame.crear')->middleware('checkRole');;
+    Route::post('mantenimiento/juegos/almacenar', 'store')->name('mantenimentGame.store')->middleware('checkRole');;
+    Route::get('mantenimiento/juegos/editar/{game}', 'edit')->name('mantenimentGame.editar')->middleware('checkRole');;
+    Route::put('mantenimiento/juegos/actualizar/{game}', 'update')->name('mantenimentGame.update')->middleware('checkRole');;
+    Route::delete('mantenimiento/juegos/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar')->middleware('checkRole');;
+    Route::view('mantenimiento/juegos/carga', 'manteniment.jocs.carga')->name('mantenimentGame.cargaView')->middleware('checkRole');;
+    Route::post('mantenimiento/juegos/carga', 'massiveLoad')->name('mantenimentGame.carga')->middleware('checkRole');;
+});
 
 Route::controller(MantenimentLocalitzacionsController::class)->group(function () {
     Route::get('mantenimiento/localizaciones', 'index')->name('mantenimentLocalitzacions.index');
