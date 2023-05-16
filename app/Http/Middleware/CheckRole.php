@@ -10,7 +10,8 @@ class CheckRole
 {
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user() && $request->user()->role !== 'Admin') {
+        $rol = Auth::user()->roles->first()->name; // Obtener el nombre del primer rol del usuario
+        if ($request->user() && $rol !== "Admin") {
             abort(403, 'No tienes permiso para acceder a esta página.');
         }
 
