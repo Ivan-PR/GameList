@@ -22,13 +22,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
-
 Route::controller(HomeController::class)->group(function () {
-    Route::get("/","__invoke")->name("home");
-    Route::post("/","__invoke")->name("home");
+    Route::match(['get', 'post'],"/","__invoke")->name("home");
     Route::match(['get', 'post'], '/game/{gameOne}', "viewGame")->name("home.viewGame");
 });
 

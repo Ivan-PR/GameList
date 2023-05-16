@@ -1,3 +1,9 @@
+Comandos:
+cmd: php artisan storage:link
+cmd: php artisan migrate:fresh --seed
+cmd: php artisan serve
+cmd: npm run dev
+
 Controladores:
 app/Http/Controllers/HomeController.php
 app/Http/Controllers/LoginController.php
@@ -97,7 +103,13 @@ resources/views/manteniment/plataformes/home.blade.php
 resources/views/manteniment/romsizes/crear.blade.php
 resources/views/manteniment/romsizes/editar.blade.php
 resources/views/manteniment/romsizes/home.blade.php
+resources/views/users/login.blade.php
+resources/views/users/registre.blade.php
+resources/views/home.blade.php
+resources/views/homeGameOne.blade.php
 
+Routes:
+routes/web.php
 
 
 

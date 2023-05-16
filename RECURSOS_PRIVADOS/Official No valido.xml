@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+
+<!-- Dat by Patrick (nointro@free.fr) aka [-F1-] on IRC, Dat and Images Hosted on http://nointro.free.fr -->
+
+<!-- Please visit official no-intro website on http://www.gbadat.altervista.org> -->
+
+<!-- Download OfflineList on http://offlinelist.free.fr> -->
+
+
+
+<!-- Datter : SolidSnake -->
+
+<!-- Pictures by :  -->
+
+<!-- OL Datter :  -->
+
+
+
+<dat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="datas.xsd">
+	<configuration>
+		<datName>Official No-Intro Atari Jaguar</datName>
+		<datVersion>981122042</datVersion>
+		<system>Atari Jaguar</system>
+		<screenshotsWidth>320</screenshotsWidth>
+		<screenshotsHeight>227</screenshotsHeight>
+		<infos>
+			<title visible="false" inNamingOption="true" default="false"></title>
+			<location visible="true" inNamingOption="true" default="true"></location>
+			<publisher visible="true" inNamingOption="true" default="true"></publisher>
+			<sourceRom visible="true" inNamingOption="true" default="true"></sourceRom>
+			<saveType visible="false" inNamingOption="false" default="false"></saveType>
+			<romSize visible="true" inNamingOption="true" default="true"></romSize>
+			<releaseNumber visible="true" inNamingOption="true" default="false"></releaseNumber>
+			<languageNumber visible="true" inNamingOption="true" default="false"></languageNumber>
+			<comment visible="true" inNamingOption="true" default="true"></comment>
+			<romCRC visible="true" inNamingOption="true" default="true"></romCRC>
+			<im1CRC visible="true" inNamingOption="true" default="false"></im1CRC>
+			<im2CRC visible="true" inNamingOption="true" default="false"></im2CRC>
+			<languages visible="true" inNamingOption="true" default="true"></languages>
+		</infos>
+		<canOpen>
+			<extension>.j64</extension>
+		</canOpen>
+		<newDat>
+			<datVersionURL>http://nointro.free.fr/version/Official%20No-Intro%20Atari%20Jaguar_version</datVersionURL>
+			<datURL fileName="Official No-Intro Atari Jaguar.zip">http://nointro.free.fr/datas/Official%20No-Intro%20Atari%20Jaguar.zip</datURL>
+			<imURL>http://nointro.free.fr/imgs/Official%20No-Intro%20Atari%20Jaguar/</imURL>
+		</newDat>
+		<search>
+			<to value="location" default="true" auto="true"></to>
+			<to value="romSize" default="true" auto="false">
+				<find operation="&lt;" value="1048576">&lt; 8 MBits</find>
+				<find operation="=" value="1048576">= 8 MBits</find>
+				<find operation="=" value="2097152">= 16 MBits</find>
+				<find operation="=" value="4194304">= 32 MBits</find>
+			</to>
+			<to value="languages" default="true" auto="true"></to>
+			<to value="publisher" default="true" auto="true"></to>
+		</search>
+		<romTitle>%n %o %m %e</romTitle>
+	</configuration>
+	<gamese>
+
+		<gamew>
+			<imageNumber>2</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Alien vs Predatora</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">DC187F82</romCRC>
+			</files>
+			<im1CRC>761C6B2E</im1CRC>
+			<im2CRC>D502730D</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>0</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Atari Jaguar BIOS</title>
+			<saveType></saveType>
+			<romSize>131072</romSize>
+			<publisher></publisher>
+			<location>16</location>
+			<sourceRom></sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">FB731AAA</romCRC>
+			</files>
+			<im1CRC>78175125</im1CRC>
+			<im2CRC>78175125</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>0</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Atari Jaguar CD BIOS</title>
+			<saveType></saveType>
+			<romSize>262144</romSize>
+			<publisher></publisher>
+			<location>16</location>
+			<sourceRom></sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">687068D5</romCRC>
+			</files>
+			<im1CRC>78175125</im1CRC>
+			<im2CRC>78175125</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>0</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Atari Jaguar Developer CD BIOS</title>
+			<saveType></saveType>
+			<romSize>262144</romSize>
+			<publisher></publisher>
+			<location>16</location>
+			<sourceRom></sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">55A0669C</romCRC>
+			</files>
+			<im1CRC>78175125</im1CRC>
+			<im2CRC>78175125</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>0</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Atari Jaguar Stubulator '93 BIOS</title>
+			<saveType></saveType>
+			<romSize>131072</romSize>
+			<publisher></publisher>
+			<location>16</location>
+			<sourceRom></sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">E60277BB</romCRC>
+			</files>
+			<im1CRC>78175125</im1CRC>
+			<im2CRC>78175125</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>0</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Atari Jaguar Stubulator '94 BIOS</title>
+			<saveType></saveType>
+			<romSize>131072</romSize>
+			<publisher></publisher>
+			<location>16</location>
+			<sourceRom></sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">8D15DBC6</romCRC>
+			</files>
+			<im1CRC>78175125</im1CRC>
+			<im2CRC>78175125</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>3</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Atari Karts</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">E28756DE</romCRC>
+			</files>
+			<im1CRC>E09D473A</im1CRC>
+			<im2CRC>4BBF15DE</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>4</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Attack of the Mutant Penguins</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">CD5BF827</romCRC>
+			</files>
+			<im1CRC>2874D034</im1CRC>
+			<im2CRC>745C1F2A</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>8</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Brutal Sports Football</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Telegames</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">BCB1A4BF</romCRC>
+			</files>
+			<im1CRC>AC8A6E1A</im1CRC>
+			<im2CRC>18760C15</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>9</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Bubsy in Fractured Furry Tales</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">2E17D5DA</romCRC>
+			</files>
+			<im1CRC>77E1CC78</im1CRC>
+			<im2CRC>919E8293</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>10</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Cannon Fodder</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Virgin</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">BDA405C6</romCRC>
+			</files>
+			<im1CRC>A44DAE80</im1CRC>
+			<im2CRC>C915222C</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>11</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Checkered Flag</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">FA7775AE</romCRC>
+			</files>
+			<im1CRC>F63FC5AB</im1CRC>
+			<im2CRC>82F4A196</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>12</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Club Drive</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">EEE8D61D</romCRC>
+			</files>
+			<im1CRC>C38F17BB</im1CRC>
+			<im2CRC>191CC3A3</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>13</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Cybermorph</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">BDE67498</romCRC>
+			</files>
+			<im1CRC>49224400</im1CRC>
+			<im2CRC>85611885</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>14</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Defender 2000</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">27594C6A</romCRC>
+			</files>
+			<im1CRC>3C708F67</im1CRC>
+			<im2CRC>80667B81</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>15</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Doom</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">5E2CDBC0</romCRC>
+			</files>
+			<im1CRC>27A91F4F</im1CRC>
+			<im2CRC>D3A89915</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>16</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Double Dragon V - The Shadow Falls</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Williams</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">348E6449</romCRC>
+			</files>
+			<im1CRC>B13C37CD</im1CRC>
+			<im2CRC>A320B65C</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>17</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Dragon - The Bruce Lee Story</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">8FEA5AB0</romCRC>
+			</files>
+			<im1CRC>535CFCEC</im1CRC>
+			<im2CRC>FAC060AC</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>18</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Evolution - Dino Dudes</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">0EC5369D</romCRC>
+			</files>
+			<im1CRC>8E675B91</im1CRC>
+			<im2CRC>C2EA688D</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>19</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Fever Pitch Soccer</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">3615AF6A</romCRC>
+			</files>
+			<im1CRC>95D9E0A6</im1CRC>
+			<im2CRC>084E628A</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>20</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Fight for Life</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">B14C4753</romCRC>
+			</files>
+			<im1CRC>5CB64AF2</im1CRC>
+			<im2CRC>A4ED58A8</im2CRC>
+			<comment></comment>
+			<duplicateID>1</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>0</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Fight for Life</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher></publisher>
+			<location>16</location>
+			<sourceRom></sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">C6C7BA62</romCRC>
+			</files>
+			<im1CRC>78175125</im1CRC>
+			<im2CRC>78175125</im2CRC>
+			<comment>[a]</comment>
+			<duplicateID>1</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>21</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Flashback - The Quest for Identity</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>US Gold</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>3</language>
+			<files>
+				<romCRC extension=".j64">DE55DCC7</romCRC>
+			</files>
+			<im1CRC>BBE9A730</im1CRC>
+			<im2CRC>31C40294</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>22</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Flip Out!</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">892BC67C</romCRC>
+			</files>
+			<im1CRC>91EFD70C</im1CRC>
+			<im2CRC>E34AEE4A</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>23</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Hover Strike</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">4899628F</romCRC>
+			</files>
+			<im1CRC>D7FD3517</im1CRC>
+			<im2CRC>D87F278E</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>28</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>I-War</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">97EB4651</romCRC>
+			</files>
+			<im1CRC>B0CB60B6</im1CRC>
+			<im2CRC>3CD8DEF4</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>26</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Iron Soldier</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">08F15576</romCRC>
+			</files>
+			<im1CRC>8B1F31C1</im1CRC>
+			<im2CRC>43B240A5</im2CRC>
+			<comment>(v1.04)</comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>29</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Kasumi Ninja</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">0957A072</romCRC>
+			</files>
+			<im1CRC>64492819</im1CRC>
+			<im2CRC>DBCE5E01</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>30</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Missile Command 3D</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">DA9C4162</romCRC>
+			</files>
+			<im1CRC>C6372DB4</im1CRC>
+			<im2CRC>0EDA49B6</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>31</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>NBA Jam T.E.</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">0AC83D77</romCRC>
+			</files>
+			<im1CRC>C90C17F1</im1CRC>
+			<im2CRC>FE0DB3E6</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>32</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Pinball Fantasies</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>21st Century Entertainment</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">5CFF14AB</romCRC>
+			</files>
+			<im1CRC>DFBAF9D3</im1CRC>
+			<im2CRC>50B96CA0</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>33</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Pitfall - The Mayan Adventure</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">817A2273</romCRC>
+			</files>
+			<im1CRC>B51EEFBA</im1CRC>
+			<im2CRC>5B3D8D5A</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>34</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Power Drive Rally</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Time-Warner Interactive</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">1660F070</romCRC>
+			</files>
+			<im1CRC>70C41BCC</im1CRC>
+			<im2CRC>3E458384</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>37</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Raiden</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">0509C85E</romCRC>
+			</files>
+			<im1CRC>865C2272</im1CRC>
+			<im2CRC>FB101C69</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>38</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Rayman</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher>Ubi Soft</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">A9F8A00E</romCRC>
+			</files>
+			<im1CRC>008A98C8</im1CRC>
+			<im2CRC>B42D4EFC</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>0</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Ruiner Pinball</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">5B6BB205</romCRC>
+			</files>
+			<im1CRC>78175125</im1CRC>
+			<im2CRC>78175125</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>25</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Sensible Soccer - International Edition</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Telegames</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">5A101212</romCRC>
+			</files>
+			<im1CRC>5719D915</im1CRC>
+			<im2CRC>0C61026A</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>44</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Super Burnout</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher></publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">6F8B2547</romCRC>
+			</files>
+			<im1CRC>16C6C473</im1CRC>
+			<im2CRC>FEDBDB0D</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>45</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>SuperCross 3D</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher></publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">4A08A2BD</romCRC>
+			</files>
+			<im1CRC>86622381</im1CRC>
+			<im2CRC>ADBF7BDD</im2CRC>
+			<comment></comment>
+			<duplicateID>2</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>0</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>SuperCross 3D</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher></publisher>
+			<location>16</location>
+			<sourceRom></sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">EC22F572</romCRC>
+			</files>
+			<im1CRC>78175125</im1CRC>
+			<im2CRC>78175125</im2CRC>
+			<comment>[a]</comment>
+			<duplicateID>2</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>46</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Syndicate</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Ocean</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">58272540</romCRC>
+			</files>
+			<im1CRC>84DAC1D4</im1CRC>
+			<im2CRC>694C7BF4</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>47</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Tempest 2000</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">6B2B95AD</romCRC>
+			</files>
+			<im1CRC>6AA3D241</im1CRC>
+			<im2CRC>D10A1E89</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>48</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Theme Park</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Ocean</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">47EBC158</romCRC>
+			</files>
+			<im1CRC>ED26A26B</im1CRC>
+			<im2CRC>B6FF3D06</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>50</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Trevor McFur in the Crescent Galaxy</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom></sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">1E451446</romCRC>
+			</files>
+			<im1CRC>52072B7C</im1CRC>
+			<im2CRC>0D2CB0B7</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>51</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Troy Aikman NFL Football</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Williams</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">38A130ED</romCRC>
+			</files>
+			<im1CRC>C8E0B193</im1CRC>
+			<im2CRC>2E561715</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>0</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Ultra Vortek</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher></publisher>
+			<location>1</location>
+			<sourceRom></sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">A27823D8</romCRC>
+			</files>
+			<im1CRC>78175125</im1CRC>
+			<im2CRC>78175125</im2CRC>
+			<comment>(Beta) (v0.94)</comment>
+			<duplicateID>3</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>52</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Ultra Vortek</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">0F6A1C2C</romCRC>
+			</files>
+			<im1CRC>2C822E7C</im1CRC>
+			<im2CRC>DE138092</im2CRC>
+			<comment></comment>
+			<duplicateID>3</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>53</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Val d'Isere Skiing and Snowboarding</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2097152</language>
+			<files>
+				<romCRC extension=".j64">C9608717</romCRC>
+			</files>
+			<im1CRC>13F86202</im1CRC>
+			<im2CRC>0C3E2ED2</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>54</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>White Men Can't Jump</title>
+			<saveType></saveType>
+			<romSize>4194304</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">14915F20</romCRC>
+			</files>
+			<im1CRC>2D257231</im1CRC>
+			<im2CRC>6F42FE3D</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>55</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Wolfenstein 3D</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">E91BD644</romCRC>
+			</files>
+			<im1CRC>95C30171</im1CRC>
+			<im2CRC>105EF749</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>58</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Zool 2</title>
+			<saveType></saveType>
+			<romSize>2097152</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">8975F48B</romCRC>
+			</files>
+			<im1CRC>1D926EC5</im1CRC>
+			<im2CRC>3C9CEFC1</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+
+		<game>
+			<imageNumber>59</imageNumber>
+			<releaseNumber>0</releaseNumber>
+			<title>Zoopa!</title>
+			<saveType></saveType>
+			<romSize>1048576</romSize>
+			<publisher>Atari</publisher>
+			<location>16</location>
+			<sourceRom>Atari</sourceRom>
+			<language>2</language>
+			<files>
+				<romCRC extension=".j64">C5562581</romCRC>
+			</files>
+			<im1CRC>B61A4EA3</im1CRC>
+			<im2CRC>E18219ED</im2CRC>
+			<comment></comment>
+			<duplicateID>0</duplicateID>
+		</game>
+	</games>
+</dat>
+
