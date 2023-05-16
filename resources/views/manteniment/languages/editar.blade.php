@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('mantenimentPlataformes.update', $language) }}" method="POST">
+                <form action="{{ route('mantenimentLanguages.update', $language) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">

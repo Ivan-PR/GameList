@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Location;
 use App\Http\Requests\StoreLocation;
 use App\Http\Requests\UpdateLocation;
+use Exception;
 
 class MantenimentLocalitzacionsController extends Controller {
     public function index() {
@@ -47,10 +48,15 @@ class MantenimentLocalitzacionsController extends Controller {
     }
 
     public function delete(Location $location) {
-        $location->delete();
+        try {
+            $location->delete();
         if (Storage::disk("imgFlag")->exists($location->__get("image"))) {
             Storage::disk("imgFlag")->delete($location->__get("image"));
         }
+        } catch (Exception $e) {
+            return redirect()->route('mantenimentLocalitzacions.index')->with('false', 'No se puede eliminar la localizacion porque esta asignada a un juego.');
+        }
+        
         return redirect()->route('mantenimentLocalitzacions.index');
     }
 }

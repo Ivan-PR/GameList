@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Language;
 use App\Http\Requests\StoreLanguage;
 use App\Http\Requests\UpdateLanguage;
+use Exception;
 
 class MantenimentLanguagesController extends Controller {
     public function index() {
@@ -30,7 +31,12 @@ class MantenimentLanguagesController extends Controller {
         return redirect()->route('mantenimentLanguages.index');
     }
     public function delete(Language $language) {
-        $language->delete();
+        try{
+            $language->delete();
+        }
+        catch(Exception $e){
+            return redirect()->route('mantenimentLanguages.index')->with('false', 'No se puede eliminar el idioma porque esta asignado a un juego.');
+        }
         return redirect()->route('mantenimentLanguages.index');
     }
 }

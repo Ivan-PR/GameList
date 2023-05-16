@@ -25,9 +25,9 @@ class UpdateGame extends FormRequest {
             'name' => 'required | max:170 | string',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'location_id' => 'numeric |exists:locations,id| min:1',
-            'publisher' => 'max:50 | string',
-            'sourcerom' => 'max:40 | string',
-            'savetype' => 'max:15 | string',
+            'publisher' => 'max:50 | string | nullable',
+            'sourcerom' => 'max:40 | string | nullable',
+            'savetype' => 'max:15 | string | nullable',
             'romsize_id' => 'numeric |exists:romsizes,id| min:1',
             'language_id' => 'numeric |exists:languages,id| min:1',
             'platform_id' => 'numeric |exists:platforms,id| min:1',
@@ -37,6 +37,14 @@ class UpdateGame extends FormRequest {
     public function attributes() {
         return [
             'name' => 'titulo del juego',
+            'publisher' => 'desarrolladora',
+            'sourcerom' => 'source rom',
+            'savetype' => 'save type',
+            'romsize_id' => 'tamaño',
+            'language_id' => 'idioma',
+            'platform_id' => 'plataforma',
+            'location_id' => 'pais',
+            'image' => 'imagen',
         ];
     }
 

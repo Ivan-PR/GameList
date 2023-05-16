@@ -10,6 +10,7 @@ use App\Http\Controllers\MantenimentLanguagesController;
 
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Permission\Models\Role;
 
 
 /*
@@ -27,16 +28,28 @@ Route::controller(HomeController::class)->group(function () {
     Route::match(['get', 'post'], '/game/{gameOne}', "viewGame")->name("home.viewGame");
 });
 
-Route::controller(MantenimentGameController::class)->group(function () {
-    Route::get('mantenimiento/juegos', 'index')->name('mantenimentGame.index');
-    Route::get('mantenimiento/juegos/crear', 'crear')->name('mantenimentGame.crear');
-    Route::post('mantenimiento/juegos/almacenar', 'store')->name('mantenimentGame.store');
-    Route::get('mantenimiento/juegos/editar/{game}', 'edit')->name('mantenimentGame.editar');
-    Route::put('mantenimiento/juegos/actualizar/{game}', 'update')->name('mantenimentGame.update');
-    Route::delete('mantenimiento/juegos/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar');
+Route::middleware(['auth', 'role:Admin'])->group(function () {
+    Route::get('mantenimiento/juegos', [MantenimentGameController::class, 'index'])->name('mantenimentGame.index');
+    Route::get('mantenimiento/juegos/crear', [MantenimentGameController::class, 'crear'])->name('mantenimentGame.crear');
+    Route::post('mantenimiento/juegos/almacenar', [MantenimentGameController::class, 'store'])->name('mantenimentGame.store');
+    Route::get('mantenimiento/juegos/editar/{game}', [MantenimentGameController::class, 'edit'])->name('mantenimentGame.editar');
+    Route::put('mantenimiento/juegos/actualizar/{game}', [MantenimentGameController::class, 'update'])->name('mantenimentGame.update');
+    Route::delete('mantenimiento/juegos/eliminar/{game}', [MantenimentGameController::class, 'delete'])->name('mantenimentGame.eliminar');
     Route::view('mantenimiento/juegos/carga', 'manteniment.jocs.carga')->name('mantenimentGame.cargaView');
-    Route::post('mantenimiento/juegos/carga', 'massiveLoad')->name('mantenimentGame.carga');
+    Route::post('mantenimiento/juegos/carga', [MantenimentGameController::class, 'massiveLoad'])->name('mantenimentGame.carga');
 });
+
+
+// Route::controller(MantenimentGameController::class)->group(function () {
+//     Route::get('mantenimiento/juegos', 'index')->name('mantenimentGame.index');
+//     Route::get('mantenimiento/juegos/crear', 'crear')->name('mantenimentGame.crear');
+//     Route::post('mantenimiento/juegos/almacenar', 'store')->name('mantenimentGame.store');
+//     Route::get('mantenimiento/juegos/editar/{game}', 'edit')->name('mantenimentGame.editar');
+//     Route::put('mantenimiento/juegos/actualizar/{game}', 'update')->name('mantenimentGame.update');
+//     Route::delete('mantenimiento/juegos/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar');
+//     Route::view('mantenimiento/juegos/carga', 'manteniment.jocs.carga')->name('mantenimentGame.cargaView');
+//     Route::post('mantenimiento/juegos/carga', 'massiveLoad')->name('mantenimentGame.carga');
+// });
 
 Route::controller(MantenimentLocalitzacionsController::class)->group(function () {
     Route::get('mantenimiento/localizaciones', 'index')->name('mantenimentLocalitzacions.index');
@@ -60,9 +73,9 @@ Route::controller(MantenimentLanguagesController::class)->group(function () {
     Route::get('mantenimiento/idiomas', 'index')->name('mantenimentLanguages.index');
     Route::get('mantenimiento/idiomas/crear', 'crear')->name('mantenimentLanguages.crear');
     Route::post('mantenimiento/idiomas/almacenar', 'store')->name('mantenimentLanguages.store');
-    Route::get('mantenimiento/idiomas/editar/{platform}', 'edit')->name('mantenimentLanguages.editar');
-    Route::put('mantenimiento/idiomas/actualizar/{platform}', 'update')->name('mantenimentLanguages.update');
-    Route::delete('mantenimiento/idiomas/eliminar/{platform}', 'delete')->name('mantenimentLanguages.eliminar');
+    Route::get('mantenimiento/idiomas/editar/{language}', 'edit')->name('mantenimentLanguages.editar');
+    Route::put('mantenimiento/idiomas/actualizar/{language}', 'update')->name('mantenimentLanguages.update');
+    Route::delete('mantenimiento/idiomas/eliminar/{language}', 'delete')->name('mantenimentLanguages.eliminar');
 });
 
 Route::controller(MantenimentRomsizesController::class)->group(function () {

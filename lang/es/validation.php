@@ -156,6 +156,7 @@ return [
         'romsize_id' => 'tamaño',
         'language' => 'idioma',
         'platform' => 'plataforma',
+        'passwordconf' => 'confirmación de contraseña',
     ],
 
 ];

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Platform;
 use App\Http\Requests\StorePlatform;
 use App\Http\Requests\UpdatePlatform;
+use Exception;
 
 class MantenimentPlataformesController extends Controller {
     public function index() {
@@ -30,7 +31,12 @@ class MantenimentPlataformesController extends Controller {
         return redirect()->route('mantenimentPlataformes.index');
     }
     public function delete(Platform $platform) {
-        $platform->delete();
+        try{
+            $platform->delete();
+        }
+        catch(Exception $e){
+            return redirect()->route('mantenimentPlataformes.index')->with('false', 'No se puede eliminar la plataforma porque esta asignada a un juego.');
+        }
         return redirect()->route('mantenimentPlataformes.index');
     }
 }

@@ -64,12 +64,18 @@ class MantenimentGameController extends Controller {
     }
 
     public function delete(Game $game) {
-        $game->delete();
-        if (Storage::disk("imgGames")->exists($game->__get("image"))) {
-            Storage::disk("imgGames")->delete($game->__get("image"));
+        try{
+            $game->delete();
+            if (Storage::disk("imgGames")->exists($game->__get("image"))) {
+                Storage::disk("imgGames")->delete($game->__get("image"));
+            }
+        } catch (Exception $e) {
+            Log::error($e);
+            return redirect()->back()->with('false', 'Algo ha salido mal, vuelve a intentarlo. Mensaje de error: ' . $e->getMessage());
         }
         return redirect()->route('mantenimentGame.index');
     }
+    
     public function massiveLoad() {
         if (isset($_POST['submit']) && isset($_FILES['xmlfile']) && $_FILES['xmlfile']["error"] == 0) {
             try {

@@ -7,16 +7,17 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
 
 class LoginController extends Controller {
 
     public function register(Request $request) {
 
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'passwordconf' => 'required'
+            'name' => 'required | min:3| max:50 | string | regex:/^[a-zA-Z\s]*$/',
+            'email' => 'required | email',
+            'password' => 'required | min:8 | max:50 ',
+            'passwordconf' => 'required | same:password'
         ]);
 
         $user = new User();
@@ -26,6 +27,12 @@ class LoginController extends Controller {
 
         if ($request->password === $request->passwordconf) {
             $user->save();
+
+            // Asignar un rol al usuario (ejemplo: rol "usuario")
+            $role = Role::where('name', 'User')->first();
+            $user->roles()->attach($role);
+
+
             Auth::login($user);
             return redirect(route('home'));
         }
@@ -34,8 +41,8 @@ class LoginController extends Controller {
 
     public function login(Request $request) {
         $request->validate([
-            'email' => 'required',
-            'password' => 'required'
+            'email' => 'required | email ',
+            'password' => 'required '
         ]);
 
         $credentials = [

@@ -23,14 +23,14 @@ class StoreGame extends FormRequest {
         return [
             'id_game' => 'required | string',
             'name' => 'required | max:170 | string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'publisher' => 'required | max:50 | string',
-            'sourcerom' => 'required | max:40 | string',
-            'savetype' => 'required | max:15 | string',
-            'location_id' => 'required | numeric | min:1 |exists:locations,id',
-            'romsize_id' => 'required | numeric | min:1 ',
-            'language_id' => 'required | numeric | min:1',
-            'platform_id' => 'required | numeric | min:1',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'location_id' => 'numeric |exists:locations,id| min:1',
+            'publisher' => 'max:50 | string | nullable',
+            'sourcerom' => 'max:40 | string | nullable',
+            'savetype' => 'max:15 | string | nullable',
+            'romsize_id' => 'numeric |exists:romsizes,id| min:1',
+            'language_id' => 'numeric |exists:languages,id| min:1',
+            'platform_id' => 'numeric |exists:platforms,id| min:1',
         ];
     }
 

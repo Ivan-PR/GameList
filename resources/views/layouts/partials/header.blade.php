@@ -21,9 +21,11 @@
                         <a class="nav-link" href="#">Ayuda</a>
                     </li>
                     @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('mantenimentGame.index') }}">Mantenimiento</a>
-                        </li>
+                        @if (Auth::user()->hasRole('Admin'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('mantenimentGame.index') }}">Mantenimiento</a>
+                            </li>
+                        @endif
                     @endauth
                 </ul>
                 <div class="navbar-nav ms-auto">

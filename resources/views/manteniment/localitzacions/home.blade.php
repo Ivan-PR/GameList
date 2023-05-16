@@ -18,6 +18,9 @@
         </div>
         <div class="row">
             <div class="col-12">
+                @if (session('false'))
+                    <p>{{ session('false') }}</p>
+                @endif
                 <table class="table table-responsive table-striped table-hover">
                     <thead>
                         <tr>

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Language extends Model {
     use HasFactory;
-
+    protected $guarded = [];
     protected function language(): Attribute {
         return new Attribute(
             // Mutador da formato al dato antes de ser guardado en la base de datos
