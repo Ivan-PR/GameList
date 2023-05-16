@@ -28,63 +28,51 @@ Route::controller(HomeController::class)->group(function () {
     Route::match(['get', 'post'], '/game/{gameOne}', "viewGame")->name("home.viewGame");
 });
 
-// Route::middleware(['auth', 'role:Admin'])->group(function () {
-//     Route::get('mantenimiento/juegos', [MantenimentGameController::class, 'index'])->name('mantenimentGame.index');
-//     Route::get('mantenimiento/juegos/crear', [MantenimentGameController::class, 'crear'])->name('mantenimentGame.crear');
-//     Route::post('mantenimiento/juegos/almacenar', [MantenimentGameController::class, 'store'])->name('mantenimentGame.store');
-//     Route::get('mantenimiento/juegos/editar/{game}', [MantenimentGameController::class, 'edit'])->name('mantenimentGame.editar');
-//     Route::put('mantenimiento/juegos/actualizar/{game}', [MantenimentGameController::class, 'update'])->name('mantenimentGame.update');
-//     Route::delete('mantenimiento/juegos/eliminar/{game}', [MantenimentGameController::class, 'delete'])->name('mantenimentGame.eliminar');
-//     Route::view('mantenimiento/juegos/carga', 'manteniment.jocs.carga')->name('mantenimentGame.cargaView');
-//     Route::post('mantenimiento/juegos/carga', [MantenimentGameController::class, 'massiveLoad'])->name('mantenimentGame.carga');
-// });
-
-
 Route::controller(MantenimentGameController::class)->group(function () {
-    Route::get('mantenimiento/juegos', 'index')->name('mantenimentGame.index')->middleware('checkRole');;
-    Route::get('mantenimiento/juegos/crear', 'crear')->name('mantenimentGame.crear')->middleware('checkRole');;
-    Route::post('mantenimiento/juegos/almacenar', 'store')->name('mantenimentGame.store')->middleware('checkRole');;
-    Route::get('mantenimiento/juegos/editar/{game}', 'edit')->name('mantenimentGame.editar')->middleware('checkRole');;
-    Route::put('mantenimiento/juegos/actualizar/{game}', 'update')->name('mantenimentGame.update')->middleware('checkRole');;
-    Route::delete('mantenimiento/juegos/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar')->middleware('checkRole');;
-    Route::view('mantenimiento/juegos/carga', 'manteniment.jocs.carga')->name('mantenimentGame.cargaView')->middleware('checkRole');;
-    Route::post('mantenimiento/juegos/carga', 'massiveLoad')->name('mantenimentGame.carga')->middleware('checkRole');;
+    Route::get('mantenimiento/juegos', 'index')->name('mantenimentGame.index')->middleware('checkRole');
+    Route::get('mantenimiento/juegos/crear', 'crear')->name('mantenimentGame.crear')->middleware('checkRole');
+    Route::post('mantenimiento/juegos/almacenar', 'store')->name('mantenimentGame.store')->middleware('checkRole');
+    Route::get('mantenimiento/juegos/editar/{game}', 'edit')->name('mantenimentGame.editar')->middleware('checkRole');
+    Route::put('mantenimiento/juegos/actualizar/{game}', 'update')->name('mantenimentGame.update')->middleware('checkRole');
+    Route::delete('mantenimiento/juegos/eliminar/{game}', 'delete')->name('mantenimentGame.eliminar')->middleware('checkRole');
+    Route::view('mantenimiento/juegos/carga', 'manteniment.jocs.carga')->name('mantenimentGame.cargaView')->middleware('checkRole');
+    Route::post('mantenimiento/juegos/carga', 'massiveLoad')->name('mantenimentGame.carga')->middleware('checkRole');
 });
 
 Route::controller(MantenimentLocalitzacionsController::class)->group(function () {
-    Route::get('mantenimiento/localizaciones', 'index')->name('mantenimentLocalitzacions.index');
-    Route::get('mantenimiento/localizaciones/crear', 'crear')->name('mantenimentLocalitzacions.crear');
-    Route::post('mantenimiento/localizaciones/almacenar', 'store')->name('mantenimentLocalitzacions.store');
-    Route::get('mantenimiento/localizaciones/editar/{location}', 'edit')->name('mantenimentLocalitzacions.editar');
-    Route::put('mantenimiento/localizaciones/actualizar/{location}', 'update')->name('mantenimentLocalitzacions.update');
-    Route::delete('mantenimiento/localizaciones/eliminar/{location}', 'delete')->name('mantenimentLocalitzacions.eliminar');
+    Route::get('mantenimiento/localizaciones', 'index')->name('mantenimentLocalitzacions.index')->middleware('checkRole');
+    Route::get('mantenimiento/localizaciones/crear', 'crear')->name('mantenimentLocalitzacions.crear')->middleware('checkRole');
+    Route::post('mantenimiento/localizaciones/almacenar', 'store')->name('mantenimentLocalitzacions.store')->middleware('checkRole');
+    Route::get('mantenimiento/localizaciones/editar/{location}', 'edit')->name('mantenimentLocalitzacions.editar')->middleware('checkRole');
+    Route::put('mantenimiento/localizaciones/actualizar/{location}', 'update')->name('mantenimentLocalitzacions.update')->middleware('checkRole');
+    Route::delete('mantenimiento/localizaciones/eliminar/{location}', 'delete')->name('mantenimentLocalitzacions.eliminar')->middleware('checkRole');
 });
 
 Route::controller(MantenimentPlataformesController::class)->group(function () {
-    Route::get('mantenimiento/plataformas', 'index')->name('mantenimentPlataformes.index');
-    Route::get('mantenimiento/plataformas/crear', 'crear')->name('mantenimentPlataformes.crear');
-    Route::post('mantenimiento/plataformas/almacenar', 'store')->name('mantenimentPlataformes.store');
-    Route::get('mantenimiento/plataformas/editar/{platform}', 'edit')->name('mantenimentPlataformes.editar');
-    Route::put('mantenimiento/plataformas/actualizar/{platform}', 'update')->name('mantenimentPlataformes.update');
-    Route::delete('mantenimiento/plataformas/eliminar/{platform}', 'delete')->name('mantenimentPlataformes.eliminar');
+    Route::get('mantenimiento/plataformas', 'index')->name('mantenimentPlataformes.index')->middleware('checkRole');
+    Route::get('mantenimiento/plataformas/crear', 'crear')->name('mantenimentPlataformes.crear')->middleware('checkRole');
+    Route::post('mantenimiento/plataformas/almacenar', 'store')->name('mantenimentPlataformes.store')->middleware('checkRole');
+    Route::get('mantenimiento/plataformas/editar/{platform}', 'edit')->name('mantenimentPlataformes.editar')->middleware('checkRole');
+    Route::put('mantenimiento/plataformas/actualizar/{platform}', 'update')->name('mantenimentPlataformes.update')->middleware('checkRole');
+    Route::delete('mantenimiento/plataformas/eliminar/{platform}', 'delete')->name('mantenimentPlataformes.eliminar')->middleware('checkRole');
 });
 
 Route::controller(MantenimentLanguagesController::class)->group(function () {
-    Route::get('mantenimiento/idiomas', 'index')->name('mantenimentLanguages.index');
-    Route::get('mantenimiento/idiomas/crear', 'crear')->name('mantenimentLanguages.crear');
-    Route::post('mantenimiento/idiomas/almacenar', 'store')->name('mantenimentLanguages.store');
-    Route::get('mantenimiento/idiomas/editar/{language}', 'edit')->name('mantenimentLanguages.editar');
-    Route::put('mantenimiento/idiomas/actualizar/{language}', 'update')->name('mantenimentLanguages.update');
-    Route::delete('mantenimiento/idiomas/eliminar/{language}', 'delete')->name('mantenimentLanguages.eliminar');
+    Route::get('mantenimiento/idiomas', 'index')->name('mantenimentLanguages.index')->middleware('checkRole');
+    Route::get('mantenimiento/idiomas/crear', 'crear')->name('mantenimentLanguages.crear')->middleware('checkRole');
+    Route::post('mantenimiento/idiomas/almacenar', 'store')->name('mantenimentLanguages.store')->middleware('checkRole');
+    Route::get('mantenimiento/idiomas/editar/{language}', 'edit')->name('mantenimentLanguages.editar')->middleware('checkRole');
+    Route::put('mantenimiento/idiomas/actualizar/{language}', 'update')->name('mantenimentLanguages.update')->middleware('checkRole');
+    Route::delete('mantenimiento/idiomas/eliminar/{language}', 'delete')->name('mantenimentLanguages.eliminar')->middleware('checkRole');
 });
 
 Route::controller(MantenimentRomsizesController::class)->group(function () {
-    Route::get('mantenimiento/romsizes', 'index')->name('mantenimentRomsizes.index');
-    Route::get('mantenimiento/romsizes/crear', 'crear')->name('mantenimentRomsizes.crear');
-    Route::post('mantenimiento/romsizes/almacenar', 'store')->name('mantenimentRomsizes.store');
-    Route::get('mantenimiento/romsizes/editar/{romsize}', 'edit')->name('mantenimentRomsizes.editar');
-    Route::put('mantenimiento/romsizes/actualizar/{romsize}', 'update')->name('mantenimentRomsizes.update');
-    Route::delete('mantenimiento/romsizes/eliminar/{romsize}', 'delete')->name('mantenimentRomsizes.eliminar');
+    Route::get('mantenimiento/romsizes', 'index')->name('mantenimentRomsizes.index')->middleware('checkRole');
+    Route::get('mantenimiento/romsizes/crear', 'crear')->name('mantenimentRomsizes.crear')->middleware('checkRole');
+    Route::post('mantenimiento/romsizes/almacenar', 'store')->name('mantenimentRomsizes.store')->middleware('checkRole');
+    Route::get('mantenimiento/romsizes/editar/{romsize}', 'edit')->name('mantenimentRomsizes.editar')->middleware('checkRole');
+    Route::put('mantenimiento/romsizes/actualizar/{romsize}', 'update')->name('mantenimentRomsizes.update')->middleware('checkRole');
+    Route::delete('mantenimiento/romsizes/eliminar/{romsize}', 'delete')->name('mantenimentRomsizes.eliminar')->middleware('checkRole');
 });
 
 Route::controller(UserController::class)->group(function () {
