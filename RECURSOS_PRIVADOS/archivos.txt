@@ -4,6 +4,86 @@ cmd: php artisan migrate:fresh --seed
 cmd: php artisan serve
 cmd: npm run dev
 
+Proceso de creación/explicacion de la aplicación:
+-IVAN-
+-Crear objetos de negocio
+app/Models/Game.php
+
+-Crear migraciones para cada objeto de negocio sirve para crear la tabla en la base de datos
+database/migrations/2023_03_02_190234_create_games_table.php
+
+-Crear factories para cada objeto de negocio sirve para crear datos de prueba
+database/factories/GameFactory.php
+
+-Crear seeders para cada objeto de negocio sirve para insertar datos de prueba en la base de datos
+database/seeders/DatabaseSeeder.php
+
+-Crear controladores para cada objeto de negocio sirve para controlar las peticiones de los usuarios
+app/Http/Controllers/MantenimentGameController.php
+
+-Crear storage para imagenes
+config/filesystems.php
+
+-Crear requests para cada objeto de negocio sirve para validar los datos que se envian desde el formulario tanto store como update
+app/Http/Requests/StoreGame.php
+
+-Crear vistas para cada objeto de negocio sirve para mostrar los datos al usuario
+resources/views/manteniment/jocs/home.blade.php
+
+-Crear rutas para cada objeto de negocio sirve para controlar las peticiones de los usuarios
+routes/web.php
+
+-Crear un layout sirve para tener una plantilla base para todas las vistas
+resources/views/layouts/plantilla.blade.php
+
+
+-ADRIAN-
+Usuarios:
+-Crear objetos de negocio
+app/Models/User.php
+
+-Crear migraciones para objeto de negocio usuario sirve para crear la tabla en la base de datos
+migraciones automaticas a traves del archivo de roles seeder
+
+-Crear factories para objeto de negocio usuario sirve para crear datos de prueba
+database/factories/UserFactory.php
+
+-Crear seeders para objeto de negocio usuario sirve para insertar datos de prueba en la base de datos
+database/seeders/UserSeeder.php
+
+-Crear controladores para objeto de negocio usuario sirve para controlar las peticiones de los usuarios
+app/Http/Controllers/LoginController.php
+
+-Crear Middleware para objeto de negocio usuario sirve para controlar los roles de los usuarios
+app/Http/Middleware/CheckRole.php
+
+-Modificar Kernel.php para registrar el middleware
+app/Http/Kernel.php
+
+-Modificar routes web.php para restingir acceso a usuarios no registrados a segun zonas de la web
+routes/web.php
+
+
+Filtros:
+-controller de los filtros en HomeController
+app/Http/Controllers/HomeController.php
+
+
+-IVAN-
+Traducciones:
+-crear archivo de traducciones
+resources/lang/es/pagination.php
+resources/lang/es/validation.php
+
+- modifica idioma en config/app.php
+config/app.php
+
+
+
+
+
+
+
 Http:
 app/Http/Kernel.php
 

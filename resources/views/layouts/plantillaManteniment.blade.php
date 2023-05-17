@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" sizes="32x32" href="imgs/system/logo.png">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="./build/assets/app-490c72e2.css">
