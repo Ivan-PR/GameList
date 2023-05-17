@@ -4,10 +4,11 @@
     <div class="vh-85 d-flex justify-content-center align-items-start mt-5">
         <div class="col-md-4 p-5 shadow-sm border rounded-3">
             <h2 class="text-center mb-4 text-dark">Formulario de registro</h2>
+            <p><b>* Campo requerido</b></p>
             <form method="POST" action="{{ route('login.registre') }}">
                 @csrf
                 <div class="mb-3">
-                    <label for="exampleInputName1" class="form-label text-dark">Nombre</label>
+                    <label for="exampleInputName1" class="form-label text-dark">Nombre: *</label>
                     <input type="text" name="name" class="form-control border border-primary" id="exampleInputName1"
                         aria-describedby="emailHelp" value="{{ old('name') }}">
                     @error('name')
@@ -15,7 +16,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label text-dark">Dirección de correo</label>
+                    <label for="exampleInputEmail1" class="form-label text-dark">Dirección de correo: *</label>
                     <input type="email" name="email" class="form-control border border-primary" id="exampleInputEmail1"
                         aria-describedby="emailHelp" value="{{ old('email') }}">
                     @error('email')
@@ -23,7 +24,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label text-dark">Contraseña</label>
+                    <label for="exampleInputPassword1" class="form-label text-dark">Contraseña: *</label>
                     <input type="password" name="password" class="form-control border border-primary"
                         id="exampleInputPassword1">
                     @error('password')
@@ -31,7 +32,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword2" class="form-label text-dark">Confirmar Contraseña</label>
+                    <label for="exampleInputPassword2" class="form-label text-dark">Confirmar Contraseña: *</label>
                     <input type="password" name="passwordconf" class="form-control border border-primary"
                         id="exampleInputPassword2">
                     @error('passwordconf')

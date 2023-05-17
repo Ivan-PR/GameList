@@ -7,7 +7,7 @@
             <form method="POST" action="{{ route('login.login') }}">
                 @csrf
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label text-dark">Dirección de correo</label>
+                    <label for="exampleInputEmail1" class="form-label text-dark">Dirección de correo: </label>
                     <input type="email" name="email" class="form-control border border-primary" id="exampleInputEmail1"
                         aria-describedby="emailHelp" value="{{ old('email') }}">
                     @error('email')
@@ -15,7 +15,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label text-dark">Contraseña</label>
+                    <label for="exampleInputPassword1" class="form-label text-dark">Contraseña: </label>
                     <input type="password" name="password" class="form-control border border-primary"
                         id="exampleInputPassword1">
                     @error('password')
