@@ -7,6 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <p><b>* Campo requerido</b></p>
                 <form action="{{ route('mantenimentGame.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-3">
@@ -19,7 +20,7 @@
                         <input class="form-control" type="file" name="image" id="imageFileMultiple" multiple>
                     </div>
                     <div class="mb-3">
-                        <label for="id_game" class="form-label">ID del juego:</label>
+                        <label for="id_game" class="form-label">ID del juego: *</label>
                         @error('id_game')
                             <br>
                             <small>* {{ $message }} </small>
@@ -29,7 +30,7 @@
                             value="{{ old('id_game') }}">
                     </div>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Titulo:</label>
+                        <label for="name" class="form-label">Titulo: *</label>
                         @error('name')
                             <br>
                             <small>* {{ $message }} </small>

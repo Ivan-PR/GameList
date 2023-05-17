@@ -6,11 +6,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <p><b>* Campo requerido</b></p>
                 <form action="{{ route('mantenimentLanguages.update', $language) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="language" class="form-label">Idioma:</label>
+                        <label for="language" class="form-label">Idioma: *</label>
                         @error('language')
                             <br>
                             <small>* {{ $message }} </small>

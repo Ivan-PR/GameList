@@ -6,11 +6,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <p><b>* Campo requerido</b></p>
                 <form action="{{ route('mantenimentPlataformes.update', $platform) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="platform" class="form-label">Plataforma:</label>
+                        <label for="platform" class="form-label">Plataforma: *</label>
                         @error('platform')
                             <br>
                             <small>* {{ $message }} </small>

@@ -6,12 +6,13 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+                <p><b>* Campo requerido</b></p>
                 <form action="{{ route('mantenimentLocalitzacions.update', $location) }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
-                        <label for="imageFileMultiple" class="form-label">Subida de imagenes:</label>
+                        <label for="imageFileMultiple" class="form-label">Subida de imagenes: *</label>
                         @error('imageFileMultiple')
                             <br>
                             <small>* {{ $message }} </small>
@@ -20,7 +21,7 @@
                         <input class="form-control" type="file" name="image" id="imageFileMultiple" multiple>
                     </div>
                     <div class="mb-3">
-                        <label for="location" class="form-label">Pais:</label>
+                        <label for="location" class="form-label">Pais: *</label>
                         @error('location')
                             <br>
                             <small>* {{ $message }} </small>
